@@ -1,0 +1,108 @@
+---
+import Image from "astro/components/Image.astro";
+import Logo from "../../public/img/Logo.png";
+import { Icon } from "astro-icon/components";
+
+const nav = [
+  { name: "Anasayfa", link: "/" },
+  { name: "Başarı Hikayeleri", link: "/" },
+  { name: "Kurumsal Web Sitesi", link: "/" },
+  { name: "Reklam Yönetimi", link: "/" },
+  { name: "Hakkımızda", link: "/" },
+  { name: "Bize Ulaşın", link: "/" },
+];
+---
+
+<nav
+  class="flex justify-between max-w-7xl mx-auto py-5 px-8 items-center relative"
+>
+  <a href="/">
+    <Image
+      class="w-[150px] cursor-pointer h-auto rounded-lg"
+      src={Logo}
+      width={200}
+      height={200}
+      alt="Logo"
+    />
+  </a>
+
+  <!-- Mobil Menü İkonu -->
+  <div class="lg:hidden">
+    <button id="mobile-menu-button">
+      <Icon width={40} height={40} name="mi:menu" />
+    </button>
+  </div>
+
+  <!-- Mobil Menü (Overlay) -->
+  <div
+    id="mobile-menu"
+    class="fixed p-16 right-1/2 translate-x-1/2 w-full rounded-2xl bottom-0 bg-gray-900 transform transition-transform duration-600 hidden flex-col justify-center items-center space-y-8 z-50 translate-y-full"
+  >
+    <ul class="list-none text-center space-y-6 text-3xl">
+      {
+        nav.map((pages) => (
+          <li>
+            <a href={pages.link} class="hover:text-blue-500">
+              {pages.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <Icon
+      id={"close-menu"}
+      class="absolute w-20 h-10 right-6 top-6 text-gray-500 hover:text-gray-700"
+      name="line-md:close-circle-filled"
+    />
+  </div>
+
+  <!-- Masaüstü Menü -->
+  <ul class="hidden lg:flex justify-center gap-10 nav">
+    {
+      nav.map((pages) => (
+        <li>
+          <a href={pages.link} class="hover:text-blue-500">
+            {pages.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<div
+  id="bg"
+  class="bg-black transform transition-all duration-800 opacity-70 z-40 pointer-events-none inset-0 hidden"
+>
+</div>
+<script>
+  const btn = document.getElementById("mobile-menu-button");
+  const menu = document.getElementById("mobile-menu");
+  const closeBtn = document.getElementById("close-menu");
+  const bg = document.getElementById("bg");
+
+  btn.addEventListener("click", () => {
+    menu.classList.remove("hidden");
+    menu.classList.add("flex");
+    setTimeout(() => {
+      menu.classList.remove("translate-y-full");
+      menu.classList.add("translate-y-0");
+    }, 10);
+    bg.classList.remove("hidden");
+    bg.classList.add("absolute");
+    bg.classList.remove("pointer-events-none");
+    bg.addEventListener("click", () => {
+      menu.classList.remove("translate-y-0");
+      bg.classList.remove("absolute");
+      bg.classList.add("hidden");
+      menu.classList.add("translate-y-full");
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    menu.classList.remove("translate-y-0");
+    bg.classList.remove("absolute");
+    bg.classList.add("hidden");
+    menu.classList.add("translate-y-full");
+  });
+</script>

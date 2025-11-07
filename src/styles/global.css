@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap");
+@import "aos/dist/aos.css";
+@import "tailwindcss";
+@layer base {
+  /* örnek: src/styles/global.css */
+
+  .nav a {
+    position: relative;
+    font-weight: 500;
+    font-family: "Zalando Sans SemiExpanded", sans-serif;
+    padding: 0.25rem 0;
+  }
+
+  /* alt çizgi oluştur */
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: #1e90ff;
+    transform: scaleX(0);
+    transform-origin: right center;
+    transition: transform 0.25s ease;
+  }
+
+  /* hover olduğunda sağdan sola büyüsün */
+  .nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+}

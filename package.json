@@ -1,0 +1,29 @@
+{
+  "name": "evolution",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@iconify-json/line-md": "^1.2.11",
+    "@iconify-json/material-symbols": "^1.2.44",
+    "@iconify-json/mi": "^1.2.2",
+    "@tailwindcss/vite": "^4.1.13",
+    "aos": "^2.3.4",
+    "astro": "^5.14.1",
+    "astro-icon": "^1.1.5",
+    "astro-integration-lottie": "^0.3.2",
+    "iconify-icon": "^3.0.2",
+    "lottie-web": "^5.13.0",
+    "tailwindcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}

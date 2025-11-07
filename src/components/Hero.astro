@@ -1,0 +1,142 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<style is:global>
+  @keyframes pulseWidth {
+    0% {
+      width: 400px;
+    }
+    50% {
+      width: 600px;
+    }
+    100% {
+      width: 400px;
+    }
+  }
+  .animate-pulse {
+    animation: pulseWidth 6s ease-in-out infinite;
+  }
+
+  @keyframes wobble {
+    0% {
+      transform: translate(-0.5px, -0.5px) rotate(-0.2deg);
+    }
+    50% {
+      transform: translate(0.5px, 0.5px) rotate(0.2deg);
+    }
+    100% {
+      transform: translate(-0.4px, -0.3px) rotate(0deg);
+    }
+  }
+
+  #rocket {
+    position: relative;
+    overflow: visible;
+    animation: wobble 0.7s infinite ease-in-out;
+  }
+
+  .cloud-streak {
+    position: absolute;
+    width: 3px;
+    height: 100px;
+    background: white;
+    opacity: 0.8;
+    top: -30px; /* yukarıdan başla */
+    animation: fall 1.5s linear forwards;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(0);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(400px);
+      opacity: 0;
+    }
+  }
+  #parag strong {
+    display: block;
+    margin-top: 5px;
+  }
+  #bg-tr {
+    pointer-events: none;
+  }
+</style>
+
+<div class="relative mt-5 overflow-hidden">
+  <div
+    id="bg-tr"
+    class="transform transition-all duration-300 absolute top-[-100px] right-[-200px] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-purple-600/40 to-blue-500/30 blur-[100px]"
+  >
+  </div>
+
+  <div
+    id="bg-tr"
+    class="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-green-500/30 to-yellow-400/20 blur-[100px]"
+  >
+  </div>
+
+  <section
+    class="flex md:gap-0 gap-10 md:flex-row flex-col-reverse items-center justify-between p-10 max-w-7xl mx-auto"
+  >
+    <div class="max-w-[500px] space-y-4" id="left side">
+      <h1 class="text-4xl md:text-5xl font-extrabold">
+        Markanızı Büyütecek Stratejiler Üretiyoruz.
+      </h1>
+      <p id="parag" class="text-xl leading-relaxed">
+        5 Yıllık Tecrübemizle ilham veren fikirleri hayata geçiriyoruz. Ve bunu
+        yaparken son teknolojileri kullanıyoruz.
+      </p>
+      <div
+        class="flex flex-col sm:flex-row items-center gap-10 mt-7 justify-center"
+      >
+        <Button variant="primary" text="Sizi Arıyım" />
+        <Button variant="secondary" text="Siz Beni Arayın" />
+      </div>
+    </div>
+    <div id="rocket" class="relative">
+      <img
+        class="max-w-[300px] bg-transparent md:max-w-md lg:max-w-xl"
+        src="img/Rocket.webp"
+        alt="Rocket"
+      />
+    </div>
+  </section>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const a = document.querySelectorAll("#bg-tr");
+    a.forEach((div) => {
+      div.classList.add("animate-pulse");
+    });
+  });
+
+  const rocket = document.getElementById("rocket");
+
+  if (rocket) {
+    setInterval(() => {
+      spawn();
+    }, 140);
+  }
+
+  function spawn() {
+    const streak = document.createElement("div");
+    streak.className = "cloud-streak";
+    streak.style.pointerEvents = "none";
+
+    const w = rocket.offsetWidth;
+
+    const minX = w * 0.2;
+    const maxX = w * 0.8;
+    const x = minX + Math.random() * (maxX - minX);
+
+    streak.style.left = x + "px";
+
+    rocket.appendChild(streak);
+
+    streak.addEventListener("animationend", () => streak.remove());
+  }
+</script>

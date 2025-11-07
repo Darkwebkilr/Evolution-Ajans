@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+export interface Props {
+  title: string;
+  description: string;
+}
+const { title = "Evolution Ajans Geleceğin Reklamcılığı", description } =
+  Astro.props;
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+---
+
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-black text-white">
+    <Header />
+    <slot />
+  </body>
+</html>
