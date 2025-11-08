@@ -12,6 +12,7 @@
     "@iconify-json/line-md": "^1.2.11",
     "@iconify-json/material-symbols": "^1.2.44",
     "@iconify-json/mi": "^1.2.2",
+    "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/vite": "^4.1.13",
     "aos": "^2.3.4",
     "astro": "^5.14.1",

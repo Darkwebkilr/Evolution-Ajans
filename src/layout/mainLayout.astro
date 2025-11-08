@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
 export interface Props {
   title: string;
   description: string;
@@ -23,5 +22,19 @@ import "../styles/global.css";
   <body class="bg-black text-white">
     <Header />
     <slot />
+    <script>
+      import Lenis from "@studio-freight/lenis";
+
+      const lenis = new Lenis({
+        smoothWheel: true,
+        lerp: 0.1,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    </script>
   </body>
 </html>

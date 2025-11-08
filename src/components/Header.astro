@@ -14,11 +14,12 @@ const nav = [
 ---
 
 <nav
-  class="flex justify-between max-w-7xl mx-auto py-5 px-8 items-center relative"
+  id="menu"
+  class="flex justify-between z-50 max-w-7xl w-full mx-auto px-8 items-center top-0 transform transition-all ease-in-out duration-800"
 >
   <a href="/">
     <Image
-      class="w-[150px] cursor-pointer h-auto rounded-lg"
+      class="w-[130px] md:w-[150px] cursor-pointer h-auto rounded-lg"
       src={Logo}
       width={200}
       height={200}
@@ -76,33 +77,5 @@ const nav = [
 >
 </div>
 <script>
-  const btn = document.getElementById("mobile-menu-button");
-  const menu = document.getElementById("mobile-menu");
-  const closeBtn = document.getElementById("close-menu");
-  const bg = document.getElementById("bg");
-
-  btn.addEventListener("click", () => {
-    menu.classList.remove("hidden");
-    menu.classList.add("flex");
-    setTimeout(() => {
-      menu.classList.remove("translate-y-full");
-      menu.classList.add("translate-y-0");
-    }, 10);
-    bg.classList.remove("hidden");
-    bg.classList.add("absolute");
-    bg.classList.remove("pointer-events-none");
-    bg.addEventListener("click", () => {
-      menu.classList.remove("translate-y-0");
-      bg.classList.remove("absolute");
-      bg.classList.add("hidden");
-      menu.classList.add("translate-y-full");
-    });
-  });
-
-  closeBtn.addEventListener("click", () => {
-    menu.classList.remove("translate-y-0");
-    bg.classList.remove("absolute");
-    bg.classList.add("hidden");
-    menu.classList.add("translate-y-full");
-  });
+  import "../scripts/menu.js";
 </script>
