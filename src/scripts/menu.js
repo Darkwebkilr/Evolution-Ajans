@@ -1,7 +1,7 @@
 const btn = document.getElementById("mobile-menu-button");
 const menu = document.getElementById("mobile-menu");
 const closeBtn = document.getElementById("close-menu");
-const bg = document.getElementById("bg");
+let cls = "bg-gradient-to-r from-white/50 to-pink-200/50";
 
 btn.addEventListener("click", () => {
   menu.classList.remove("hidden");
@@ -10,21 +10,10 @@ btn.addEventListener("click", () => {
     menu.classList.remove("translate-y-full");
     menu.classList.add("translate-y-0");
   }, 10);
-  bg.classList.remove("hidden");
-  bg.classList.add("absolute");
-  bg.classList.remove("pointer-events-none");
-  bg.addEventListener("click", () => {
-    menu.classList.remove("translate-y-0");
-    bg.classList.remove("absolute");
-    bg.classList.add("hidden");
-    menu.classList.add("translate-y-full");
-  });
 });
 
 closeBtn.addEventListener("click", () => {
   menu.classList.remove("translate-y-0");
-  bg.classList.remove("absolute");
-  bg.classList.add("hidden");
   menu.classList.add("translate-y-full");
 });
 
