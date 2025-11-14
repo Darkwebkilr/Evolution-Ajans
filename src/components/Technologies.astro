@@ -1,0 +1,49 @@
+---
+import { Techno } from "../components/techno/technos.js";
+---
+
+<style>
+  section {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    color: black;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: white;
+  }
+</style>
+
+<div class="my-20">
+  <h2
+    id="heading"
+    class="text-white my-5 font-mono text-xl md:text-5xl text-center"
+  >
+    Kullandığımız Teknolojiler
+  </h2>
+
+  <div class="h-full w-full">
+    {
+      Techno.map((tec) => (
+        <section id="tt" class="w-full  text-center">
+          <div
+            class={`w-full h-screen p-10 bg-gradient-to-br ${tec.bg} flex flex-col items-center justify-center`}
+          >
+            <h2 class="text-white text-4xl font-bold">{tec.name}</h2>
+            <img
+              src={tec.img}
+              alt={tec.name}
+              class="mt-6 max-w-60 md:max-w-md "
+            />
+            <p class="text-white mt-4 text-lg" set:html={tec.desc} />
+          </div>
+        </section>
+      ))
+    }
+  </div>
+</div>
+
+<script src="../scripts/techno.js"></script>

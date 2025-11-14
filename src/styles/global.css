@@ -2,8 +2,6 @@
 @import "aos/dist/aos.css";
 @import "tailwindcss";
 @layer base {
-  /* örnek: src/styles/global.css */
-
   .nav a {
     position: relative;
     font-weight: 500;
