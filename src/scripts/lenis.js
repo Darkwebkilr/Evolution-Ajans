@@ -4,7 +4,7 @@ const lenis = new Lenis({
   smooth: true,
   smoothTouch: true,
   syncTouch: true,
-  touchMultiplier: 1.5,
+  touchMultiplier: 0.75,
 });
 
 function raf(time) {
