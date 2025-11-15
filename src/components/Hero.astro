@@ -15,7 +15,7 @@ import Button from "../components/Button.astro";
     }
   }
   .animate-pulse {
-    animation: pulseWidth 6s ease-in-out infinite;
+    animation: pulseWidth 4s ease-in-out infinite;
   }
 
   @keyframes wobble {
@@ -33,7 +33,7 @@ import Button from "../components/Button.astro";
   #rocket {
     position: relative;
     overflow: visible;
-    animation: wobble 0.7s infinite ease-in-out;
+    animation: wobble 0.5s infinite ease-in-out;
   }
 
   .cloud-streak {
@@ -68,13 +68,13 @@ import Button from "../components/Button.astro";
 <div class="relative mt-5 overflow-hidden">
   <div
     id="bg-tr"
-    class="transform transition-all duration-300 absolute top-[-100px] right-[-200px] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-purple-600/40 to-blue-500/30 blur-[100px]"
+    class="transform transition-all duration-300 absolute top-[-100px] right-[-200px] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-purple-600/40 to-blue-500/30 blur-[50px]"
   >
   </div>
 
   <div
     id="bg-tr"
-    class="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-green-500/30 to-yellow-400/20 blur-[100px]"
+    class="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] rounded-full bg-gradient-to-br from-green-500/30 to-yellow-400/20 blur-[50px]"
   >
   </div>
 

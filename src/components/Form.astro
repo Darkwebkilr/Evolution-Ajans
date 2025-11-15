@@ -1,0 +1,66 @@
+---
+const handleSubmit = (e) => {
+  e.preventDefault();
+  alert("Mesajınız başarıyla gönderildi! (Backend bağlayınca gerçek olur 😄)");
+};
+---
+
+<section
+  class="w-full bg-gradient-to-br from-gray-900 via-gray-800 to-black py-20 px-6 md:px-20"
+>
+  <div class="max-w-3xl mx-auto text-center mb-12">
+    <h2 class="text-4xl font-bold text-white">Bizimle İletişime Geç</h2>
+    <p class="mt-3 text-gray-300">
+      Projenden bize bahset, birlikte harika bir şey oluşturalım.
+    </p>
+  </div>
+
+  <form
+    on:submit={handleSubmit}
+    class="max-w-2xl mx-auto bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-xl space-y-6"
+  >
+    <!-- İsim -->
+    <div class="flex flex-col">
+      <label class="text-gray-200 mb-1 font-medium">İsim</label>
+      <input
+        type="text"
+        name="name"
+        required
+        placeholder="Adınız"
+        class="p-3 rounded-xl bg-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-pink-500 outline-none transition"
+      />
+    </div>
+
+    <!-- Email -->
+    <div class="flex flex-col">
+      <label class="text-gray-200 mb-1 font-medium">E-Mail</label>
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="E-mail adresiniz"
+        class="p-3 rounded-xl bg-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-pink-500 outline-none transition"
+      />
+    </div>
+
+    <!-- Mesaj -->
+    <div class="flex flex-col">
+      <label class="text-gray-200 mb-1 font-medium">Mesaj</label>
+      <textarea
+        name="message"
+        rows="5"
+        required
+        placeholder="Projenizi veya sorularınızı buraya yazın..."
+        class="p-3 rounded-xl bg-white/20 text-white placeholder-gray-300 resize-none focus:ring-2 focus:ring-pink-500 outline-none transition"
+      ></textarea>
+    </div>
+
+    <!-- Buton -->
+    <button
+      type="submit"
+      class="w-full py-3 bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-xl transition shadow-lg"
+    >
+      Gönder
+    </button>
+  </form>
+</section>

@@ -17,10 +17,4 @@ export const Techno = [
     img: "img/photoshop.png",
     bg: "from-blue-400 via-indigo-500 to-pink-500",
   },
-  {
-    name: "Next Js",
-    desc: "Web dünyasının uzun zamandır kullanılan popüler araçlarından biri olan <span>wordpress</span> güçlü yönetim paneli ile öne çıkıyor.",
-    img: "img/nextjs.png",
-    bg: "from-black via-gray-900 to-blue-600",
-  },
 ];
