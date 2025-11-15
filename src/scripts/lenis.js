@@ -1,14 +1,15 @@
 import Lenis from "@studio-freight/lenis";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const lenis = new Lenis({
-    smoothWheel: true,
-    lerp: 0.1,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
+const lenis = new Lenis({
+  smooth: true,
+  smoothTouch: true,
+  syncTouch: true,
+  touchMultiplier: 1.5,
 });
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
