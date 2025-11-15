@@ -25,16 +25,18 @@ import "../styles/global.css";
     <script>
       import Lenis from "@studio-freight/lenis";
 
-      const lenis = new Lenis({
-        smoothWheel: true,
-        lerp: 0.1,
-      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const lenis = new Lenis({
+          smoothWheel: true,
+          lerp: 0.1,
+        });
 
-      function raf(time) {
-        lenis.raf(time);
+        function raf(time: number) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
         requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
+      });
     </script>
   </body>
 </html>
