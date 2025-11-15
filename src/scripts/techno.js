@@ -35,9 +35,13 @@ gsap.utils.toArray("#tt").forEach((panel, i) => {
 });
 
 gsap.utils.toArray("#tt").forEach((panel, i) => {
-  ScrollTrigger.create({
-    trigger: panel,
-    snap: 1 / 2,
-    duration: 0.1,
-  });
+  if (i == 0) {
+    return;
+  } else {
+    ScrollTrigger.create({
+      trigger: panel,
+      snap: 1 / 2,
+      duration: 0.1,
+    });
+  }
 });

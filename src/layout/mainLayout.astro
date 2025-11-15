@@ -18,25 +18,17 @@ import "../styles/global.css";
     <meta name="description" content={description} />
 
     <title>{title}</title>
+    <style>
+      html,
+      body {
+        height: auto !important;
+        overflow: hidden !important;
+      }
+    </style>
   </head>
   <body class="bg-black text-white">
     <Header />
     <slot />
-    <script>
-      import Lenis from "@studio-freight/lenis";
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const lenis = new Lenis({
-          smoothWheel: true,
-          lerp: 0.1,
-        });
-
-        function raf(time: number) {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-      });
-    </script>
+    <script src="../scripts/lenis.js"></script>
   </body>
 </html>
