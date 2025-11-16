@@ -45,3 +45,23 @@ gsap.utils.toArray("#tt").forEach((panel, i) => {
     });
   }
 });
+
+let i = 0;
+while (i < 2) {
+  i++;
+  document.addEventListener("DOMContentLoaded", () => {
+    dd();
+  });
+}
+
+const a = document.getElementById("hea");
+function dd() {
+  if (window.innerWidth <= 560) {
+    a.classList.remove("hidden");
+    a.classList.add("block");
+  } else {
+    a.classList.remove("block");
+    a.classList.add("hidden");
+  }
+}
+window.onresize = dd;

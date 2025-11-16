@@ -5,30 +5,30 @@ import { Techno } from "../components/techno/technos.js";
 <div class="my-20">
   <h2
     id="heading"
-    class="text-white my-5 font-mono text-3xl sm:text-4xl lg:text-7xl text-center"
+    class="text-white my-5 text-clip font-mono text-4xl md:text-5xl lg:text-6xl text-center"
   >
-    Kullandığımız Teknolojiler
+    Kullandığımız <br id="hea" class="hidden" /> Teknolojiler
   </h2>
+</div>
 
-  <div class="h-full w-full">
-    {
-      Techno.map((tec) => (
-        <section id="tt" class="w-full  text-center">
-          <div
-            class={`w-full h-screen p-10 bg-gradient-to-br ${tec.bg} flex flex-col items-center justify-center`}
-          >
-            <h2 class="text-white text-4xl font-bold">{tec.name}</h2>
-            <img
-              src={tec.img}
-              alt={tec.name}
-              class="mt-6 max-w-60 md:max-w-md "
-            />
-            <p class="text-white mt-4 text-lg" set:html={tec.desc} />
-          </div>
-        </section>
-      ))
-    }
-  </div>
+<div class="h-full w-full">
+  {
+    Techno.map((tec) => (
+      <section id="tt" class="w-full  text-center">
+        <div
+          class={`w-full h-screen p-10 bg-gradient-to-br ${tec.bg} flex flex-col items-center justify-center`}
+        >
+          <h2 class="text-white text-4xl font-bold">{tec.name}</h2>
+          <img
+            src={tec.img}
+            alt={tec.name}
+            class="mt-6 max-w-60 md:max-w-md "
+          />
+          <p class="text-white mt-4 text-lg" set:html={tec.desc} />
+        </div>
+      </section>
+    ))
+  }
 </div>
 
 <script src="../scripts/techno.js"></script>
