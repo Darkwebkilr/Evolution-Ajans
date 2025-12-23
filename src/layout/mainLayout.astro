@@ -7,6 +7,8 @@ const { title = "Evolution Ajans Geleceğin Reklamcılığı", description } =
   Astro.props;
 import Header from "../components/Header.astro";
 import "../styles/global.css";
+
+import LogoAnimation from "../components/LogoAnimation.astro";
 ---
 
 <html lang="tr">
@@ -19,8 +21,11 @@ import "../styles/global.css";
     <title>{title}</title>
   </head>
   <body class="bg-black text-white">
+    <LogoAnimation />
     <Header />
-    <slot />
+    <main transition:animate="">
+      <slot />
+    </main>
     <script src="../scripts/lenis.js"></script>
   </body>
 </html>

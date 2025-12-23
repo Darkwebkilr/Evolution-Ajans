@@ -1,0 +1,67 @@
+---
+import Logo from "../../public/img/Logo.png";
+import Image from "astro/components/Image.astro";
+---
+
+<!-- Anasayfa Logo Animasyon-->
+<div
+  id="intro"
+  class="bg-black bg pointer-events-none fixed z-50 w-full h-full"
+>
+  <Image
+    width={"500"}
+    height={"500"}
+    src={Logo}
+    class={"animation"}
+    alt={"Evolution Logo"}
+  />
+</div>
+
+<style>
+  .animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: logoAnimation 1.5s ease-in-out forwards;
+  }
+
+  .intro {
+    animation: bgAnimation 0.5s ease-out forwards;
+  }
+
+  @keyframes bgAnimation {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes logoAnimation {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    70% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+  }
+</style>
+<script>
+  // Logo animasyonu tamamlandığında öğeyi kaldır
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      document.getElementById("intro")?.remove();
+    }, 1500);
+    setTimeout(() => {
+      document.getElementById("intro")?.classList.add("intro");
+    }, 1200);
+  });
+</script>
