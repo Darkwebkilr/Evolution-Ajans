@@ -2,7 +2,9 @@
 import { getCollection } from "astro:content";
 import MainLayout from "../layout/mainLayout.astro";
 
-const allBlogPost = await getCollection("blog");
+const allBlogPost = await getCollection("blog", ({ data }) => {
+  return !data.isDraft;
+});
 ---
 
 <MainLayout title="Blog" description="Bloguma Hoşgeldiniz">

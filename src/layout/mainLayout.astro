@@ -2,13 +2,21 @@
 export interface Props {
   title: string;
   description: string;
+  image?: string;
+  type?: string;
 }
-const { title = "Evolution Ajans Geleceğin Reklamcılığı", description } =
-  Astro.props;
-import Header from "../components/Header.astro";
-import "../styles/global.css";
+const {
+  title = "Evolution Ajans | Geleceğin Reklamcılığı",
+  description = "Markanızın dijital dünyadaki evrimini yönetiyoruz. SEO, web tasarım, sosyal medya ve dijital pazarlama çözümleri.",
+  image = "/img/social-media.png", // Default sharing image
+  type = "website",
+} = Astro.props;
 
-import LogoAnimation from "../components/LogoAnimation.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import Wpbutton from "../components/Wpbutton.astro";
+// import LogoAnimation from "../components/LogoAnimation.astro";
 ---
 
 <html lang="tr">
@@ -17,15 +25,30 @@ import LogoAnimation from "../components/LogoAnimation.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
+
+    <!-- SEO & Canonical -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Evolution Ajans" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
   </head>
   <body class="bg-black text-white">
-    <LogoAnimation />
+    <!-- <LogoAnimation /> -->
+    <Wpbutton />
     <Header />
-    <main transition:animate="">
+    <main class="pt-28 md:pt-40">
       <slot />
     </main>
     <script src="../scripts/lenis.js"></script>
+    <Footer />
   </body>
 </html>

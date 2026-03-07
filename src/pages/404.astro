@@ -1,0 +1,135 @@
+---
+import MainLayout from "../layout/mainLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout title="404 | Sistem Hatası - Evolution Ajans" description="Aradığınız sayfa uzay boşluğunda kaybolmuş olabilir.">
+  <section class="relative min-h-[90vh] md:h-screen w-full bg-[#030303] overflow-hidden flex items-center justify-center px-6">
+    
+    <!-- Glitch Background Atmosphere -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-[20%] left-[-10%] w-[50vw] h-[50vw] bg-red-600/10 blur-[150px] rounded-full mix-blend-screen animate-pulse"></div>
+      <div class="absolute bottom-[-10%] right-[10%] w-[40vw] h-[40vw] bg-blue-600/10 blur-[120px] rounded-full mix-blend-screen" style="animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite reverse;"></div>
+      
+      <!-- Scanline effect -->
+      <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, #fff 2px, #fff 4px);"></div>
+    </div>
+
+    <div class="relative z-10 flex flex-col items-center text-center max-w-3xl">
+      
+      <!-- 404 Glitch Text -->
+      <div class="relative group cursor-default">
+        <h1 class="text-[120px] sm:text-[180px] md:text-[250px] font-black uppercase tracking-tighter leading-none text-transparent text-stroke-2 text-stroke-white opacity-20 group-hover:opacity-100 transition-opacity duration-300">
+          404
+        </h1>
+        <h1 class="absolute inset-0 text-[120px] sm:text-[180px] md:text-[250px] font-black uppercase tracking-tighter leading-none text-white animate-glitch mix-blend-screen">
+          404
+        </h1>
+      </div>
+
+      <div class="space-y-6 mt-8">
+         <span class="inline-block px-4 py-2 bg-red-500/10 border border-red-500/20 text-red-400 font-mono text-xs uppercase tracking-[0.3em] rounded-full">
+            Bağlantı Koptu
+         </span>
+         
+         <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+            SİNYAL BULUNAMADI.
+         </h2>
+         
+         <p class="text-white/50 text-lg font-light leading-relaxed max-w-lg mx-auto">
+            Aradığınız dijital koordinat mevcut değil. Sizi ana merkeze yönlendiriyoruz.
+         </p>
+      </div>
+
+      <!-- Countdown & CTA -->
+      <div class="mt-16 flex flex-col items-center gap-8">
+        <!-- Interactive Countdown Ring -->
+        <div class="relative w-24 h-24 flex items-center justify-center">
+           <svg class="absolute inset-0 w-full h-full -rotate-90">
+             <circle cx="48" cy="48" r="46" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="4"></circle>
+             <circle id="progress-ring" cx="48" cy="48" r="46" fill="none" stroke="#3b82f6" stroke-width="4" stroke-dasharray="289" stroke-dashoffset="0" class="transition-all duration-1000 ease-linear"></circle>
+           </svg>
+           <span id="countdown-text" class="text-2xl font-black font-mono text-white">10</span>
+        </div>
+
+        <a href="/" class="group relative inline-flex items-center justify-center gap-4 px-8 py-4 bg-white text-black rounded-full overflow-hidden transition-all hover:scale-105">
+           <Icon name="mdi:home" size={20} class="relative z-10" />
+           <span class="relative z-10 text-sm font-bold uppercase tracking-widest">Ana Merkeze Dön</span>
+           <div class="absolute inset-0 bg-blue-100 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    /* Custom Text Stroke Utility */
+    .text-stroke-2 {
+      -webkit-text-stroke-width: 2px;
+    }
+    .text-stroke-white {
+      -webkit-text-stroke-color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Glitch Animation Keyframes */
+    @keyframes glitch-anim {
+      0% {
+        clip-path: inset(20% 0 80% 0);
+        transform: translate(-2px, 2px);
+      }
+      20% {
+        clip-path: inset(60% 0 10% 0);
+        transform: translate(2px, -2px);
+      }
+      40% {
+        clip-path: inset(40% 0 50% 0);
+        transform: translate(-2px, -2px);
+      }
+      60% {
+        clip-path: inset(80% 0 5% 0);
+        transform: translate(2px, 2px);
+      }
+      80% {
+        clip-path: inset(10% 0 70% 0);
+        transform: translate(-2px, 2px);
+      }
+      100% {
+        clip-path: inset(30% 0 50% 0);
+        transform: translate(0);
+      }
+    }
+
+    .animate-glitch {
+      animation: glitch-anim 2s infinite linear alternate-reverse;
+      text-shadow: 
+        -2px 0 #ff00c1, 
+        2px 0 #00fff9;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let timeLeft = 10;
+      const countText = document.getElementById("countdown-text");
+      const progressRing = document.getElementById("progress-ring");
+      
+      if(!countText || !progressRing) return;
+
+      const circumference = 2 * Math.PI * 46; // r=46
+      
+      const interval = setInterval(() => {
+        timeLeft--;
+        countText.innerText = timeLeft.toString();
+        
+        // Update circle progress
+        const offset = circumference - (timeLeft / 10) * circumference;
+        progressRing.style.strokeDashoffset = offset.toString();
+
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+          window.location.href = "/";
+        }
+      }, 1000);
+    });
+  </script>
+</MainLayout>

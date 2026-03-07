@@ -3,52 +3,65 @@ export interface Props {
   title: string;
   desc: string;
   icon: string;
+  index?: number;
 }
 
-const { title, desc, icon } = Astro.props;
-const kontrol = icon.endsWith("json");
-const animId = "anim-" + crypto.randomUUID();
+const { title, desc, icon, index = 0 } = Astro.props;
+const isLottie = icon.endsWith("json");
 import LottieAnimation from "astro-integration-lottie/Lottie.astro";
+const slug = title.toLowerCase().replace(/ /g, "-").replace(/&/g, "ve");
+
+// Format index as 01, 02, etc.
+const formattedIndex = (index + 1).toString().padStart(2, '0');
 ---
 
-<div
-  class="group
-    p-6
-    rounded-2xl
-    bg-neutral-900/60
-    border border-neutral-800
-    backdrop-blur-md
-    transition
-    hover:border-blue-400/60
-    hover:shadow-[0_0_35px_rgba(59,130,246,0.45)]
-    hover:-translate-y-1
-    flex
-    flex-col
-    items-center"
->
-  {
-    kontrol ? (
-      <div class="w-44 h-44 md:w-60 md:h-60">
-        <LottieAnimation src={icon} autoplay="visible" />
+<a href={`/services/${slug}`} class="block h-full group outline-none" data-aos="fade-up" data-aos-delay={index * 100}>
+  <div class="relative h-full bg-[#070707] border border-white/5 p-8 md:p-10 rounded-[2rem] overflow-hidden transition-all duration-700 hover:border-white/20 hover:bg-[#0c0c0c] flex flex-col justify-between z-10 hover:shadow-[0_20px_50px_-15px_rgba(59,130,246,0.15)] hover:-translate-y-2">
+    
+    <!-- Hover Gradient Background Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] via-transparent to-pink-500/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0 pointer-events-none"></div>
+    
+    <div class="relative z-10">
+      <div class="flex justify-between items-start mb-12 border-b border-white/5 pb-8 group-hover:border-white/10 transition-colors duration-500">
+        <span class="text-4xl md:text-5xl font-mono font-bold text-white/5 group-hover:text-white/20 transition-colors duration-700 tracking-tighter">
+          {formattedIndex}
+        </span>
+        
+        <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center opacity-60 group-hover:opacity-100 group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]">
+          {isLottie ? (
+            <div class="w-full h-full filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+              <LottieAnimation src={icon} autoplay="visible" />
+            </div>
+          ) : (
+            <img src={icon} class="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" alt={title} />
+          )}
+        </div>
       </div>
-    ) : (
-      <img
-        src={icon}
-        class="w-44 h-44 mb-4 md:w-60 md:h-60 text-neutral-500 group-hover:text-blue-300 transition"
-        alt=""
-      />
-    )
-  }
 
-  <h2
-    class="text-2xl text-start font-semibold cursor-default text-neutral-200 mb-2 group-hover:text-blue-200 transition"
-  >
-    {title}
-  </h2>
+      <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-6 tracking-tight uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/60 transition-all duration-500">
+        {title}
+      </h3>
+      
+      <p class="text-white/40 text-sm md:text-base leading-relaxed group-hover:text-white/70 transition-colors duration-500">
+        {desc}
+      </p>
+    </div>
 
-  <p
-    class="text-neutral-400 text-start cursor-default text-base leading-relaxed"
-  >
-    {desc}
-  </p>
-</div>
+    <!-- Animated Details Area -->
+    <div class="relative z-10 mt-12 flex items-center justify-between overflow-hidden pt-6">
+      <span class="text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-white/30 group-hover:text-white/80 transition-colors duration-500">Detayları Gör</span>
+      
+      <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-black/50 group-hover:bg-white group-hover:border-white transition-all duration-500 overflow-hidden relative">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white/50 absolute group-hover:translate-x-8 group-hover:-translate-y-8 transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black absolute -translate-x-8 translate-y-8 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] delay-75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</a>

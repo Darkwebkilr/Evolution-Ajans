@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 flex flex-col items-end gap-4 pointer-events-none">
+  
+  <!-- Tooltip Message (Appears on hover of the button) -->
+  <div class="wp-tooltip bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-2xl text-xs font-mono tracking-widest uppercase opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
+    Bir Kahve İçelim ☕
+  </div>
+
+  <a
+    href="https://wa.me/905519283598"
+    target="_blank"
+    class="relative group pointer-events-auto flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#25D366] hover:bg-[#1ebd5a] transition-colors duration-300 shadow-[0_0_30px_rgba(37,211,102,0.4)]"
+    aria-label="WhatsApp üzerinden iletişime geçin"
+  >
+    <!-- Background Pulse Effect -->
+    <div class="absolute inset-0 rounded-full border-2 border-[#25D366] animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] opacity-50"></div>
+    <div class="absolute inset-0 rounded-full border border-[#25D366] animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite_0.5s] opacity-30"></div>
+
+    <!-- Inner Glow/Glass on Hover -->
+    <div class="absolute inset-1 rounded-full bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-[2px]"></div>
+
+    <!-- Icon -->
+    <Icon 
+      name="mdi:whatsapp" 
+      class="w-8 h-8 md:w-9 md:h-9 text-white relative z-10 group-hover:scale-110 group-hover:rotate-[10deg] transition-transform duration-300 ease-[cubic-bezier(0.19,1,0.22,1)]" 
+    />
+  </a>
+</div>
+
+<style>
+  /* Show tooltip when hovering the anchor tag */
+  a.group:hover ~ .wp-tooltip,
+  a.group:hover + .wp-tooltip,
+  .fixed:has(a.group:hover) .wp-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

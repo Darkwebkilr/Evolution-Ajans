@@ -1,0 +1,126 @@
+---
+import { Icon } from "astro-icon/components";
+const today = new Date();
+
+const services = [
+  { name: "Web Tasarım", link: "/hizmet/web-tasarim" },
+  { name: "SEO Optimizasyonu", link: "/hizmet/seo" },
+  { name: "Sosyal Medya Yönetimi", link: "/hizmet/sosyal-medya" },
+  { name: "Dijital Reklam", link: "/hizmet/reklam" },
+];
+
+const company = [
+  { name: "Hakkımızda", link: "/hakkimizda" },
+  { name: "Başarı Hikayeleri", link: "/basari" },
+  { name: "Blog", link: "/blog" },
+  { name: "İletişim", link: "/iletisim" },
+];
+
+const socials = [
+  { icon: "mdi:instagram", link: "#" },
+  { icon: "mdi:linkedin", link: "#" },
+  { icon: "mdi:twitter", link: "#" },
+  { icon: "mdi:youtube", link: "#" },
+];
+---
+
+<footer class="relative bg-[#020202] pt-24 pb-8 overflow-hidden border-t border-white/10">
+  <!-- Aesthetic Grid Background -->
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+  
+  <!-- Glowing accents -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[300px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+    
+    <!-- Top Section: Big Call to Action -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 mb-20 border-b border-white/10 pb-16">
+      <div class="max-w-2xl">
+        <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">
+          Birlikte <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Büyüyelim</span>
+        </h2>
+        <p class="text-white/40 text-lg font-light">Dijital dönüşümünüzü başlatmak için bir kahve içelim.</p>
+      </div>
+      <a href="mailto:hello@evolution.com" class="group relative inline-flex items-center justify-center px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm rounded-full overflow-hidden transition-all hover:scale-105">
+        <span class="relative z-10">hello@evolution.com</span>
+        <div class="absolute inset-0 bg-blue-100 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></div>
+      </a>
+    </div>
+
+    <!-- Middle Section: Links -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+      
+      <!-- Brand Info -->
+      <div class="lg:col-span-1">
+        <div class="inline-flex items-center gap-2 mb-6">
+          <Icon name="mdi:flare" class="text-blue-500" size={24} />
+          <span class="text-xl font-black tracking-widest uppercase text-white">EVOLUTION</span>
+        </div>
+        <p class="text-white/40 text-sm leading-relaxed mb-6">
+          İzmir merkezli yeni nesil reklam ve teknoloji ajansı. Markanızı geleceğe taşıyoruz.
+        </p>
+        <div class="flex gap-4">
+          {socials.map(social => (
+            <a href={social.link} class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-white/50 hover:bg-white/5 transition-all duration-300">
+              <Icon name={social.icon} size={20} />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Spacer for Desktop Layout -->
+      <div class="hidden lg:block"></div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="text-xs font-mono uppercase tracking-[0.2em] text-white/30 mb-6">Hizmetlerimiz</h4>
+        <ul class="space-y-4">
+          {services.map(item => (
+            <li>
+              <a href={item.link} class="text-white/60 hover:text-white text-sm transition-colors relative group">
+                {item.name}
+                <span class="absolute -bottom-1 left-0 w-0 h-px bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="text-xs font-mono uppercase tracking-[0.2em] text-white/30 mb-6">Ajans</h4>
+        <ul class="space-y-4">
+          {company.map(item => (
+            <li>
+              <a href={item.link} class="text-white/60 hover:text-white text-sm transition-colors relative group">
+                {item.name}
+                <span class="absolute -bottom-1 left-0 w-0 h-px bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Section: Giant Text & Copyright -->
+    <div class="relative flex flex-col items-center border-t border-white/10 pt-8">
+      <!-- Huge Background Text -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.02] select-none overflow-hidden">
+        <span class="text-[12vw] font-black uppercase tracking-tighter whitespace-nowrap">EVOLUTION</span>
+      </div>
+      
+      <div class="w-full flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
+        <p class="text-white/30 text-xs font-mono uppercase tracking-widest">
+          © {today.getFullYear()} EVOLUTION AJANS.
+        </p>
+        <div class="flex gap-6">
+          <a href="/gizlilik" class="text-white/30 hover:text-white text-xs font-mono uppercase tracking-widest transition-colors">Gizlilik Politikası</a>
+          <a href="/sartlar" class="text-white/30 hover:text-white text-xs font-mono uppercase tracking-widest transition-colors">Kullanım Şartları</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>

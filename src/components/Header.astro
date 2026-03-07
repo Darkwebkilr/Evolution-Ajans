@@ -5,72 +5,214 @@ import { Icon } from "astro-icon/components";
 
 const nav = [
   { name: "Anasayfa", link: "/" },
-  { name: "Başarı Hikayeleri", link: "/" },
-  { name: "Kurumsal Web Sitesi", link: "/" },
-  { name: "Reklam Yönetimi", link: "/" },
-  { name: "Hakkımızda", link: "/" },
-  { name: "Bize Ulaşın", link: "/" },
+  { name: "Başarı Hikayeleri", link: "/basari" },
+  { name: "Blog", link: "/blog" },
+  { name: "Hakkımızda", link: "/hakkimizda" },
+  { name: "Bize Ulaşın", link: "/iletisim" },
 ];
 ---
 
-<nav
-  id="menu"
-  class="flex justify-between z-40 p-3 max-w-7xl w-full mx-auto px-8 items-center top-0 transform transition-all ease-in-out duration-800"
+<header
+  class="fixed top-4 md:top-8 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl z-60 transition-all duration-500"
+  id="main-header"
 >
-  <a href="/">
-    <Image
-      class="w-[110px] md:w-[150px] cursor-pointer h-auto rounded-lg"
-      src={Logo}
-      width={200}
-      height={200}
-      alt="Logo"
-    />
-  </a>
-
-  <!-- Mobil Menü İkonu -->
-  <div class="lg:hidden">
-    <button id="mobile-menu-button">
-      <Icon width={40} height={40} name="mi:menu" />
-    </button>
-  </div>
-
-  <!-- Mobil Menü (Overlay) -->
   <div
-    id="mobile-menu"
-    class="fixed p-16 right-1/2 translate-x-1/2 w-full rounded-2xl bottom-0 bg-gray-900 transform transition-transform duration-600 hidden flex-col justify-center items-center space-y-8 z-50 translate-y-full"
+    class="flex justify-between items-center bg-[#0a0a0a]/60 backdrop-blur-2xl border border-white/5 px-6 py-4 md:px-8 md:py-4 rounded-3xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)]"
   >
-    <ul class="list-none text-center space-y-6 text-3xl">
+    <!-- LOGO -->
+    <a href="/" class="group relative overflow-hidden flex items-center z-50">
+      <Image
+        class="w-[100px] md:w-[130px] h-auto object-contain transition-transform duration-700 ease-out group-hover:scale-105"
+        src={Logo}
+        width={200}
+        height={200}
+        alt="Evolution Logo"
+      />
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <nav class="hidden lg:flex items-center gap-12">
       {
-        nav.map((pages) => (
-          <li>
-            <a href={pages.link} class="hover:text-blue-500">
-              {pages.name}
-            </a>
-          </li>
+        nav.map((item, index) => (
+          <a
+            href={item.link}
+            class="nav-link relative text-xs uppercase tracking-[0.25em] font-bold text-white/70 hover:text-white transition-colors duration-500"
+          >
+            {item.name}
+          </a>
         ))
       }
-    </ul>
-    <Icon
-      id={"close-menu"}
-      class="absolute w-20 h-10 right-6 top-6 text-gray-500 hover:text-gray-700"
-      name="line-md:close-circle-filled"
-    />
+      <a
+        href="https://wa.me/+905519283598"
+        class="relative group overflow-hidden rounded-full bg-white text-black px-6 py-3 text-xs uppercase tracking-[0.2em] font-bold transition-transform hover:scale-105 duration-500"
+      >
+        <span class="relative z-10">Hemen Ara</span>
+        <div
+          class="absolute inset-0 bg-blue-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] z-0"
+        >
+        </div>
+        <span
+          class="absolute inset-0 flex items-center justify-center text-white translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] z-10"
+          >Hemen Ara</span
+        >
+      </a>
+    </nav>
+
+    <!-- MOBILE TOGGLE BUTTON -->
+    <button
+      id="menu-toggle"
+      class="lg:hidden flex flex-col justify-center items-end gap-[6px] w-12 h-12 z-[60] relative group transition-transform duration-300"
+      aria-label="Toggle Menu"
+    >
+      <span
+        class="block w-8 h-[2px] bg-white transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-[.active]:translate-y-[8px] group-[.active]:rotate-45 group-[.active]:bg-white group-[.active]:w-8"
+      ></span>
+      <span
+        class="block w-6 h-[2px] bg-white transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-[.active]:opacity-0 group-[.active]:translate-x-4"
+      ></span>
+      <span
+        class="block w-4 h-[2px] bg-white transition-all duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-[.active]:-translate-y-[8px] group-[.active]:-rotate-45 group-[.active]:bg-white group-[.active]:w-8"
+      ></span>
+    </button>
+  </div>
+</header>
+
+<!-- FULLSCREEN MOBILE MENU -->
+<div
+  id="mobile-overlay"
+  class="fixed inset-0 bg-[#050505] z-[40] flex flex-col justify-center px-8 sm:px-12 pointer-events-none opacity-0 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
+>
+  <!-- Background Texture/Noise -->
+  <div
+    class="absolute inset-0 opacity-[0.04] pointer-events-none mix-blend-overlay"
+    style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"
+  >
   </div>
 
-  <!-- Masaüstü Menü -->
-  <ul class="hidden lg:flex justify-center gap-10 nav">
+  <nav class="relative z-70 flex flex-col gap-6 mt-16">
     {
-      nav.map((pages) => (
-        <li>
-          <a href={pages.link} class="hover:text-blue-500">
-            {pages.name}
-          </a>
-        </li>
+      nav.map((item, index) => (
+        <a href={item.link} class="mobile-link block">
+          <span
+            class="block text-4xl sm:text-6xl font-extrabold uppercase tracking-tighter text-white/40 hover:text-white hover:translate-x-4 transition-all duration-500 origin-left"
+            style={`transform: translateY(120%); transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1) ${index * 0.1}s, color 0.4s ease, padding 0.4s ease;`}
+          >
+            {item.name}
+          </span>
+        </a>
       ))
     }
-  </ul>
-</nav>
+  </nav>
+
+  <div
+    class="absolute bottom-12 left-8 sm:left-12 flex flex-col gap-4 mobile-footer opacity-0 translate-y-8 transition-all duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] delay-300"
+  >
+    <a
+      href="mailto:hello@evolution.com"
+      class="text-white/60 hover:text-white text-sm tracking-widest uppercase transition-colors"
+      >hello@evolution.com</a
+    >
+    <a
+      href="tel:+905519283598"
+      class="text-white/60 hover:text-white text-sm tracking-widest uppercase transition-colors"
+      >+90 551 928 35 98</a
+    >
+    <p class="text-white/30 text-xs tracking-[0.2em] uppercase mt-4">
+      Evolution Ajans © {new Date().getFullYear()}
+    </p>
+  </div>
+</div>
+
+<style>
+  /* Desktop Link Hover Underline Animation */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -6px;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  /* Active states for Mobile Menu */
+  #mobile-overlay.active {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  #mobile-overlay.active .mobile-link span {
+    transform: translateY(0);
+  }
+
+  #mobile-overlay.active .mobile-footer {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hide header on scroll down, show on scroll up */
+  header.scroll-down {
+    transform: translate(-50%, -150%);
+  }
+</style>
 
 <script>
-  import "../scripts/menu.js";
+  document.addEventListener("DOMContentLoaded", () => {
+    // Mobile Menu Toggle Logic
+    const toggle = document.getElementById("menu-toggle");
+    const overlay = document.getElementById("mobile-overlay");
+    const body = document.body;
+
+    if (toggle && overlay) {
+      toggle.addEventListener("click", () => {
+        const isActive = toggle.classList.contains("active");
+
+        if (isActive) {
+          toggle.classList.remove("active");
+          overlay.classList.remove("active");
+          body.style.overflow = "";
+        } else {
+          toggle.classList.add("active");
+          overlay.classList.add("active");
+          body.style.overflow = "hidden";
+        }
+      });
+    }
+
+    // Smart Header Scroll Logic
+    const header = document.getElementById("main-header");
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!header) return;
+
+        // Don't hide header if mobile menu is open
+        if (toggle && toggle.classList.contains("active")) return;
+
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+          // Scrolling down
+          header.classList.add("scroll-down");
+        } else {
+          // Scrolling up
+          header.classList.remove("scroll-down");
+        }
+
+        lastScrollY = currentScrollY;
+      },
+      { passive: true },
+    );
+  });
 </script>
+

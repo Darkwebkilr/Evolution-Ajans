@@ -1,0 +1,160 @@
+---
+import MainLayout from "../layout/mainLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout 
+  title="Hakkımızda - Evolution Ajans | İzmir'in Dijital Gücü" 
+  description="İzmir merkezli 360° reklam ajansı. Markanızın dijital evrimini yöneten, yaratıcılık ve teknolojiyi birleştiren çok yönlü bir çözüm ortağıyız."
+>
+  <section class="relative overflow-hidden py-24 md:py-40">
+    <!-- Background Elements -->
+    <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-pink-600/10 blur-[150px] rounded-full pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Left Side: Hero Title -->
+        <div class="lg:col-span-7 space-y-8" data-aos="fade-right">
+          <span class="inline-block px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-mono uppercase tracking-[0.3em] text-blue-400 mb-4">
+            Biz Kimiz?
+          </span>
+          <h1 class="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-[0.8] mb-8">
+            İZMİR'DEN <br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">DÜNYAYA</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-white/60 font-light leading-relaxed max-w-2xl">
+            Evolution Ajans, İzmir'in dinamik ruhunu dijitalin sınırsız gücüyle birleştiren, 360 derece hizmet veren çok yönlü bir reklam ajansıdır.
+          </p>
+        </div>
+
+        <!-- Right Side: Abstract Visual/Stats -->
+        <div class="lg:col-span-5 relative" data-aos="zoom-in" data-aos-delay="200">
+           <div class="aspect-square relative flex items-center justify-center">
+              <!-- Animated Circle -->
+              <div class="absolute inset-0 border-2 border-dashed border-white/10 rounded-full animate-[spin_20s_linear_infinite]"></div>
+              <div class="absolute inset-10 border border-white/5 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+              
+              <div class="text-center space-y-2 z-10">
+                <span class="text-7xl md:text-8xl font-black text-white block tracking-tighter">5+</span>
+                <span class="text-sm font-mono uppercase tracking-[0.4em] text-white/40 block">Yıllık Evrim</span>
+              </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section with Asymmetric Layout -->
+  <section class="py-24 bg-white/5 border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+        
+        <div class="space-y-12" data-aos="fade-up">
+          <h2 class="text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
+            Sadece bir ajans değil, <br/>
+            <span class="text-white/40 italic font-light">stratejik bir ortağız.</span>
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+             <div class="space-y-4">
+                <div class="w-12 h-12 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400">
+                   <Icon name="mdi:flare" size={24} />
+                </div>
+                <h4 class="text-xl font-bold uppercase tracking-wide">Yaratıcılık</h4>
+                <p class="text-white/50 text-sm leading-relaxed">
+                  İzmir'in ilham veren dokusunu modern tasarım trendleriyle harmanlıyoruz.
+                </p>
+             </div>
+             <div class="space-y-4">
+                <div class="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center text-purple-400">
+                   <Icon name="mdi:rocket-launch" size={24} />
+                </div>
+                <h4 class="text-xl font-bold uppercase tracking-wide">Teknoloji</h4>
+                <p class="text-white/50 text-sm leading-relaxed">
+                  En güncel dijital araçları kullanarak markanızın performansını maksimize ediyoruz.
+                </p>
+             </div>
+          </div>
+        </div>
+
+        <div class="bg-black p-12 rounded-[3rem] border border-white/10 shadow-2xl space-y-8" data-aos="fade-left" data-aos-delay="300">
+          <p class="text-lg md:text-xl text-white/80 leading-relaxed font-light">
+            İzmir merkezli ofisimizde, web tasarımdan SEO'ya, sosyal medya yönetiminden kurumsal kimlik inşasına kadar geniş bir yelpazede hizmet veriyoruz. Bizim için her marka, dijital bir evrimin parçasıdır. 
+          </p>
+          <p class="text-lg md:text-xl text-white/80 leading-relaxed font-light">
+            Geleneksel reklamcılığın sınırlarını zorluyor, veriye dayalı stratejilerle markanızı sadece görünür değil, aynı zamanda etkileşim kuran bir güce dönüştürüyoruz.
+          </p>
+          <div class="pt-8 flex items-center gap-4">
+             <div class="h-[1px] w-20 bg-gradient-to-r from-blue-500 to-transparent"></div>
+             <span class="text-xs font-mono uppercase tracking-[0.3em] text-white/30">Evolution Ads Team</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Values Section -->
+  <section class="py-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+       <div class="flex flex-col items-center text-center mb-24 space-y-6">
+          <h3 class="text-5xl md:text-7xl font-black uppercase tracking-tighter" data-aos="fade-up">
+            BİZİ <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-orange-400">FARKLI</span> KILAN NE?
+          </h3>
+          <p class="text-white/40 max-w-xl text-lg font-light" data-aos="fade-up" data-aos-delay="100">
+            Sıradan bir ajansın ötesinde, büyüme hedeflerinize odaklanan bir ekosistem sunuyoruz.
+          </p>
+       </div>
+
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { title: "Çok Yönlü Yaklaşım", icon: "mdi:all-inclusive", desc: "360 derece reklamcılık anlayışıyla markanızın her noktasına dokunuyoruz." },
+            { title: "Yerel Güç, Küresel Vizyon", icon: "mdi:earth", desc: "İzmir'deki köklerimizden aldığımız güçle küresel standartlarda işler üretiyoruz." },
+            { title: "Veri Odaklı Kararlar", icon: "mdi:chart-timeline-variant", desc: "Yaratıcılığımızı sayılarla destekliyor, sonuçları tesadüfe bırakmıyoruz." }
+          ].map((val, i) => (
+            <div 
+              class="group p-10 bg-[#0a0a0a] border border-white/5 rounded-[2.5rem] hover:border-blue-500/50 transition-all duration-700 hover:-translate-y-4"
+              data-aos="fade-up"
+              data-aos-delay={i * 150}
+            >
+              <div class="mb-8 p-4 w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-white group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                 <Icon name={val.icon} size={32} />
+              </div>
+              <h4 class="text-2xl font-bold uppercase mb-4 tracking-tight group-hover:text-blue-400 transition-colors duration-500">{val.title}</h4>
+              <p class="text-white/40 leading-relaxed group-hover:text-white/70 transition-colors duration-500">
+                {val.desc}
+              </p>
+            </div>
+          ))}
+       </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 max-w-7xl mx-auto px-6 mb-24" data-aos="zoom-in">
+    <div class="relative bg-gradient-to-br from-blue-600 to-indigo-900 rounded-[3rem] p-12 md:p-24 overflow-hidden text-center group">
+       <div class="absolute inset-0 opacity-20 mix-blend-overlay group-hover:scale-110 transition-transform duration-[20s] ease-linear" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+       
+       <h2 class="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter mb-10 relative z-10 leading-none">
+          EVRİMİN <br/> BİR PARÇASI OLUN
+       </h2>
+       <a href="/iletisim" class="inline-flex items-center gap-4 bg-white text-black px-10 py-5 rounded-full text-lg font-bold uppercase tracking-widest hover:scale-105 transition-transform relative z-10">
+          Bizimle Tanışın
+          <Icon name="mdi:arrow-right" size={24} />
+       </a>
+    </div>
+  </section>
+
+</MainLayout>
+
+<script>
+  import AOS from "aos";
+  document.addEventListener("DOMContentLoaded", () => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out-cubic'
+    });
+  });
+</script>

@@ -1,76 +1,161 @@
 ---
-const handleSubmit = (e) => {
-  e.preventDefault();
-  alert("Mesajınız başarıyla gönderildi! (Backend bağlayınca gerçek olur 😄)");
-};
+import { Icon } from "astro-icon/components";
 ---
 
 <section
   id="iletisim"
-  class="w-full form bg-gradient-to-br from-gray-900 via-gray-800 to-black py-20 px-6 md:px-20"
+  class="relative w-full py-32 bg-[#050505] overflow-hidden border-t border-white/5"
 >
-  <div class="max-w-3xl mx-auto text-center mb-12">
-    <h2 class="text-4xl font-bold text-white">Bizimle İletişime Geç</h2>
-    <p class="mt-3 text-gray-300">
-      Projenden bize bahset, birlikte harika bir şey oluşturalım.
-    </p>
+  <!-- Abstract Background Elements -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <!-- Grid -->
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <!-- Orbs -->
+    <div class="absolute top-1/4 -right-64 w-[500px] h-[500px] bg-blue-600/20 blur-[150px] rounded-full mix-blend-screen"></div>
+    <div class="absolute -bottom-32 -left-64 w-[600px] h-[600px] bg-purple-600/10 blur-[150px] rounded-full mix-blend-screen"></div>
   </div>
 
-  <form
-    on:submit={handleSubmit}
-    class="max-w-2xl mx-auto bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-xl space-y-6"
-  >
-    <!-- İsim -->
-    <div class="flex flex-col">
-      <label class="text-gray-200 mb-1 font-medium">İsim</label>
-      <input
-        type="text"
-        name="name"
-        required
-        placeholder="Adınız"
-        class="p-3 rounded-xl bg-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-pink-500 outline-none transition"
-      />
-    </div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      
+      <!-- Contact Info / Typography -->
+      <div class="space-y-12" data-aos="fade-right">
+        <div>
+          <span class="inline-block px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-mono uppercase tracking-[0.3em] text-blue-400 mb-6">
+            Yeni Bir Proje
+          </span>
+          <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9]">
+            HİKAYENİZİ <br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-white">YAZALIM.</span>
+          </h2>
+        </div>
 
-    <!-- Email -->
-    <div class="flex flex-col">
-      <label class="text-gray-200 mb-1 font-medium">E-Mail</label>
-      <input
-        type="email"
-        name="email"
-        required
-        placeholder="E-mail adresiniz"
-        class="p-3 rounded-xl bg-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-pink-500 outline-none transition"
-      />
-    </div>
+        <p class="text-white/50 text-lg font-light max-w-md leading-relaxed">
+          Sınırları zorlayan bir fikriniz mi var? Gelin, onu dijital ekosistemde bir güç merkezine dönüştürelim. Formu doldurun, sizinle hemen iletişime geçelim.
+        </p>
 
-    <!-- Mesaj -->
-    <div class="flex flex-col">
-      <label class="text-gray-200 mb-1 font-medium">Mesaj</label>
-      <textarea
-        name="message"
-        rows="5"
-        required
-        placeholder="Projenizi veya sorularınızı buraya yazın..."
-        class="p-3 rounded-xl bg-white/20 text-white placeholder-gray-300 resize-none focus:ring-2 focus:ring-pink-500 outline-none transition"
-      ></textarea>
-    </div>
+        <div class="space-y-6 pt-6 border-t border-white/10">
+          <div class="flex items-center gap-6 group">
+            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all duration-500">
+              <Icon name="mdi:email-outline" size={24} />
+            </div>
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-white/30 mb-1">E-posta</p>
+              <a href="mailto:hello@evolution.com" class="text-lg font-bold text-white hover:text-blue-400 transition-colors">hello@evolution.com</a>
+            </div>
+          </div>
 
-    <!-- Buton -->
-    <button
-      type="submit"
-      class="w-full py-3 bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-xl transition shadow-lg"
-    >
-      Gönder
-    </button>
-  </form>
+          <div class="flex items-center gap-6 group">
+            <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 group-hover:bg-purple-600 group-hover:text-white group-hover:border-purple-500 transition-all duration-500">
+              <Icon name="mdi:phone-outline" size={24} />
+            </div>
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-white/30 mb-1">Telefon / WhatsApp</p>
+              <a href="tel:+905519283598" class="text-lg font-bold text-white hover:text-purple-400 transition-colors">+90 551 928 35 98</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Concept -->
+      <div class="relative" data-aos="fade-left">
+        <!-- Floating Elements for depth -->
+        <div class="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full blur-2xl opacity-50 animate-pulse"></div>
+        <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-gradient-to-br from-pink-500 to-orange-500 rounded-full blur-3xl opacity-30 animate-pulse" style="animation-delay: 1s;"></div>
+
+        <form
+          id="contact-form"
+          class="relative bg-[#0a0a0a]/80 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-[0_0_50px_rgba(0,0,0,0.5)] z-10"
+        >
+          <div class="space-y-8">
+            <!-- Name Input -->
+            <div class="relative group">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full bg-transparent border-b-2 border-white/10 px-0 py-4 text-white text-lg focus:outline-none focus:border-blue-500 transition-colors peer placeholder-transparent"
+                placeholder="İsim"
+              />
+              <label for="name" class="absolute left-0 top-4 text-white/40 text-lg transition-all duration-300 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-blue-500 peer-focus:font-mono peer-focus:uppercase peer-focus:tracking-widest peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white/50 peer-valid:font-mono peer-valid:uppercase peer-valid:tracking-widest cursor-text">
+                Adınız Soyadınız
+              </label>
+            </div>
+
+            <!-- Email Input -->
+            <div class="relative group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full bg-transparent border-b-2 border-white/10 px-0 py-4 text-white text-lg focus:outline-none focus:border-purple-500 transition-colors peer placeholder-transparent"
+                placeholder="E-mail"
+              />
+              <label for="email" class="absolute left-0 top-4 text-white/40 text-lg transition-all duration-300 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-purple-500 peer-focus:font-mono peer-focus:uppercase peer-focus:tracking-widest peer-valid:-top-4 peer-valid:text-xs peer-valid:text-white/50 peer-valid:font-mono peer-valid:uppercase peer-valid:tracking-widest cursor-text">
+                E-posta Adresiniz
+              </label>
+            </div>
+
+            <!-- Message Input -->
+            <div class="relative group pt-4">
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                class="w-full bg-transparent border-b-2 border-white/10 px-0 py-4 text-white text-lg focus:outline-none focus:border-pink-500 transition-colors peer placeholder-transparent resize-none"
+                placeholder="Mesaj"
+              ></textarea>
+              <label for="message" class="absolute left-0 top-8 text-white/40 text-lg transition-all duration-300 peer-focus:top-0 peer-focus:text-xs peer-focus:text-pink-500 peer-focus:font-mono peer-focus:uppercase peer-focus:tracking-widest peer-valid:top-0 peer-valid:text-xs peer-valid:text-white/50 peer-valid:font-mono peer-valid:uppercase peer-valid:tracking-widest cursor-text">
+                Projenizden Bahsedin
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="w-full group relative inline-flex items-center justify-center gap-4 px-8 py-5 bg-white text-black rounded-2xl overflow-hidden transition-all hover:scale-[1.02] active:scale-95"
+            >
+              <span class="relative z-10 text-sm font-bold uppercase tracking-widest">Sisteme Gönder</span>
+              <div class="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></div>
+              <Icon name="mdi:send" size={20} class="relative z-10 group-hover:text-white transition-colors duration-500" />
+              <!-- Using CSS to change text color on hover for the span as well -->
+              <style>
+                button:hover span { color: white; transition: color 0.5s; }
+              </style>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <script>
-  function updateMargin() {
-    document.querySelector(".form").style.marginTop = `${window.innerHeight}px`;
-  }
-
-  updateMargin(); // sayfa açılır açılmaz çalıştır
-  window.addEventListener("resize", updateMargin); // ekran değişince güncelle
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
+        
+        // Simüle edilmiş yükleme durumu
+        btn.innerHTML = `<span class="relative z-10 text-sm font-bold uppercase tracking-widest text-white">Gönderiliyor...</span><div class="absolute inset-0 bg-blue-600 z-0"></div>`;
+        
+        setTimeout(() => {
+          btn.innerHTML = `<span class="relative z-10 text-sm font-bold uppercase tracking-widest text-white">Başarıyla İletildi</span><div class="absolute inset-0 bg-green-500 z-0"></div>`;
+          form.reset();
+          
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+          }, 3000);
+        }, 1500);
+      });
+    }
+  });
 </script>
