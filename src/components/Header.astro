@@ -80,7 +80,7 @@ const nav = [
 <!-- FULLSCREEN MOBILE MENU -->
 <div
   id="mobile-overlay"
-  class="fixed inset-0 bg-[#050505] z-[40] flex flex-col justify-center px-8 sm:px-12 pointer-events-none opacity-0 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
+  class="fixed inset-0 bg-[#050505] z-[55] flex flex-col justify-center px-8 sm:px-12 pointer-events-none opacity-0 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
 >
   <!-- Background Texture/Noise -->
   <div
@@ -89,10 +89,10 @@ const nav = [
   >
   </div>
 
-  <nav class="relative z-70 flex flex-col gap-6 mt-16">
+  <nav class="relative z-[70] flex flex-col gap-6 mt-16 pointer-events-auto">
     {
       nav.map((item, index) => (
-        <a href={item.link} class="mobile-link block">
+        <a href={item.link} class="mobile-link block overflow-hidden">
           <span
             class="block text-4xl sm:text-6xl font-extrabold uppercase tracking-tighter text-white/40 hover:text-white hover:translate-x-4 transition-all duration-500 origin-left"
             style={`transform: translateY(120%); transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1) ${index * 0.1}s, color 0.4s ease, padding 0.4s ease;`}
@@ -105,7 +105,7 @@ const nav = [
   </nav>
 
   <div
-    class="absolute bottom-12 left-8 sm:left-12 flex flex-col gap-4 mobile-footer opacity-0 translate-y-8 transition-all duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] delay-300"
+    class="absolute bottom-12 left-8 sm:left-12 flex flex-col gap-4 mobile-footer opacity-0 translate-y-8 transition-all duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] delay-300 pointer-events-auto"
   >
     <a
       href="mailto:hello@evolution.com"
@@ -150,7 +150,7 @@ const nav = [
   }
 
   #mobile-overlay.active .mobile-link span {
-    transform: translateY(0);
+    transform: translateY(0) !important;
   }
 
   #mobile-overlay.active .mobile-footer {

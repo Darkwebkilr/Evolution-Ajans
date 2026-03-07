@@ -1,67 +1,162 @@
 ---
+import { Image } from "astro:assets";
 import Logo from "../../public/img/Logo.png";
-import Image from "astro/components/Image.astro";
 ---
 
-<!-- Anasayfa Logo Animasyon-->
-<div
-  id="intro"
-  class="bg-black bg pointer-events-none fixed z-50 w-full h-full"
->
-  <Image
-    width={"500"}
-    height={"500"}
-    src={Logo}
-    class={"animation"}
-    alt={"Evolution Logo"}
-  />
+<!-- Sadece anasayfada veya her sayfa yüklendiğinde çalışması için (cookie ile kontrol edilebilir ama şimdilik her zaman çalışsın) -->
+<div id="preloader" class="fixed inset-0 z-[100] bg-[#030303] flex flex-col items-center justify-center overflow-hidden transition-transform duration-1000 ease-[cubic-bezier(0.87,0,0.13,1)] origin-top">
+  
+  <!-- Subtle Background Noise -->
+  <div class="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+
+  <!-- Ambient Glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue-600/20 blur-[100px] rounded-full mix-blend-screen opacity-0 animate-glow-in"></div>
+
+  <div class="relative z-10 flex flex-col items-center">
+    <!-- Logo Container -->
+    <div class="relative w-40 md:w-56 h-auto mb-8 overflow-hidden">
+      <!-- Actual Logo -->
+      <Image
+        src={Logo}
+        width={400}
+        height={400}
+        alt="Evolution Logo"
+        class="w-full h-auto object-contain opacity-0 translate-y-10 animate-logo-reveal"
+      />
+      <!-- Scanline overlay over logo -->
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/20 to-transparent w-full h-4 animate-scanline"></div>
+    </div>
+
+    <!-- Tech Loading Text & Bar -->
+    <div class="flex flex-col items-center gap-4 opacity-0 animate-fade-in-up">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 bg-blue-500 rounded-full animate-ping"></span>
+        <span class="text-[10px] font-mono text-white/50 uppercase tracking-[0.4em] font-bold" id="loading-text">
+          Evolution_Core_Yükleniyor
+        </span>
+      </div>
+
+      <!-- Loading Bar -->
+      <div class="w-48 h-[1px] bg-white/10 relative overflow-hidden">
+        <div class="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-500 to-purple-500 w-full origin-left scale-x-0 animate-progress"></div>
+      </div>
+      
+      <!-- Progress Percentage -->
+      <span class="text-[10px] font-mono text-white/30 tracking-widest mt-1"><span id="progress-percent">0</span>%</span>
+    </div>
+  </div>
 </div>
 
 <style>
-  .animation {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: logoAnimation 1.5s ease-in-out forwards;
+  /* Animations */
+  .animate-glow-in {
+    animation: glowIn 1.5s ease-out forwards;
   }
 
-  .intro {
-    animation: bgAnimation 0.5s ease-out forwards;
+  .animate-logo-reveal {
+    animation: revealUp 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards 0.2s;
   }
 
-  @keyframes bgAnimation {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
+  .animate-scanline {
+    animation: scan 1.5s linear infinite;
   }
 
-  @keyframes logoAnimation {
-    0% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
-    70% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-    100% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.5);
-    }
+  .animate-fade-in-up {
+    animation: fadeUp 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards 0.5s;
+  }
+
+  .animate-progress {
+    animation: loadBar 2s cubic-bezier(0.87, 0, 0.13, 1) forwards 0.3s;
+  }
+
+  @keyframes glowIn {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+  }
+
+  @keyframes revealUp {
+    0% { opacity: 0; transform: translateY(60px) scale(0.9); filter: blur(15px); }
+    100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+  }
+
+  @keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(600%); }
+  }
+
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes loadBar {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+  }
+
+  /* Exit Animation Classes */
+  .preloader-exit {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
   }
 </style>
+
 <script>
-  // Logo animasyonu tamamlandığında öğeyi kaldır
   document.addEventListener("DOMContentLoaded", () => {
+    const preloader = document.getElementById("preloader");
+    const percentEl = document.getElementById("progress-percent");
+    const loadingText = document.getElementById("loading-text");
+    
+    if (!preloader || !percentEl) return;
+
+    let progress = 0;
+    const interval = setInterval(() => {
+      // Faster increment
+      progress += Math.random() * 3 + 1.5; 
+      
+      if (progress > 80 && progress < 100) {
+        if(loadingText) loadingText.innerText = "SİSTEM_HAZIRLANIYOR...";
+      }
+      
+      if (progress >= 90 && progress < 100) {
+        if(loadingText) loadingText.innerText = "BAŞLATILIYOR...";
+      }
+
+      if (progress >= 100) {
+        progress = 100;
+        percentEl.innerText = "100";
+        clearInterval(interval);
+        
+        // Finish Sequence Faster
+        setTimeout(() => {
+          if(loadingText) loadingText.innerText = "EVRİM_BAŞLADI";
+          
+          setTimeout(() => {
+            preloader.classList.add("preloader-exit");
+            document.body.style.overflow = "auto"; // Re-enable scroll
+            
+            setTimeout(() => {
+              preloader.remove(); // Remove from DOM entirely
+            }, 800);
+          }, 300);
+        }, 200);
+        
+      } else {
+        percentEl.innerText = Math.floor(progress).toString();
+      }
+    }, 30); // Faster interval
+
+    // Disable scroll while preloader is active
+    document.body.style.overflow = "hidden";
+    
+    // Fallback failsafe
     setTimeout(() => {
-      document.getElementById("intro")?.remove();
-    }, 1500);
-    setTimeout(() => {
-      document.getElementById("intro")?.classList.add("intro");
-    }, 1200);
+        if(document.body.contains(preloader)){
+            preloader.classList.add("preloader-exit");
+            document.body.style.overflow = "auto";
+            setTimeout(() => preloader.remove(), 800);
+        }
+    }, 4000);
   });
 </script>
