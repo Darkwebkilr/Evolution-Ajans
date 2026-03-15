@@ -80,7 +80,7 @@ const nav = [
 <!-- FULLSCREEN MOBILE MENU -->
 <div
   id="mobile-overlay"
-  class="fixed inset-0 bg-[#050505] z-[55] flex flex-col justify-center px-8 sm:px-12 pointer-events-none opacity-0 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
+  class="hidden fixed inset-0 bg-[#050505] z-[55] flex flex-col justify-center px-8 sm:px-12 pointer-events-none opacity-0 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]"
 >
   <!-- Background Texture/Noise -->
   <div
@@ -147,6 +147,7 @@ const nav = [
   #mobile-overlay.active {
     pointer-events: auto;
     opacity: 1;
+    display: flex !important;
   }
 
   #mobile-overlay.active .mobile-link span {
@@ -156,6 +157,7 @@ const nav = [
   #mobile-overlay.active .mobile-footer {
     opacity: 1;
     transform: translateY(0);
+    display: flex !important;
   }
 
   /* Hide header on scroll down, show on scroll up */
@@ -215,4 +217,3 @@ const nav = [
     );
   });
 </script>
-
