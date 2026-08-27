@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import MainLayout from "../../layout/mainLayout.astro";
 
 export async function getStaticPaths() {
@@ -7,13 +7,13 @@ export async function getStaticPaths() {
     return !data.isDraft;
   });
   return allPosts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: { post },
   }));
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <MainLayout
@@ -22,9 +22,18 @@ const { Content } = await post.render();
   image={post.data.image}
   type="article"
 >
-  <article>
-    <h1 class="text-9xl">{post.data.title}</h1>
-    <p>Yazar: {post.data.author}</p>
-    <Content />
-  </article>
+  <div class="container mx-auto px-6 py-24 md:py-40">
+    <article class="max-w-3xl mx-auto bg-white border-4 border-black p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+      <h1 class="text-sm sm:text-base md:text-xl font-bold text-black mb-6 tracking-tight leading-relaxed font-pixel uppercase">
+        {post.data.title}
+      </h1>
+      <div class="text-[8px] font-mono text-black/50 font-pixel mb-10 pb-6 border-b-2 border-black/10 flex justify-between">
+        <span>Yazar: {post.data.author}</span>
+        <span>Tarih: {new Date(post.data.pubDate).toLocaleDateString("tr-TR")}</span>
+      </div>
+      <div class="prose prose-slate max-w-none text-black leading-relaxed font-mono">
+        <Content />
+      </div>
+    </article>
+  </div>
 </MainLayout>

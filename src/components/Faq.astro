@@ -1,0 +1,48 @@
+---
+const faqItems = [
+  {
+    q: "Neden retro-atari tarzı bir tasarım tercih ettiniz?",
+    a: "Çünkü dijital dünyadaki binlerce birbirinin kopyası kurumsal şablondan sıyrılmak istiyoruz. Bu özgün tasarım, markanızın hafızalarda kalmasını sağlar, kreatif cesaretinizi gösterir ve Google'dan gelen ziyaretçileri şaşırtarak dönüşüm oranlarını artırır."
+  },
+  {
+    q: "SEO (Arama Motoru Optimizasyonu) çalışmaları ne kadar sürede sonuç verir?",
+    a: "SEO organik ve kalıcı bir büyüme sürecidir. Sitenizde yaptığımız optimizasyonlar ve Google Indexing API entegrasyonu sayesinde ilk haftalarda hızlı indeks alıp yükseliş görürüz. Ancak tam ve kalıcı sonuçları genellikle 3 ila 6 ay arasında elde ederiz."
+  },
+  {
+    q: "Yeni bir web sitesinin tasarımı ve yayına alınması ne kadar sürer?",
+    a: "Projenizin kapsamına ve özel isteklerinize bağlı olarak tasarım ve kodlama süreci genellikle 2 ila 4 hafta arasında tamamlanmaktadır. Bu süreçte siteniz tüm mobil cihazlarla tam uyumlu ve SEO altyapısı hazır şekilde teslim edilir."
+  },
+  {
+    q: "Evolution Ajans olarak hangi dijital hizmetleri sunuyorsunuz?",
+    a: "A'dan Z'ye dijital reklamcılık ve yazılım hizmetleri sunuyoruz. Başlıca odak alanlarımız: Kurumsal Web Tasarım, Google SEO Hizmeti, Meta (Instagram/Facebook) Reklam Yönetimi, Sosyal Medya Yönetimi ve Marka Kimliği Tasarımıdır."
+  }
+];
+---
+
+<section class="py-24 bg-white border-t-4 border-black relative z-10">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center mb-16 space-y-4">
+      <span class="inline-block px-4 py-2 border-2 border-black bg-black text-white text-[9px] font-mono uppercase tracking-[0.3em] font-pixel">
+        Sorular & Cevaplar
+      </span>
+      <h2 class="text-2xl md:text-4xl font-black uppercase tracking-tighter text-black">
+        SIKÇA SORULAN SORULAR
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      {faqItems.map((item) => (
+        <details class="group bg-white border-4 border-black p-6 rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-[2px] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] transition-all cursor-pointer">
+          <summary class="font-pixel text-[9px] sm:text-[10px] md:text-xs font-bold text-black uppercase cursor-pointer list-none flex justify-between items-center select-none">
+            <span>{item.q}</span>
+            <span class="text-lg font-bold group-open:hidden">+</span>
+            <span class="text-lg font-bold hidden group-open:inline">−</span>
+          </summary>
+          <div class="mt-4 text-black/70 text-sm leading-relaxed border-t-2 border-black/10 pt-4 font-mono">
+            <p>{item.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

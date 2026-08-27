@@ -29,6 +29,31 @@ import LogoAnimation from "../components/LogoAnimation.astro";
     <!-- SEO & Canonical -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={Astro.url.href} />
+
+    <!-- Schema.org JSON-LD (ProfessionalService) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Evolution Ajans",
+        "image": "https://evolutionajans.com/img/Logo.png",
+        "@id": "https://evolutionajans.com/#organization",
+        "url": "https://evolutionajans.com",
+        "telephone": "+905519283598",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Folkart Towers, Bayraklı",
+          "addressLocality": "İzmir",
+          "addressCountry": "TR"
+        },
+        "sameAs": [
+          "https://www.instagram.com/evolutionajans",
+          "https://www.linkedin.com/company/evolutionajans"
+        ]
+      }
+    </script>
 
     <!-- Open Graph (Facebook, LinkedIn, etc.) -->
     <meta property="og:title" content={title} />
@@ -41,10 +66,10 @@ import LogoAnimation from "../components/LogoAnimation.astro";
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
   </head>
-  <body class="bg-black text-white">
+  <body class="bg-[#f8fafc] text-black">
     <Wpbutton />
     <Header />
-    <main class="pt-28 md:pt-40">
+    <main class="pt-28 md:pt-36">
       <slot />
     </main>
     <script src="../scripts/lenis.js"></script>

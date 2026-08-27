@@ -1,0 +1,29 @@
+---
+---
+
+<div class="py-6 bg-black text-white border-y-4 border-black overflow-hidden select-none font-pixel text-[8px] sm:text-[10px] tracking-widest uppercase relative z-20">
+  <div class="flex whitespace-nowrap gap-16 animate-marquee">
+    {Array(4).fill([
+      "⚡ TEKNO HOLDİNG",
+      "★ KREATİF GRUP",
+      "⚡ VİZYON BOYA",
+      "★ EGE İNŞAAT",
+      "⚡ MODA DÜNYASI",
+      "★ ATLAS DİJİTAL"
+    ]).flat().map(brand => (
+      <span class="flex items-center gap-2">{brand}</span>
+    ))}
+  </div>
+</div>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-25%); }
+  }
+  .animate-marquee {
+    display: flex;
+    animation: marquee 25s linear infinite;
+    width: max-content;
+  }
+</style>

@@ -7,15 +7,31 @@ const allBlogPost = await getCollection("blog", ({ data }) => {
 });
 ---
 
-<MainLayout title="Blog" description="Bloguma Hoşgeldiniz">
-  <h1>Blog Yazılarım</h1>
-  <ul>
-    {
-      allBlogPost.map((post) => (
-        <li class="underline text-4xl mt-20">
-          <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+<MainLayout title="Blog - Evolution Ajans" description="Evolution Ajans blog yazıları ile dijital dünya hakkında son gelişmeleri keşfedin.">
+  <div class="container mx-auto px-6 py-24 md:py-40">
+    <h1 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-16 text-center">
+      Blog Yazılarım
+    </h1>
+    
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        allBlogPost.map((post) => (
+          <a href={`/blog/${post.id}/`} class="group relative bg-white border-4 border-black p-8 rounded-none transition-all duration-300 hover:-translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
+            <div>
+              <p class="text-[8px] font-mono text-black/50 font-pixel mb-4">
+                {new Date(post.data.pubDate).toLocaleDateString("tr-TR")}
+              </p>
+              <h3 class="text-xs sm:text-sm font-bold text-black mb-4 font-pixel uppercase tracking-tight group-hover:text-blue-600 transition-colors leading-relaxed">
+                {post.data.title}
+              </h3>
+              <p class="text-black/70 text-sm leading-relaxed mb-6">
+                {post.data.description}
+              </p>
+            </div>
+            <span class="text-[8px] uppercase tracking-[0.25em] text-black/50 font-pixel mt-4 group-hover:text-black">Devamını Oku -></span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
 </MainLayout>

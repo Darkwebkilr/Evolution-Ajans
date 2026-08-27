@@ -2,9 +2,7 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="relative py-32 bg-[#050505] overflow-hidden border-t border-white/5">
-  <!-- Subtle Background Grid/Noise -->
-  <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 40px 40px;"></div>
+<section class="relative py-32 bg-white overflow-hidden border-t-4 border-black retro-grid">
 
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -12,17 +10,17 @@ import { Icon } from "astro-icon/components";
       <!-- Typography / Content Side -->
       <div class="space-y-10" data-aos="fade-right">
         <div class="inline-flex items-center gap-4">
-          <div class="w-12 h-[1px] bg-blue-500"></div>
-          <span class="text-xs font-mono uppercase tracking-[0.3em] text-white/50">Biz Kimiz?</span>
+          <div class="w-12 h-1 bg-black"></div>
+          <span class="text-[10px] font-mono uppercase tracking-[0.3em] text-black/50 font-pixel">Biz Kimiz?</span>
         </div>
 
-        <h2 class="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9]">
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none">
           Sıradanlığı <br/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Reddeden</span><br/>
+          <span class="text-purple-600 mt-2 block">Reddeden</span>
           Bir Ajans.
         </h2>
 
-        <div class="space-y-6 text-lg text-white/60 font-light leading-relaxed">
+        <div class="space-y-6 text-base text-black/75 font-light leading-relaxed">
           <p>
             Evolution Ajans, markaların dijital ekosistemde hayatta kalmasını değil, o ekosistemi domine etmesini sağlayan yeni nesil bir kreatif ve teknoloji stüdyosudur.
           </p>
@@ -32,7 +30,7 @@ import { Icon } from "astro-icon/components";
         </div>
 
         <div class="pt-4">
-          <a href="/hakkimizda" class="group inline-flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-white border-b border-white/20 pb-2 hover:border-blue-400 hover:text-blue-400 transition-colors">
+          <a href="/hakkimizda" class="group inline-flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-black border-b-2 border-black pb-2 hover:border-blue-600 hover:text-blue-600 transition-colors font-pixel">
             Hikayemizi Keşfedin
             <Icon name="mdi:arrow-right" size={20} class="group-hover:translate-x-2 transition-transform" />
           </a>
@@ -40,33 +38,31 @@ import { Icon } from "astro-icon/components";
       </div>
 
       <!-- Visual / Abstract Side -->
-      <div class="relative h-[500px] rounded-[3rem] bg-[#0a0a0a] border border-white/5 overflow-hidden flex items-center justify-center group" data-aos="fade-left">
-        <!-- Glowing Orb -->
-        <div class="absolute w-64 h-64 bg-blue-600/30 rounded-full blur-[80px] group-hover:bg-purple-600/30 transition-colors duration-1000"></div>
+      <div class="relative h-[450px] rounded-none bg-slate-50 border-4 border-black overflow-hidden flex items-center justify-center group shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" data-aos="fade-left">
         
         <!-- Stats Grid Overlay -->
-        <div class="relative z-10 grid grid-cols-2 gap-px bg-white/5 p-px rounded-2xl backdrop-blur-sm">
+        <div class="relative z-10 grid grid-cols-2 gap-0.5 bg-black p-0.5 rounded-none">
           
-          <div class="bg-[#0a0a0a] p-8 flex flex-col justify-center items-center text-center rounded-tl-2xl hover:bg-white/5 transition-colors">
-            <span class="text-4xl md:text-5xl font-black text-white mb-2">5+</span>
-            <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-white/40">Yıllık Tecrübe</span>
+          <div class="bg-white p-8 flex flex-col justify-center items-center text-center rounded-none hover:bg-slate-50 transition-colors">
+            <span class="text-3xl md:text-4xl font-bold text-black mb-2 font-pixel">5+</span>
+            <span class="text-[9px] font-mono uppercase tracking-[0.2em] text-black/50 font-pixel">Yıllık Tecrübe</span>
           </div>
           
-          <div class="bg-[#0a0a0a] p-8 flex flex-col justify-center items-center text-center rounded-tr-2xl hover:bg-white/5 transition-colors">
-            <span class="text-4xl md:text-5xl font-black text-white mb-2">360°</span>
-            <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-white/40">Tam Hizmet</span>
+          <div class="bg-white p-8 flex flex-col justify-center items-center text-center rounded-none hover:bg-slate-50 transition-colors">
+            <span class="text-3xl md:text-4xl font-bold text-black mb-2 font-pixel">360°</span>
+            <span class="text-[9px] font-mono uppercase tracking-[0.2em] text-black/50 font-pixel">Tam Hizmet</span>
           </div>
           
-          <div class="bg-[#0a0a0a] p-8 flex flex-col justify-center items-center text-center rounded-bl-2xl hover:bg-white/5 transition-colors">
-            <span class="text-4xl md:text-5xl font-black text-white mb-2">%100</span>
-            <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-white/40">Performans</span>
+          <div class="bg-white p-8 flex flex-col justify-center items-center text-center rounded-none hover:bg-slate-50 transition-colors">
+            <span class="text-3xl md:text-4xl font-bold text-black mb-2 font-pixel">%100</span>
+            <span class="text-[9px] font-mono uppercase tracking-[0.2em] text-black/50 font-pixel">Performans</span>
           </div>
           
-          <div class="bg-[#0a0a0a] p-8 flex flex-col justify-center items-center text-center rounded-br-2xl hover:bg-white/5 transition-colors">
-            <span class="w-12 h-12 flex items-center justify-center bg-blue-500/20 text-blue-400 rounded-full mb-2">
+          <div class="bg-white p-8 flex flex-col justify-center items-center text-center rounded-none hover:bg-slate-50 transition-colors">
+            <span class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-600 border-2 border-black rounded-none mb-2">
               <Icon name="mdi:rocket-launch" size={24} />
             </span>
-            <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-white/40">İnovasyon</span>
+            <span class="text-[9px] font-mono uppercase tracking-[0.2em] text-black/50 font-pixel">İnovasyon</span>
           </div>
 
         </div>

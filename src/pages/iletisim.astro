@@ -9,33 +9,22 @@ import { Icon } from "astro-icon/components";
   description="İzmir'in önde gelen dijital ajansı ile projenizi hayata geçirin. Web tasarım, SEO ve reklam yönetimi için bizimle iletişime geçin."
 >
   <!-- Minimalist Hero Header for Contact Page -->
-  <section class="relative pt-40 pb-12 overflow-hidden">
-    <!-- Abstract Background -->
-    <div
-      class="absolute top-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-purple-600/10 blur-[150px] rounded-full pointer-events-none mix-blend-screen"
-    >
-    </div>
-    <div
-      class="absolute inset-0 opacity-[0.03] pointer-events-none"
-      style="background-image: linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px); background-size: 50px 50px;"
-    >
-    </div>
-
+  <section class="relative pt-40 pb-12 overflow-hidden retro-grid">
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div
-        class="flex flex-col md:flex-row justify-between items-end gap-10 border-b border-white/10 pb-16"
+        class="flex flex-col md:flex-row justify-between items-end gap-10 border-b-4 border-black pb-16"
       >
         <div class="max-w-3xl" data-aos="fade-right">
           <h1
-            class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-6"
+            class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-none mb-6"
           >
-            <span class="block text-white">GELECEĞİ</span>
+            <span class="block text-black">GELECEĞİ</span>
             <span
-              class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"
+              class="block text-purple-600 mt-2"
               >PLANLAYALIM.</span
             >
           </h1>
-          <p class="text-xl text-white/50 font-light leading-relaxed max-w-xl">
+          <p class="text-lg text-black/60 font-light leading-relaxed max-w-xl">
             Sıradan bir iletişim sayfasında değilsiniz. Markanızın kaderini
             değiştirecek o ilk adımı atmak üzeresiniz.
           </p>
@@ -45,14 +34,14 @@ import { Icon } from "astro-icon/components";
           <a
             href="https://instagram.com"
             target="_blank"
-            class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-white/50 hover:bg-white/5 transition-all duration-300"
+            class="w-12 h-12 rounded-none border-2 border-black flex items-center justify-center text-black bg-white hover:bg-[#facc15] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-[2px] hover:-translate-y-[2px] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
           >
             <Icon name="mdi:instagram" size={24} />
           </a>
           <a
             href="https://linkedin.com"
             target="_blank"
-            class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-white/50 hover:bg-white/5 transition-all duration-300"
+            class="w-12 h-12 rounded-none border-2 border-black flex items-center justify-center text-black bg-white hover:bg-[#facc15] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-[2px] hover:-translate-y-[2px] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
           >
             <Icon name="mdi:linkedin" size={24} />
           </a>
@@ -67,43 +56,43 @@ import { Icon } from "astro-icon/components";
       >
         <div class="space-y-4">
           <span
-            class="text-[10px] font-mono uppercase tracking-[0.3em] text-blue-400 block"
+            class="text-[9px] font-mono uppercase tracking-[0.3em] text-blue-600 block font-pixel"
             >Lokasyon</span
           >
-          <h4 class="text-2xl font-bold uppercase tracking-wide text-white">
+          <h4 class="text-xl font-bold uppercase tracking-wide text-black font-pixel">
             İzmir, TR
           </h4>
-          <p class="text-white/40 text-sm leading-relaxed">
+          <p class="text-black/60 text-sm leading-relaxed">
             Folart Towers, Bayraklı<br />
             İzmir, Türkiye
           </p>
         </div>
         <div class="space-y-4">
           <span
-            class="text-[10px] font-mono uppercase tracking-[0.3em] text-purple-400 block"
+            class="text-[9px] font-mono uppercase tracking-[0.3em] text-purple-600 block font-pixel"
             >Direkt Hat</span
           >
           <a
             href="tel:+905519283598"
-            class="text-2xl font-bold tracking-wide text-white hover:text-purple-400 transition-colors block"
+            class="text-xl font-bold tracking-wide text-black hover:text-purple-600 transition-colors block font-pixel"
             >+90 551 928 35 98</a
           >
-          <p class="text-white/40 text-sm leading-relaxed">
+          <p class="text-black/60 text-sm leading-relaxed font-mono">
             Hafta içi: 09:00 - 18:00<br />
             Hafta sonu: Kapalı
           </p>
         </div>
         <div class="space-y-4">
           <span
-            class="text-[10px] font-mono uppercase tracking-[0.3em] text-pink-400 block"
+            class="text-[9px] font-mono uppercase tracking-[0.3em] text-pink-600 block font-pixel"
             >Dijital Ağ</span
           >
           <a
             href="mailto:hello@evolution.com"
-            class="text-2xl font-bold tracking-wide text-white hover:text-pink-400 transition-colors block"
+            class="text-xl font-bold tracking-wide text-black hover:text-pink-600 transition-colors block font-pixel"
             >hello@evolution.com</a
           >
-          <p class="text-white/40 text-sm leading-relaxed">
+          <p class="text-black/60 text-sm leading-relaxed">
             Proje detaylarınızı ve<br />
             sunumlarınızı iletebilirsiniz.
           </p>
@@ -112,32 +101,32 @@ import { Icon } from "astro-icon/components";
     </div>
   </section>
 
-  <!-- The existing advanced Form Component handles the actual form -->
-  <div class="pb-24">
+  <!-- The existing Form Component handles the actual form -->
+  <div class="pb-24 bg-white">
     <Form />
   </div>
 
   <!-- Map / Location Visuals (Abstract) -->
   <section
-    class="h-[50vh] min-h-[400px] w-full relative bg-[#030303] flex items-center justify-center overflow-hidden border-t border-white/5"
+    class="h-[30vh] min-h-[300px] w-full relative bg-[#f8fafc] flex items-center justify-center overflow-hidden border-t-4 border-black retro-grid"
   >
     <!-- Simulating a stylized digital map / radar -->
     <div class="absolute inset-0 flex items-center justify-center opacity-30">
       <div
-        class="absolute w-[800px] h-[800px] rounded-full border border-white/5 animate-[ping_4s_cubic-bezier(0,0,0.2,1)_infinite]"
+        class="absolute w-[800px] h-[800px] rounded-full border border-black/5 animate-[ping_4s_cubic-bezier(0,0,0.2,1)_infinite]"
       >
       </div>
       <div
-        class="absolute w-[600px] h-[600px] rounded-full border border-white/5 animate-[ping_4s_cubic-bezier(0,0,0.2,1)_infinite]"
+        class="absolute w-[600px] h-[600px] rounded-full border border-black/5 animate-[ping_4s_cubic-bezier(0,0,0.2,1)_infinite]"
         style="animation-delay: 1s"
       >
       </div>
       <div
-        class="absolute w-[400px] h-[400px] rounded-full border border-white/10"
+        class="absolute w-[400px] h-[400px] rounded-full border border-black/10"
       >
       </div>
       <div
-        class="absolute w-[200px] h-[200px] rounded-full border border-white/20"
+        class="absolute w-[200px] h-[200px] rounded-full border border-black/20"
       >
       </div>
     </div>
