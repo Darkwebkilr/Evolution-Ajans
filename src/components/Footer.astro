@@ -3,17 +3,15 @@ import { Icon } from "astro-icon/components";
 const today = new Date();
 
 const services = [
-  { name: "Kurumsal Web Tasarımı", link: "/hizmetler/kurumsal-web-tasarimi" },
-  { name: "SEO Hizmeti", link: "/hizmetler/seo-hizmeti" },
-  { name: "Sosyal Medya Yönetimi", link: "/hizmetler/sosyal-medya-yonetimi" },
-  { name: "Dijital Reklam Yönetimi", link: "/hizmetler/reklam-yonetimi" },
+  { name: "Yüksek Dönüşümlü Web Tasarım", link: "#services" },
+  { name: "Google Ads Reklamları", link: "#services" },
+  { name: "Meta Ads Reklamları", link: "#services" },
 ];
 
 const company = [
-  { name: "Hakkımızda", link: "/hakkimizda" },
-  { name: "Başarı Hikayeleri", link: "/basari" },
-  { name: "Blog", link: "/blog" },
-  { name: "İletişim", link: "/iletisim" },
+  { name: "Gerçek Sonuçlar", link: "#sonuclar" },
+  { name: "Hizmetlerimiz", link: "#services" },
+  { name: "Ücretsiz Analiz", link: "#iletisim" },
 ];
 
 const socials = [
@@ -31,13 +29,13 @@ const socials = [
     <!-- Top Section: Big Call to Action -->
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 mb-20 border-b-2 border-black/10 pb-16">
       <div class="max-w-2xl">
-        <h2 class="text-3xl md:text-5xl font-black text-black uppercase tracking-tighter mb-4 font-pixel">
+        <h2 class="text-4xl md:text-6xl font-black text-black uppercase tracking-tighter mb-4 font-pixel">
           Birlikte <br/>
           <span class="text-blue-600 block mt-2">Büyüyelim</span>
         </h2>
-        <p class="text-black/60 text-base font-light">Dijital dönüşümünüzü başlatmak için bir kahve içelim.</p>
+        <p class="text-black/75 text-lg md:text-xl font-medium">Dijital dönüşümünüzü başlatmak için bir kahve içelim.</p>
       </div>
-      <a href="mailto:hello@evolution.com" class="group relative inline-flex items-center justify-center px-6 py-4 bg-[#facc15] text-black border-2 border-black font-bold uppercase tracking-widest text-xs rounded-none hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all font-pixel">
+      <a href="mailto:hello@evolution.com" class="group relative inline-flex items-center justify-center px-6 py-4 bg-[#facc15] text-black border-2 border-black font-bold uppercase tracking-widest text-sm rounded-none hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all font-pixel">
         <span class="relative z-10">hello@evolution.com</span>
       </a>
     </div>
@@ -49,9 +47,9 @@ const socials = [
       <div class="lg:col-span-1">
         <div class="inline-flex items-center gap-2 mb-6">
           <Icon name="mdi:flare" class="text-blue-600" size={24} />
-          <span class="text-lg font-black tracking-widest uppercase text-black font-pixel">EVOLUTION</span>
+          <span class="text-xl font-black tracking-widest uppercase text-black font-pixel">EVOLUTION</span>
         </div>
-        <p class="text-black/60 text-sm leading-relaxed mb-6">
+        <p class="text-black/75 text-base leading-relaxed mb-6">
           İzmir merkezli yeni nesil reklam ve teknoloji ajansı. Markanızı geleceğe taşıyoruz.
         </p>
         <div class="flex gap-4">
@@ -68,11 +66,11 @@ const socials = [
 
       <!-- Services -->
       <div>
-        <h4 class="text-[9px] font-mono uppercase tracking-[0.2em] text-black/60 mb-6 font-pixel">Hizmetlerimiz</h4>
+        <h4 class="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-black/60 mb-6 font-pixel">Hizmetlerimiz</h4>
         <ul class="space-y-4">
           {services.map(item => (
             <li>
-              <a href={item.link} class="text-black/70 hover:text-black text-sm transition-colors relative group font-semibold">
+              <a href={item.link} class="text-black/80 hover:text-black text-base transition-colors relative group font-semibold">
                 {item.name}
               </a>
             </li>
@@ -82,11 +80,11 @@ const socials = [
 
       <!-- Company -->
       <div>
-        <h4 class="text-[9px] font-mono uppercase tracking-[0.2em] text-black/60 mb-6 font-pixel">Ajans</h4>
+        <h4 class="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-black/60 mb-6 font-pixel">Ajans</h4>
         <ul class="space-y-4">
           {company.map(item => (
             <li>
-              <a href={item.link} class="text-black/70 hover:text-black text-sm transition-colors relative group font-semibold">
+              <a href={item.link} class="text-black/80 hover:text-black text-base transition-colors relative group font-semibold">
                 {item.name}
               </a>
             </li>
@@ -104,12 +102,12 @@ const socials = [
       </div>
       
       <div class="w-full flex flex-col md:flex-row justify-between items-center gap-4 relative z-10">
-        <p class="text-black/40 text-[9px] font-mono uppercase tracking-widest font-pixel">
+        <p class="text-black/50 text-[10px] sm:text-xs font-mono uppercase tracking-widest font-pixel">
           © {today.getFullYear()} EVOLUTION AJANS.
         </p>
         <div class="flex gap-6">
-          <a href="/gizlilik" class="text-black/40 hover:text-black text-[9px] font-mono uppercase tracking-widest transition-colors font-pixel">Gizlilik Politikası</a>
-          <a href="/sartlar" class="text-black/40 hover:text-black text-[9px] font-mono uppercase tracking-widest transition-colors font-pixel">Kullanım Şartları</a>
+          <a href="/gizlilik" class="text-black/50 hover:text-black text-[10px] sm:text-xs font-mono uppercase tracking-widest transition-colors font-pixel">Gizlilik Politikası</a>
+          <a href="/sartlar" class="text-black/50 hover:text-black text-[10px] sm:text-xs font-mono uppercase tracking-widest transition-colors font-pixel">Kullanım Şartları</a>
         </div>
       </div>
     </div>

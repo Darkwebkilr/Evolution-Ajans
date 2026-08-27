@@ -15,7 +15,7 @@ import LottieAnimation from "astro-integration-lottie/Lottie.astro";
 const formattedIndex = (index + 1).toString().padStart(2, '0');
 ---
 
-<a href={`/hizmetler/${slug}`} class="block h-full group outline-none" data-aos="fade-up" data-aos-delay={index * 100}>
+<a href="#iletisim" class="block h-full group outline-none" data-aos="fade-up" data-aos-delay={index * 100}>
   <div class="relative h-full bg-white border-4 border-black p-8 md:p-10 rounded-none overflow-hidden transition-all duration-300 hover:bg-slate-50 flex flex-col justify-between z-10 hover:-translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
     
     <div class="relative z-10">
@@ -42,7 +42,7 @@ const formattedIndex = (index + 1).toString().padStart(2, '0');
 
     <!-- Animated Details Area -->
     <div class="relative z-10 mt-10 flex items-center justify-between overflow-hidden pt-6 border-t border-black/5">
-      <span class="text-[9px] uppercase tracking-[0.25em] text-black/50 font-pixel">Detayları Gör</span>
+      <span class="text-[9px] uppercase tracking-[0.25em] text-black/50 font-pixel">Analiz İste</span>
       
       <div class="w-10 h-10 rounded-none border-2 border-black flex items-center justify-center bg-[#facc15] transition-all duration-300 overflow-hidden relative">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black absolute group-hover:translate-x-8 group-hover:-translate-y-8 transition-all duration-300 ease-[cubic-bezier(0.19,1,0.22,1)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

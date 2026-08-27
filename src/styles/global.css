@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=Share+Tech+Mono&display=swap");
 @import "aos/dist/aos.css";
 @import "tailwindcss";
 
 @theme {
-  --font-pixel: "Press Start 2P", monospace;
+  --font-pixel: "Space Grotesk", sans-serif;
   --font-mono: "Share Tech Mono", monospace;
 }
 
@@ -15,14 +15,15 @@
   }
 
   h1, h2, h3, h4, h5, h6, .font-pixel {
-    font-family: "Press Start 2P", monospace;
-    font-weight: normal;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 800;
   }
 
   .nav a {
     position: relative;
-    font-family: "Press Start 2P", monospace;
-    font-size: 0.75rem;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
     padding: 0.25rem 0;
   }
 

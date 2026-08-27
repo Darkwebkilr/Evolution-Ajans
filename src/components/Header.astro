@@ -4,11 +4,11 @@ import Logo from "../../public/img/Logo.png";
 import { Icon } from "astro-icon/components";
 
 const nav = [
-  { name: "Anasayfa", link: "/" },
-  { name: "Başarı Hikayeleri", link: "/basari" },
-  { name: "Blog", link: "/blog" },
-  { name: "Hakkımızda", link: "/hakkimizda" },
-  { name: "Bize Ulaşın", link: "/iletisim" },
+  { name: "Anasayfa", link: "#" },
+  { name: "Gerçek Sonuçlar", link: "#sonuclar" },
+  { name: "Hizmetlerimiz", link: "#services" },
+  { name: "Çözüm Paketleri", link: "#fiyatlandirma" },
+  { name: "Ücretsiz Analiz", link: "#iletisim" },
 ];
 ---
 
@@ -30,7 +30,7 @@ const nav = [
       nav.map((item) => (
         <a
           href={item.link}
-          class="text-[10px] uppercase font-bold text-black/70 hover:text-black transition-colors duration-300 font-pixel"
+          class="text-sm lg:text-base uppercase font-bold text-black/70 hover:text-black transition-colors duration-300 font-pixel"
         >
           {item.name}
         </a>
@@ -41,7 +41,7 @@ const nav = [
   <!-- CALL TO ACTION BOX -->
   <a
     href="tel:+905519283598"
-    class="hidden lg:flex pointer-events-auto bg-[#facc15] border-4 border-black px-5 py-4 shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-[2px] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] transition-all font-pixel text-[9px] font-bold uppercase text-black"
+    class="hidden lg:flex pointer-events-auto bg-[#facc15] border-4 border-black px-5 py-4 shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-[2px] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] transition-all font-pixel text-xs lg:text-sm font-bold uppercase text-black"
   >
     Hemen Ara
   </a>

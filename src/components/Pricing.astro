@@ -1,0 +1,134 @@
+---
+import { Icon } from "astro-icon/components";
+
+const packages = [
+  {
+    name: "Hızlı Başlangıç",
+    price: "10.000 TL",
+    period: "/ ay",
+    desc: "Acil işe ihtiyacı olan, telefonlarının hemen bugün çalmasını isteyen işletmeler için.",
+    features: [
+      "Tek sayfalık, şimşek hızında açılış sayfası (Landing Page)",
+      "Sadece müşteri getiren Google Arama Ağı Reklamları kurulum ve yönetimi",
+      "Telefon araması ve WhatsApp tıklama takibi",
+      "Aylık net performans raporu"
+    ],
+    buttonText: "Bu Sistemle Başla",
+    highlight: false,
+    color: "bg-white",
+    btnColor: "bg-white hover:bg-slate-50"
+  },
+  {
+    name: "Bölge Hakimi",
+    price: "20.000 TL",
+    period: "/ ay",
+    desc: "Sadece arayanı değil, kararsız müşteriyi de rakibe kaptırmak istemeyenler için.",
+    features: [
+      "Hızlı açılış sayfası + Google Haritalar (Benim İşletmem) optimizasyonu",
+      "Google Arama Ağı Reklamları",
+      "Sitenize girip çıkanları takip eden Meta (Instagram/Facebook) Yeniden Pazarlama Reklamları",
+      "Rakiplerin hamlelerini analiz edip anlık bütçe optimizasyonu"
+    ],
+    buttonText: "Bölgemi Domine Et",
+    highlight: true,
+    color: "bg-[#facc15]", // Highlight with neo-yellow
+    btnColor: "bg-black text-white hover:bg-black/90"
+  },
+  {
+    name: "Sektör Lideri",
+    price: "35.000 TL",
+    period: "/ ay",
+    desc: "Tüm ilçelerde arama motorunu kapatmak ve organik olarak her yerden müşteri toplamak isteyenler için.",
+    features: [
+      "Google & Meta reklamlarının tam kapsamlı yönetimi",
+      "İlçe/Mahalle Bazlı Otomasyon: Tüm hizmet bölgeleriniz için yüzlerce alt sayfa oluşturma (SEO ile reklamsız trafik)",
+      "Google Indexing API ile anında arama motoruna kayıt",
+      "A'dan Z'ye dijital varlık yönetimi ve öncelikli destek"
+    ],
+    buttonText: "Zirveye Oyna",
+    highlight: false,
+    color: "bg-white",
+    btnColor: "bg-white hover:bg-slate-50"
+  }
+];
+---
+
+<section id="fiyatlandirma" class="py-32 bg-slate-50 border-t-4 border-black relative z-10 retro-grid">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <!-- Header Title -->
+    <div class="text-center mb-24 space-y-4">
+      <span class="inline-block px-4 py-2 border-2 border-black bg-black text-white text-sm md:text-base font-mono uppercase tracking-[0.3em] font-pixel">
+        Büyüme Paketleri
+      </span>
+      <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-black">
+        ÇÖZÜM PAKETLERİ
+      </h2>
+      <p class="text-black/75 max-w-2xl mx-auto text-xl md:text-2xl font-medium">
+        İşletmenizin ölçeğine ve hedeflerinize uygun şeffaf fiyatlandırma planları.
+      </p>
+    </div>
+
+    <!-- Pricing Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+      {packages.map((pkg, index) => (
+        <div 
+          class={`relative border-4 border-black p-8 md:p-10 rounded-none flex flex-col justify-between transition-all duration-300 hover:-translate-x-[4px] hover:-translate-y-[4px] ${pkg.highlight ? 'shadow-[8px_8px_0px_rgba(0,0,0,1)]' : 'shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)]'} ${pkg.color}`}
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+        >
+          {pkg.highlight && (
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-black text-white border-2 border-black px-4 py-1.5 text-[10px] md:text-xs font-pixel font-bold uppercase tracking-wider">
+              ★ EN ÇOK TERCİH EDİLEN
+            </div>
+          )}
+
+          <div class="space-y-8">
+            <!-- Package Name -->
+            <div class="border-b-2 border-black/10 pb-6">
+              <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight text-black font-pixel mb-4">
+                {pkg.name}
+              </h3>
+              <p class="text-black/70 text-base leading-relaxed font-mono min-h-[48px]">
+                {pkg.desc}
+              </p>
+            </div>
+
+            <!-- Price -->
+            <div class="flex items-baseline gap-1">
+              <span class="text-4xl md:text-5xl font-black font-pixel tracking-tighter text-black">
+                {pkg.price}
+              </span>
+              <span class="text-sm font-mono font-bold text-black/50 uppercase font-pixel">
+                {pkg.period}
+              </span>
+            </div>
+
+            <!-- Features List -->
+            <ul class="space-y-4 pt-6 border-t-2 border-black/10">
+              {pkg.features.map(feat => (
+                <li class="flex items-start gap-3">
+                  <span class="text-black font-bold text-base mt-0.5 select-none">✔</span>
+                  <span class="text-black/85 text-base md:text-lg leading-snug font-mono uppercase font-bold">{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Action Button -->
+          <div class="mt-12">
+            <a 
+              href="#iletisim" 
+              class={`w-full group relative inline-flex items-center justify-center gap-4 px-6 py-4 border-2 border-black rounded-none transition-all font-pixel text-sm sm:text-base font-bold uppercase ${pkg.btnColor} shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] active:translate-x-0 active:translate-y-0 active:shadow-none`}
+            >
+              <span>{pkg.buttonText}</span>
+              <Icon name="mdi:arrow-right" size={18} class="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
