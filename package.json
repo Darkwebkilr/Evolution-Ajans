@@ -9,14 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/compiler-binding-win32-x64-msvc": "^0.4.0",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/vue": "^7.0.2",
     "@iconify-json/line-md": "^1.2.11",
     "@iconify-json/material-symbols": "^1.2.44",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/mi": "^1.2.2",
-    "@rolldown/binding-win32-x64-msvc": "^1.2.5",
     "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/vite": "^4.1.13",
     "aos": "^2.3.4",
@@ -36,5 +34,9 @@
     "@types/aos": "^3.0.7",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1"
+  },
+  "optionalDependencies": {
+    "@astrojs/compiler-binding-win32-x64-msvc": "^0.4.0",
+    "@rolldown/binding-win32-x64-msvc": "^1.2.5"
   }
 }
