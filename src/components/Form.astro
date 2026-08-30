@@ -46,7 +46,7 @@ import { Icon } from "astro-icon/components";
           class="relative bg-white border-4 border-black rounded-none p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] z-10"
         >
           <!-- Web3Forms Config -->
-          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+          <input type="hidden" name="access_key" value="0d040a39-0e41-40fa-8148-865c250a7adf" />
           <input type="hidden" name="subject" value="Evolution Ajans - Yeni İletişim Formu Mesajı" />
           <input type="hidden" name="from_name" value="Evolution Ajans Web Sitesi" />
           <div class="space-y-6">
@@ -146,6 +146,9 @@ import { Icon } from "astro-icon/components";
           if (response.status === 200 || result.success) {
             btn.innerHTML = `<span class="relative z-10 text-sm font-bold uppercase tracking-widest text-white">Başarıyla İletildi</span><div class="absolute inset-0 bg-green-500 z-0"></div>`;
             (form as HTMLFormElement).reset();
+            setTimeout(() => {
+              window.location.href = "/basari";
+            }, 1000);
           } else {
             console.error(result);
             btn.innerHTML = `<span class="relative z-10 text-sm font-bold uppercase tracking-widest text-white">Hata Oluştu</span><div class="absolute inset-0 bg-red-600 z-0"></div>`;

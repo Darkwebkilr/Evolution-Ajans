@@ -1,6 +1,5 @@
 ---
-import Logo from "../../public/img/Logo.png";
-import { Image } from "astro:assets";
+// Technologies.astro
 ---
 
 <div id="tech" class="my-20">
@@ -15,14 +14,14 @@ import { Image } from "astro:assets";
     class="flex flex-col md:flex-row mt-30 max-w-6xl mx-auto items-center justify-between"
   >
     <div data-aos="zoom-in" class="md:hidden block w-[350px]">
-      <Image src={Logo} alt="logomuz" />
+      <img src="/img/Logo.png" alt="logomuz" width="350" height="150" />
     </div>
 
     <div>
       <p data-aos="zoom-in-down">lorem ipsum</p>
     </div>
     <div data-aos="zoom-in" class="md:block hidden w-[350px]">
-      <Image src={Logo} alt="logomuz" />
+      <img src="/img/Logo.png" alt="logomuz" width="350" height="150" />
     </div>
   </div>
 </div>

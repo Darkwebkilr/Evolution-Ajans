@@ -1,0 +1,63 @@
+---
+import MainLayout from "../../layout/mainLayout.astro";
+import { districts } from "../../components/data/districts.js";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout 
+  title="Hizmet Bölgelerimiz - İzmir Yerel Büyüme Çözümleri | Evolution Ajans"
+  description="İzmir genelinde Google Ads, Meta Ads, Web Tasarım ve Harita SEO çözümlerimizle yerel hizmet işletmenizi büyütüyoruz. İlçenizi seçerek detaylı çözümleri inceleyin."
+>
+  <section class="py-32 bg-slate-50 relative z-10 retro-grid min-h-[70vh]">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Page Header -->
+      <div class="text-center mb-24 space-y-6">
+        <div class="inline-flex items-center gap-3 px-4 py-2 border-2 border-black bg-black text-white" data-aos="fade-down">
+          <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+          <span class="text-xs font-mono uppercase tracking-[0.2em] font-bold font-pixel">YEREL HİZMET REHBERİ</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter text-black" data-aos="fade-up" data-aos-delay="100">
+          İZMİR HİZMET BÖLGELERİMİZ
+        </h1>
+        <p class="text-black/75 max-w-2xl mx-auto text-xl md:text-2xl font-medium leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+          İzmir'in tüm ilçelerindeki yerel hizmet işletmeleri için özel olarak kurguladığımız dijital büyüme, reklam ve arama motoru optimizasyonu çözümleri.
+        </p>
+      </div>
+
+      <!-- Districts Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="300">
+        {districts.map((dist, index) => (
+          <a 
+            href={`/hizmet-bolgeleri/${dist.slug}`} 
+            class="group bg-white border-4 border-black p-6 rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[8px_8px_0px_rgba(0,0,0,1)] active:translate-x-0 active:translate-y-0 active:shadow-none transition-all duration-300 flex items-center justify-between"
+          >
+            <div class="space-y-1">
+              <span class="text-sm font-mono text-black/45 font-bold uppercase block font-pixel">
+                {dist.name} Rehberi
+              </span>
+              <span class="text-xl sm:text-2xl font-black uppercase text-black font-pixel tracking-tight group-hover:text-blue-600 transition-colors">
+                {dist.name}
+              </span>
+            </div>
+            <div class="w-10 h-10 border-2 border-black bg-[#facc15] flex items-center justify-center transition-all duration-300 group-hover:translate-x-1">
+              <Icon name="mdi:arrow-right" size={20} class="text-black" />
+            </div>
+          </a>
+        ))}
+      </div>
+
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  import AOS from "aos";
+  document.addEventListener("DOMContentLoaded", () => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out-cubic'
+    });
+  });
+</script>

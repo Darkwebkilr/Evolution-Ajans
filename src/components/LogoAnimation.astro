@@ -1,6 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import Logo from "../../public/img/Logo.png";
+// LogoAnimation.astro
 ---
 
 <!-- Sadece anasayfada veya her sayfa yüklendiğinde çalışması için (cookie ile kontrol edilebilir ama şimdilik her zaman çalışsın) -->
@@ -16,10 +15,10 @@ import Logo from "../../public/img/Logo.png";
     <!-- Logo Container -->
     <div class="relative w-40 md:w-56 h-auto mb-8 overflow-hidden">
       <!-- Actual Logo -->
-      <Image
-        src={Logo}
-        width={400}
-        height={400}
+      <img
+        src="/img/Logo.png"
+        width="400"
+        height="400"
         alt="Evolution Logo"
         class="w-full h-auto object-contain opacity-0 translate-y-10 animate-logo-reveal"
       />

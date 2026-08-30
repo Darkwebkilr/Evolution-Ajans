@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Google Indexing API secrets and states
+service-account.json
+indexed-urls.json

@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import "./src/styles/global.css";
 import tailwindcss from "@tailwindcss/vite";
 
 import icon from "astro-icon";
@@ -13,6 +12,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
     server: {
       watch: {
+        usePolling: true,
         ignored: [
           "**/C:/DumpStack.log.tmp**",
           "**/C:/DumpStack.log**",
