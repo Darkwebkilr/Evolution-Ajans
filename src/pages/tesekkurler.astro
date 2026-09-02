@@ -1,0 +1,90 @@
+---
+import MainLayout from "../layout/mainLayout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout 
+  title="Talebiniz Alındı - Evolution Ajans" 
+  description="Ücretsiz check-up talebiniz başarıyla alındı. Müşteri temsilcilerimiz en kısa sürede analizinizle birlikte sizinle iletişime geçecektir."
+>
+  <section class="py-40 bg-slate-50 relative z-10 retro-grid min-h-[85vh] flex items-center">
+    <div class="max-w-4xl mx-auto px-6 w-full">
+      
+      <!-- Success Box Container -->
+      <div 
+        class="bg-white border-4 border-black p-8 md:p-16 rounded-none shadow-[8px_8px_0px_rgba(0,0,0,1)] text-center space-y-8 relative overflow-hidden"
+        data-aos="zoom-in"
+      >
+        <!-- Top Banner Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 border-2 border-black bg-black text-white font-mono text-xs uppercase tracking-widest font-pixel">
+          <Icon name="mdi:check-circle-outline" class="text-green-400" size={16} />
+          <span>BAŞARILI</span>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="text-3xl md:text-5xl font-black uppercase tracking-tighter text-black font-pixel">
+          CHECK-UP TALEBİNİZ <br/>
+          <span class="text-blue-600 block mt-2">BAŞARIYLA ALINDI!</span>
+        </h1>
+
+        <!-- Description -->
+        <p class="text-black/85 text-base md:text-xl font-mono leading-relaxed max-w-2xl mx-auto">
+          Bilgilerinizi aldık. Sitenizi ve reklam bütçenizin kayıplarını analiz etmeye başladık. Sizinle en kısa sürede iletişime geçip detaylı raporu telefonla aktaracağız.
+        </p>
+
+        <!-- Dynamic Action Buttons (WhatsApp & Phone) -->
+        <div class="pt-6 border-t-2 border-black/10">
+          <p class="text-xs font-mono font-bold uppercase tracking-widest text-black/50 font-pixel mb-6">
+            Analizi Beklemek İstemiyor musunuz? Hemen Bize Ulaşın:
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto font-pixel">
+            <!-- WhatsApp Action -->
+            <a 
+              href="https://wa.me/905519283598?text=Merhaba,%20web%20sitemin%20ve%20reklamlarımın%20ücretsiz%20analizi%20için%20başvurumu%20ilettim."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group relative inline-flex items-center justify-center gap-3 px-8 py-5 border-2 border-black bg-[#25D366] text-white font-bold uppercase tracking-widest text-sm hover:-translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-0 active:translate-y-0 active:shadow-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+            >
+              <Icon name="mdi:whatsapp" size={24} />
+              <span>Hemen WhatsApp'tan Yazın</span>
+            </a>
+
+            <!-- Phone Action -->
+            <a 
+              href="tel:+905519283598"
+              class="group relative inline-flex items-center justify-center gap-3 px-8 py-5 border-2 border-black bg-[#facc15] text-black font-bold uppercase tracking-widest text-sm hover:-translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-0 active:translate-y-0 active:shadow-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+            >
+              <Icon name="mdi:phone" size={24} />
+              <span>Doğrudan Arayın</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Back to Homepage Link -->
+        <div class="pt-6">
+          <a 
+            href="/" 
+            class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-black/50 hover:text-black transition-colors font-pixel"
+          >
+            <Icon name="mdi:arrow-left" size={14} />
+            <span>Anasayfaya Geri Dön</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  import AOS from "aos";
+  document.addEventListener("DOMContentLoaded", () => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out-cubic'
+    });
+  });
+</script>
