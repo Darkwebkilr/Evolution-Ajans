@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { districts } from "./data/districts.js";
 const today = new Date();
 
 const services = [
@@ -62,8 +63,18 @@ const socials = [
         </div>
       </div>
 
-      <!-- Spacer for Desktop Layout -->
-      <div class="hidden lg:block"></div>
+      <!-- Hizmet Bölgeleri -->
+      <div>
+        <h4 class="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-black/60 mb-6 font-pixel">Bölgeler</h4>
+        <ul class="space-y-3">
+          <li><a href="/hizmet-bolgeleri/bornova/" class="text-black/80 hover:text-black text-sm transition-colors font-medium">Bornova</a></li>
+          <li><a href="/hizmet-bolgeleri/karsiyaka/" class="text-black/80 hover:text-black text-sm transition-colors font-medium">Karşıyaka</a></li>
+          <li><a href="/hizmet-bolgeleri/konak/" class="text-black/80 hover:text-black text-sm transition-colors font-medium">Konak</a></li>
+          <li><a href="/hizmet-bolgeleri/buca/" class="text-black/80 hover:text-black text-sm transition-colors font-medium">Buca</a></li>
+          <li><a href="/hizmet-bolgeleri/bayrakli/" class="text-black/80 hover:text-black text-sm transition-colors font-medium">Bayraklı</a></li>
+          <li><a href="/hizmet-bolgeleri/" class="text-blue-600 hover:underline font-pixel text-xs pt-1 block font-bold">Tüm 30 Bölge →</a></li>
+        </ul>
+      </div>
 
       <!-- Services -->
       <div>
@@ -93,6 +104,23 @@ const socials = [
         </ul>
       </div>
 
+    </div>
+
+    <!-- SEO Internal Linking: All Districts -->
+    <div class="border-t-2 border-black/10 pt-8 pb-10">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-black/60 font-pixel">İzmir Hizmet Bölgelerimiz:</span>
+      </div>
+      <div class="flex flex-wrap gap-x-3 gap-y-2 text-xs font-mono text-black/70">
+        {districts.map((d, index) => (
+          <span>
+            <a href={`/hizmet-bolgeleri/${d.slug}/`} class="hover:text-black hover:underline transition-colors">
+              {d.name}
+            </a>
+            {index < districts.length - 1 && <span class="text-black/30 ml-2">/</span>}
+          </span>
+        ))}
+      </div>
     </div>
 
     <!-- Bottom Section: Giant Text & Copyright -->

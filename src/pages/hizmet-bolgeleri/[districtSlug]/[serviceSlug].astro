@@ -55,12 +55,45 @@ const { dist, srv, allServices } = Astro.props;
 
 // Filter out the current service to show others for internal linking
 const otherServices = allServices.filter(s => s.slug !== srv.slug);
+const otherDistricts = districts.filter(d => d.slug !== dist.slug);
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Anasayfa",
+      "item": "https://evolutionajans.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hizmet Bölgeleri",
+      "item": "https://evolutionajans.com/hizmet-bolgeleri/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": dist.name,
+      "item": `https://evolutionajans.com/hizmet-bolgeleri/${dist.slug}/`
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": `${dist.name} ${srv.name}`,
+      "item": `https://evolutionajans.com/hizmet-bolgeleri/${dist.slug}/${srv.slug}/`
+    }
+  ]
+};
 ---
 
 <MainLayout 
   title={`${dist.name} ${srv.name} Hizmeti - Yerel SEO ve Büyüme Çözümleri | Evolution Ajans`}
   description={`${dist.name} ilçesindeki işletmeler için profesyonel ${srv.name} çözümleri. Sektörünüzde öne çıkmak ve yeni müşteriler kazanmak için hemen analiz talep edin.`}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <section class="py-32 bg-slate-50 relative z-10 retro-grid border-b-4 border-black">
     <div class="max-w-5xl mx-auto px-6">
       
@@ -180,6 +213,28 @@ const otherServices = allServices.filter(s => s.slug !== srv.slug);
         ))}
       </div>
 
+    </div>
+  </section>
+
+  <!-- Cross-District Service Mesh: Same Service Across All Districts -->
+  <section class="py-16 bg-white border-t-4 border-black relative z-10">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="mb-8 border-l-4 border-black pl-4">
+        <span class="text-xs font-mono uppercase tracking-[0.2em] text-black/50 block font-pixel">BÖLGESEL ÇÖZÜM AĞI</span>
+        <h3 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-black font-pixel">
+          Diğer İlçelerde {srv.name} Hizmetlerimiz
+        </h3>
+      </div>
+      <div class="flex flex-wrap gap-2 text-xs font-mono">
+        {otherDistricts.map((d) => (
+          <a 
+            href={`/hizmet-bolgeleri/${d.slug}/${srv.slug}/`}
+            class="px-3 py-2 bg-slate-50 border-2 border-black font-bold text-black hover:bg-[#facc15] hover:-translate-x-[1px] hover:-translate-y-[1px] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] transition-all font-pixel"
+          >
+            {d.name} {srv.name}
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 </MainLayout>
