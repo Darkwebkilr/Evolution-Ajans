@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import lottie from "astro-integration-lottie";
 import sitemap from "@astrojs/sitemap";
+import { serialize } from "v8";
 
 // https://astro.build/config
 export default defineConfig({
@@ -33,5 +34,18 @@ export default defineConfig({
   },
   experimental: {},
 
-  integrations: [icon(), lottie(), sitemap()],
+  integrations: [
+    icon(),
+    lottie(),
+    sitemap({
+      filter: (page) =>
+        page !== "https://evolutionajans.com/tesekkurler" &&
+        page !== "https://evolutionajans.com/tesekkurler/" &&
+        !page.includes("/admin/"),
+      serialize(item) {
+        item.lastmod = new Date().toISOString();
+        return item;
+      },
+    }),
+  ],
 });
