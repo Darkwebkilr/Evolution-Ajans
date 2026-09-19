@@ -1,12 +1,46 @@
 ---
 import MainLayout from "../layout/mainLayout.astro";
 import { Icon } from "astro-icon/components";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://evolutionajans.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hakkımızda",
+      "item": "https://evolutionajans.com/hakkimizda/"
+    }
+  ]
+};
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Hakkımızda - Evolution Ajans",
+  "description": "İzmir merkezli 360° dijital reklam ve web ajansı. Evolution Ajans hakkında detaylı bilgi ve vizyonumuz.",
+  "url": "https://evolutionajans.com/hakkimizda/",
+  "mainEntity": {
+    "@type": "ProfessionalService",
+    "@id": "https://evolutionajans.com/#organization"
+  }
+};
 ---
 
 <MainLayout 
-  title="Hakkımızda - Evolution Ajans | İzmir'in Dijital Gücü" 
+  title="Hakkımızda | İzmir Web Tasarım ve Reklam Ajansı - Evolution Ajans" 
   description="İzmir merkezli 360° reklam ajansı. Markanızın dijital evrimini yöneten, yaratıcılık ve teknolojiyi birleştiren çok yönlü bir çözüm ortağıyız."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
+
   <section class="relative overflow-hidden py-24 md:py-40 retro-grid">
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">

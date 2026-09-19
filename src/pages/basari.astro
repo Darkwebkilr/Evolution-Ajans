@@ -49,12 +49,33 @@ const cases = [
     color: "from-amber-400 to-orange-500"
   }
 ];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://evolutionajans.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Başarı Hikayeleri",
+      "item": "https://evolutionajans.com/basari/"
+    }
+  ]
+};
 ---
 
 <MainLayout 
-  title="Başarı Hikayeleri - Evolution Ajans" 
-  description="Evolution Ajans'ın markalar için yarattığı dijital evrim serüvenlerini ve başarı hikayelerini keşfedin."
+  title="Başarı Hikayeleri & Vaka Analizleri | Evolution Ajans" 
+  description="Evolution Ajans ile çalışan markaların ROAS, organik trafik ve dönüşüm artışı elde ettiği gerçek vaka analizleri ve başarı hikayeleri."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
   <!-- Hero Section -->
   <section class="relative pt-40 pb-24 overflow-hidden retro-grid">
     <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">

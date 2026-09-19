@@ -2,12 +2,46 @@
 import MainLayout from "../../layout/mainLayout.astro";
 import { districts } from "../../components/data/districts.js";
 import { Icon } from "astro-icon/components";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://evolutionajans.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hizmet Bölgeleri",
+      "item": "https://evolutionajans.com/hizmet-bolgeleri/"
+    }
+  ]
+};
+
+const collectionPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "İzmir Hizmet Bölgelerimiz - Evolution Ajans",
+  "description": "İzmir'in 30 ilçesi için yerel SEO, web tasarım ve Google Haritalar optimizasyon çözümleri.",
+  "url": "https://evolutionajans.com/hizmet-bolgeleri/",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://evolutionajans.com"
+  }
+};
 ---
 
 <MainLayout 
-  title="Hizmet Bölgelerimiz - İzmir Yerel Büyüme Çözümleri | Evolution Ajans"
-  description="İzmir genelinde Google Ads, Meta Ads, Web Tasarım ve Harita SEO çözümlerimizle yerel hizmet işletmenizi büyütüyoruz. İlçenizi seçerek detaylı çözümleri inceleyin."
+  title="İzmir Hizmet Bölgelerimiz | Yerel SEO ve Web Tasarım - Evolution Ajans"
+  description="İzmir genelinde 30 ilçede Google Ads, Meta Ads, Web Tasarım ve Harita SEO çözümlerimizle yerel işletmenizi büyütüyoruz. İlçenizi seçerek detaylı çözümleri inceleyin."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionPageSchema)} />
+
   <section class="py-32 bg-slate-50 relative z-10 retro-grid min-h-[70vh]">
     <div class="max-w-7xl mx-auto px-6">
       

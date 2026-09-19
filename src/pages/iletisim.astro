@@ -2,12 +2,46 @@
 import MainLayout from "../layout/mainLayout.astro";
 import Form from "../components/Form.astro";
 import { Icon } from "astro-icon/components";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://evolutionajans.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "İletişim",
+      "item": "https://evolutionajans.com/iletisim/"
+    }
+  ]
+};
+
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "İletişim - Evolution Ajans",
+  "description": "Evolution Ajans iletişim bilgileri, Folkart Towers Bayraklı İzmir ofisi, telefon numarası ve teklif formu.",
+  "url": "https://evolutionajans.com/iletisim/",
+  "mainEntity": {
+    "@type": "ProfessionalService",
+    "@id": "https://evolutionajans.com/#organization"
+  }
+};
 ---
 
 <MainLayout
-  title="İletişim - Evolution Ajans | Dijital Dönüşüm İçin Adım Atın"
+  title="İletişim | İzmir Web Tasarım ve Reklam Ajansı - Evolution Ajans"
   description="İzmir'in önde gelen dijital ajansı ile projenizi hayata geçirin. Web tasarım, SEO ve reklam yönetimi için bizimle iletişime geçin."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(contactPageSchema)} />
+
   <!-- Minimalist Hero Header for Contact Page -->
   <section class="relative pt-40 pb-12 overflow-hidden retro-grid">
     <div class="max-w-7xl mx-auto px-6 relative z-10">

@@ -6,9 +6,9 @@ export interface Props {
   type?: string;
 }
 const {
-  title = "Evolution Ajans | Geleceğin Reklamcılığı",
-  description = "Markanızın dijital dünyadaki evrimini yönetiyoruz. SEO, web tasarım, sosyal medya ve dijital pazarlama çözümleri.",
-  image = "/img/social-media.png", // Default sharing image
+  title = "Evolution Ajans | İzmir Web Tasarım, SEO ve Dijital Pazarlama",
+  description = "İzmir'de profesyonel web tasarım, SEO, Google Haritalar optimizasyonu ve Google/Meta reklam yönetimi ile işletmenizi büyütüyoruz.",
+  image = "/img/social-media.png",
   type = "website",
 } = Astro.props;
 
@@ -17,54 +17,113 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import Wpbutton from "../components/Wpbutton.astro";
 import LogoAnimation from "../components/LogoAnimation.astro";
+
+const siteUrl = "https://evolutionajans.com";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = new URL(image, siteUrl).href;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Evolution Ajans",
+  "legalName": "Evolution Ajans Dijital Pazarlama ve Yazılım",
+  "image": `${siteUrl}/img/Logo.png`,
+  "@id": `${siteUrl}/#organization`,
+  "url": siteUrl,
+  "telephone": "+905519283598",
+  "email": "info@evolutionajans.com",
+  "priceRange": "₺₺",
+  "currenciesAccepted": "TRY",
+  "paymentAccepted": "Nakit, Kredi Kartı, Banka Havalesi",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Folkart Towers, Adalet Mah. Manas Blv. No:47/B",
+    "addressLocality": "Bayraklı",
+    "addressRegion": "İzmir",
+    "postalCode": "35530",
+    "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "38.4554",
+    "longitude": "27.1783"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "10:00",
+      "closes": "15:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/evolutionajans",
+    "https://www.linkedin.com/company/evolutionajans"
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "İzmir"
+    },
+    {
+      "@type": "Country",
+      "name": "Türkiye"
+    }
+  ]
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Evolution Ajans",
+  "url": siteUrl,
+  "inLanguage": "tr-TR",
+  "description": "İzmir web tasarım, Google Haritalar SEO ve dijital reklam ajansı."
+};
 ---
 
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- SEO & Canonical -->
+    <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={Astro.url.href} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Evolution Ajans" />
+    <meta name="geo.region" content="TR-35" />
+    <meta name="geo.placename" content="İzmir" />
+    <meta name="geo.position" content="38.4554;27.1783" />
+    <meta name="ICBM" content="38.4554, 27.1783" />
 
-    <!-- Schema.org JSON-LD (ProfessionalService) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Evolution Ajans",
-        "image": "https://evolutionajans.com/img/Logo.png",
-        "@id": "https://evolutionajans.com/#organization",
-        "url": "https://evolutionajans.com",
-        "telephone": "+905519283598",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Folkart Towers, Bayraklı",
-          "addressLocality": "İzmir",
-          "addressCountry": "TR"
-        },
-        "sameAs": [
-          "https://www.instagram.com/evolutionajans",
-          "https://www.linkedin.com/company/evolutionajans"
-        ]
-      }
-    </script>
-
-    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
     <meta property="og:site_name" content="Evolution Ajans" />
+    <meta property="og:locale" content="tr_TR" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Global JSON-LD Schemas -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
   </head>
   <body class="bg-[#f8fafc] text-black">
     <Wpbutton />

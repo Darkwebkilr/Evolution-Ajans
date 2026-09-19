@@ -17,7 +17,22 @@ const faqItems = [
     a: "A'dan Z'ye dijital reklamcılık ve yazılım hizmetleri sunuyoruz. Başlıca odak alanlarımız: Kurumsal Web Tasarım, Google SEO Hizmeti, Meta (Instagram/Facebook) Reklam Yönetimi, Sosyal Medya Yönetimi ve Marka Kimliği Tasarımıdır."
   }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map((item) => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <section class="py-24 bg-white border-t-4 border-black relative z-10">
   <div class="max-w-4xl mx-auto px-6">
