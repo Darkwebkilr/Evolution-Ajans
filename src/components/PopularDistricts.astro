@@ -1,0 +1,109 @@
+---
+import { districts } from "./data/districts.js";
+import { Icon } from "astro-icon/components";
+
+// Top 12 key commercial & high-traffic districts
+const popularSlugs = [
+  "konak",
+  "bornova",
+  "karsiyaka",
+  "bayrakli",
+  "buca",
+  "cigli",
+  "gaziemir",
+  "cesme",
+  "urla",
+  "torbali",
+  "balcova",
+  "menemen"
+];
+
+const popularDistricts = popularSlugs
+  .map(slug => districts.find(d => d.slug === slug))
+  .filter(Boolean);
+---
+
+<section class="py-24 bg-white relative z-10 border-b-4 border-black">
+  <div class="max-w-6xl mx-auto px-6">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-l-4 border-black pl-6">
+      <div class="space-y-2">
+        <span class="text-xs font-mono uppercase tracking-[0.2em] text-black/50 block font-pixel">YEREL HİZMET AĞI</span>
+        <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter text-black font-pixel">
+          İzmir Popüler Hizmet Bölgelerimiz
+        </h2>
+        <p class="text-black/70 font-mono text-sm md:text-base max-w-2xl pt-2">
+          İzmir genelinde esnaf ve kurumsal işletmelerin Google Haritalarda ve aramalarda en üst sırada çıkmasını sağlıyoruz. Hizmet verdiğimiz ana merkezler:
+        </p>
+      </div>
+
+      <a 
+        href="/hizmet-bolgeleri/" 
+        class="inline-flex items-center gap-3 px-6 py-3 border-2 border-black bg-[#facc15] text-black font-bold uppercase tracking-wider text-xs font-pixel shrink-0 hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[4px_4px_0px_rgba(0,0,0,1)] transition-all self-start md:self-end"
+      >
+        <span>Tüm 30 İlçeyi Gör</span>
+        <Icon name="mdi:arrow-right" size={16} />
+      </a>
+    </div>
+
+    <!-- 12-District Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {popularDistricts.map((dist, index) => (
+        <a 
+          href={`/hizmet-bolgeleri/${dist.slug}/`}
+          class="group bg-slate-50 border-4 border-black p-6 rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-[7px_7px_0px_rgba(0,0,0,1)] hover:bg-[#fefce8] transition-all duration-300 flex flex-col justify-between"
+          data-aos="fade-up"
+          data-aos-delay={(index % 3) * 100}
+        >
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2 border-b-2 border-black/10 pb-3">
+              <span class="font-pixel font-bold text-xs uppercase text-black/60 bg-black/5 px-2 py-0.5 border border-black/20">
+                Nüfus: {dist.population}
+              </span>
+              <Icon name="mdi:arrow-top-right" size={20} class="text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </div>
+
+            <h3 class="text-2xl font-black uppercase text-black font-pixel group-hover:text-blue-600 transition-colors">
+              {dist.name}
+            </h3>
+
+            <p class="text-xs font-mono text-black/70 font-semibold line-clamp-1">
+              {dist.type}
+            </p>
+
+            <div class="pt-2 flex flex-wrap gap-1.5">
+              {dist.landmarks.slice(0, 3).map((landmark) => (
+                <span class="text-[11px] font-mono px-2 py-0.5 bg-white border border-black/30 text-black/80">
+                  {landmark}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-black/10 flex items-center justify-between text-xs font-mono font-bold uppercase text-blue-600 font-pixel">
+            <span>{dist.name} Çözümleri</span>
+            <Icon name="mdi:chevron-right" size={16} />
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Quick Footer Link Row -->
+    <div class="mt-12 p-6 bg-slate-100 border-2 border-black flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <Icon name="mdi:map-marker-multiple" size={24} class="text-black shrink-0" />
+        <span class="font-mono text-xs md:text-sm text-black/80 font-medium">
+          İlçeniz listede yok mu? İzmir'in 30 ilçesinin tamamında adrese teslim dijital çözümler üretiyoruz.
+        </span>
+      </div>
+      <a 
+        href="/hizmet-bolgeleri/"
+        class="text-xs font-pixel font-bold uppercase text-black underline hover:text-blue-600 shrink-0"
+      >
+        İzmir Hizmet Haritası &rarr;
+      </a>
+    </div>
+
+  </div>
+</section>
