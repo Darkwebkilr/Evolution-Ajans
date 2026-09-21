@@ -19,8 +19,9 @@
     "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/vite": "^4.1.13",
     "aos": "^2.3.4",
-    "astro": "^7.2.7",
+    "astro": "7.2.7",
     "astro-icon": "^1.1.5",
+    "astro-indexnow": "^2.3.10",
     "astro-integration-lottie": "^0.3.2",
     "astro-swiper": "^1.1.0",
     "dotenv": "^17.4.2",
@@ -40,6 +41,6 @@
   },
   "optionalDependencies": {
     "@astrojs/compiler-binding-win32-x64-msvc": "^0.4.0",
-    "@rolldown/binding-win32-x64-msvc": "^1.2.5"
+    "@rolldown/binding-win32-x64-msvc": "^1.2.9"
   }
 }

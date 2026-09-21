@@ -4,7 +4,9 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import lottie from "astro-integration-lottie";
 import sitemap from "@astrojs/sitemap";
-import { serialize } from "v8";
+import indexNow from "astro-indexnow";
+
+const INDEXNOW_KEY = process.env.INDEXNOW_KEY || "ee53d0b5d75ffee8940a2d380be0833d";
 
 // https://astro.build/config
 export default defineConfig({
@@ -46,6 +48,9 @@ export default defineConfig({
         item.lastmod = new Date().toISOString();
         return item;
       },
+    }),
+    indexNow({
+      key: INDEXNOW_KEY,
     }),
   ],
 });
