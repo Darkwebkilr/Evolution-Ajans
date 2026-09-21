@@ -131,7 +131,16 @@ const webSiteSchema = {
     <main class="pt-28 md:pt-36">
       <slot />
     </main>
-    <script src="../scripts/lenis.js"></script>
     <Footer />
+    <script>
+      import AOS from "aos";
+      document.addEventListener("DOMContentLoaded", () => {
+        AOS.init({
+          duration: 800,
+          once: true,
+          easing: "ease-out-cubic"
+        });
+      });
+    </script>
   </body>
 </html>

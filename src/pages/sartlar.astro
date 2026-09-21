@@ -1,0 +1,110 @@
+---
+import MainLayout from "../layout/mainLayout.astro";
+import { Icon } from "astro-icon/components";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Anasayfa",
+      "item": "https://evolutionajans.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Kullanım Şartları",
+      "item": "https://evolutionajans.com/sartlar/"
+    }
+  ]
+};
+---
+
+<MainLayout 
+  title="Kullanım Şartları ve Hizmet Koşulları | Evolution Ajans"
+  description="Evolution Ajans web sitesi ve dijital pazarlama hizmetlerinin kullanım şartları, fikri mülkiyet hakları ve yasal sorumluluk koşulları."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <!-- Hero Section -->
+  <section class="py-24 md:py-32 bg-slate-50 relative z-10 retro-grid border-b-4 border-black">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <nav class="flex items-center gap-2 text-xs md:text-sm font-mono text-black/60 mb-8 font-bold uppercase font-pixel" data-aos="fade-down">
+        <a href="/" class="hover:text-black transition-colors">Anasayfa</a>
+        <span>/</span>
+        <span class="text-black bg-[#facc15] px-2 py-0.5 border border-black">Kullanım Şartları</span>
+      </nav>
+
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 border-2 border-black bg-black text-white font-pixel text-xs uppercase tracking-wider font-bold">
+          <Icon name="mdi:file-document-check-outline" size={16} class="text-[#facc15]" />
+          <span>Yasal Koşullar</span>
+        </div>
+        
+        <h1 class="text-3xl md:text-5xl font-black uppercase tracking-tighter text-black leading-tight font-pixel">
+          Kullanım Şartları ve Hizmet Koşulları
+        </h1>
+        
+        <p class="text-black/80 font-mono text-sm md:text-base">
+          Son Güncelleme Tarihi: 21 Eylül 2026
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Legal Content -->
+  <section class="py-16 bg-white relative z-10">
+    <div class="max-w-4xl mx-auto px-6 font-mono text-black/85 space-y-10 leading-relaxed text-sm md:text-base">
+      
+      <div class="p-6 border-4 border-black bg-slate-50 shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+        <h2 class="text-lg md:text-xl font-black uppercase text-black font-pixel mb-3">1. Genel Hükümler</h2>
+        <p>
+          Bu web sitesini (evolutionajans.com) ziyaret ederek ve sitemiz üzerinden sunulan hizmetleri kullanarak, aşağıda belirtilen kullanım şartlarını ve yasal sorumlulukları peşinen kabul etmiş sayılırsınız. Şartların herhangi birini kabul etmiyorsanız lütfen siteyi kullanmayınız.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <h2 class="text-lg md:text-xl font-black uppercase text-black font-pixel">2. Hizmet Tanımı ve Kapsamı</h2>
+        <p>
+          Evolution Ajans; web tasarım, arama motoru optimizasyonu (SEO), Google Ads yönetimi, Meta reklam kampanyaları ve Google Haritalar yerel optimizasyon alanlarında danışmanlık ve ajans hizmeti sunmaktadır. Sitede yer alan fiyat, paket ve içerik bilgileri genel bilgilendirme mahiyetindedir. Kesin hizmet kapsamı taraflar arasında akdedilecek sözleşmeyle belirlenir.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <h2 class="text-lg md:text-xl font-black uppercase text-black font-pixel">3. Fikri ve Sınai Mülkiyet Hakları</h2>
+        <p>
+          Bu sitede yer alan tüm metinler, logolar, grafikler, tasarım ögeleri ve yazılım kodları Evolution Ajans'a aittir veya lisanslı olarak kullanılmaktadır. Yazılı izin alınmaksızın kopyalanamaz, çoğaltılamaz ve ticari amaçla kullanılamaz.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <h2 class="text-lg md:text-xl font-black uppercase text-black font-pixel">4. Sorumluluğun Sınırlandırılması</h2>
+        <p>
+          Evolution Ajans, web sitesinde sunulan bilgilerin güncelliğini ve doğruluğunu sağlamak için makul çabayı gösterir; ancak içeriklerin tamlığı veya kesintisiz erişilebilirlik konusunda garanti vermez. Üçüncü taraf arama motorlarının (Google, Meta vb.) algoritma değişikliklerinden veya hesap politikalarından kaynaklanan bağımsız durumlardan ajansımız sorumlu tutulamaz.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <h2 class="text-lg md:text-xl font-black uppercase text-black font-pixel">5. Değişiklik Hakkı ve Yetkili Mahkeme</h2>
+        <p>
+          Evolution Ajans, bu kullanım şartlarını dilediği zaman önceden bildirmeksizin güncelleme hakkını saklı tutar. Bu şartlardan doğabilecek her türlü uyuşmazlığın çözümünde İzmir Mahkemeleri ve İcra Daireleri yetkilidir.
+        </p>
+      </div>
+
+      <div class="pt-6 border-t-2 border-black/10 flex items-center justify-between">
+        <a href="/" class="inline-flex items-center gap-2 font-pixel text-xs font-bold uppercase underline hover:text-blue-600">
+          <Icon name="mdi:arrow-left" size={16} />
+          <span>Anasayfaya Dön</span>
+        </a>
+        <a href="/gizlilik/" class="font-pixel text-xs font-bold uppercase underline hover:text-blue-600">
+          Gizlilik Politikası &rarr;
+        </a>
+      </div>
+
+    </div>
+  </section>
+</MainLayout>

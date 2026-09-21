@@ -18,7 +18,7 @@ export const services = [
       "3. Özel Arayüz Geliştirme",
       "4. Optimizasyon & Yayın"
     ],
-    icon: "img/lottie/web.json",
+    icon: "mdi:xml",
   },
   {
     name: "Google Ads (Arama Ağı Reklamları)",
@@ -39,7 +39,7 @@ export const services = [
       "3. Hedefleme Setup & Kurulum",
       "4. Günlük İzleme & Optimizasyon"
     ],
-    icon: "img/lottie/ads.json",
+    icon: "mdi:google-ads",
   },
   {
     name: "Meta Ads (Hedefli Sosyal Medya)",
@@ -60,6 +60,6 @@ export const services = [
       "3. Hedefleme Setup & Piksel Entegrasyonu",
       "4. Performans & Erişim Analizi"
     ],
-    icon: "img/lottie/social-media.png",
+    icon: "mdi:bullhorn-outline",
   }
 ];

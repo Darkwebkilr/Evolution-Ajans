@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 import icon from "astro-icon";
-import lottie from "astro-integration-lottie";
 import sitemap from "@astrojs/sitemap";
 import indexNow from "astro-indexnow";
 
@@ -38,14 +37,15 @@ export default defineConfig({
 
   integrations: [
     icon(),
-    lottie(),
     sitemap({
       filter: (page) =>
         page !== "https://evolutionajans.com/tesekkurler" &&
         page !== "https://evolutionajans.com/tesekkurler/" &&
         !page.includes("/admin/"),
       serialize(item) {
-        item.lastmod = new Date().toISOString();
+        item.changefreq = "daily";
+        item.priority = 0.7;
+        item.lastmod = new Date();
         return item;
       },
     }),

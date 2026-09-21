@@ -8,6 +8,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: "Share Tech Mono", monospace;
     background-color: #f8fafc;
