@@ -20,7 +20,6 @@
     "astro": "^7.3.5",
     "astro-icon": "^1.1.5",
     "astro-indexnow": "^2.3.10",
-    "astro-microsoft-clarity-integration": "^1.1.7",
     "dotenv": "^17.4.2",
     "googleapis": "^176.0.0",
     "tailwindcss": "^4.1.13",
