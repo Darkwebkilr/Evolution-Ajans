@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import indexNow from "astro-indexnow";
+import clarityIntegration from "astro-microsoft-clarity-integration";
 
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY || "ee53d0b5d75ffee8940a2d380be0833d";
 
@@ -51,6 +52,14 @@ export default defineConfig({
     }),
     indexNow({
       key: INDEXNOW_KEY,
+    }),
+    clarityIntegration({
+      projectId: "yngkp7wvyj",
+      enabled: import.meta.env.PROD,
+      scriptStage: "head-inline",
+      debug: false,
+      async: true,
+      defer: false,
     }),
   ],
 });
