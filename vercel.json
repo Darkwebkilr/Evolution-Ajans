@@ -1,0 +1,9 @@
+{
+    "redirects":[
+    {
+        "source": "/:path*",
+        "destination": "https://evolutionajans.com/:path*",
+        "permament": true
+      }
+    ]
+  }
