@@ -49,8 +49,5 @@ export default defineConfig({
         return item;
       },
     }),
-    indexNow({
-      key: INDEXNOW_KEY,
-    }),
   ],
 });
