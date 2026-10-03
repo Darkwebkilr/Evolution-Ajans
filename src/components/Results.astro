@@ -6,7 +6,7 @@ const results = [
     title: "Google Ads Raporu",
     description: "Yönettiğimiz kampanyalardan biri olan Google Ads arama ağı reklamlarının gösterim, tıklama ve maliyet detaylarını içeren canlı sistem panel ekranı.",
     metric: "Google Ads Paneli",
-    image: "/google-ads-ss.png",
+    image: "/google-ads-ss.webp",
     badge: "PANEL GÖRÜNTÜSÜ",
     color: "text-green-600"
   },
@@ -14,7 +14,7 @@ const results = [
     title: "Google Ads Ham Müşteri Listesi",
     description: "Google Ads reklamları üzerinden web sitemize gelip form dolduran veya doğrudan telefonla arayan potansiyel müşterilerin anlık çağrı ve talep listesi.",
     metric: "Ham Müşteri Listesi",
-    image: "/google-ads-ham-musteriler.png",
+    image: "/google-ads-ham-musteriler.webp",
     badge: "MÜŞTERİ LİSTESİ",
     color: "text-blue-600"
   },
@@ -22,7 +22,7 @@ const results = [
     title: "Meta Ads Form Paneli",
     description: "Instagram ve Facebook üzerinde aktif olan form toplama kampanyalarımızın form sayılarını, gösterimlerini ve erişim verilerini gösteren Meta Business reklam paneli ekranı.",
     metric: "Meta Ads Paneli",
-    image: "/meta-ads-ss.png",
+    image: "/meta-ads-ss.webp",
     badge: "FORM VERİLERİ",
     color: "text-purple-600"
   }
@@ -73,6 +73,8 @@ const results = [
             <img 
               src={item.image} 
               alt={item.title} 
+              loading="lazy"
+              decoding="async"
               class="zoomable-image w-full h-auto object-contain cursor-zoom-in" 
             />
             
