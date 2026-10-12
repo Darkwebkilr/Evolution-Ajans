@@ -72,6 +72,30 @@ async function extractUrlsFromSitemap(filePath) {
     return [...new Set(urls)]; // Tekrar edenleri temizle
 }
 
+const STATE_FILE = "./indexed-urls.json";
+
+// Mevcut kayıtlı URL'leri yükle
+function loadIndexedUrls() {
+    if (fs.existsSync(STATE_FILE)) {
+        try {
+            const data = JSON.parse(fs.readFileSync(STATE_FILE, "utf-8"));
+            return Array.isArray(data) ? data : [];
+        } catch (e) {
+            console.warn("⚠️ indexed-urls.json okunamadı, boş liste ile başlanıyor.");
+            return [];
+        }
+    }
+    return [];
+}
+
+// 200 dönen URL'i anında dosyaya kaydet
+function saveIndexedUrl(url, list) {
+    if (!list.includes(url)) {
+        list.push(url);
+    }
+    fs.writeFileSync(STATE_FILE, JSON.stringify(list, null, 2), "utf-8");
+}
+
 async function startIndexing() {
     try {
         const credentials = getCredentials();
@@ -85,8 +109,10 @@ async function startIndexing() {
             return;
         }
 
-        console.log(`📊 Toplam Gönderilecek URL: ${allUrls.length}`);
-        console.log("🚀 Google Indexing API gönderimi başlatılıyor...\n");
+        const indexedUrls = loadIndexedUrls();
+        console.log(`📊 Toplam Sitemap URL: ${allUrls.length}`);
+        console.log(`💾 Önceden Kayıtlı 200 OK URL Sayısı: ${indexedUrls.length}`);
+        console.log("🚀 Google Indexing API gönderimi ve 200 durum kontrolü başlatılıyor...\n");
 
         // 2. Auth Yapılandırması
         const auth = new google.auth.GoogleAuth({
@@ -99,11 +125,12 @@ async function startIndexing() {
         let successCount = 0;
         let failCount = 0;
 
-        // 3. URL'leri Doğrudan Gönder (DB / Geçmiş kaydı tutulmaz)
+        // 3. URL'leri Gönder ve 200 Dönenleri indexed-urls.json Dosyasına Kaydet
         for (let i = 0; i < allUrls.length; i++) {
             const url = allUrls[i];
             try {
-                await indexing.urlNotifications.publish({
+                // Google Indexing API bildirimi yap (API 200 dönerse başarılı)
+                const response = await indexing.urlNotifications.publish({
                     auth: authClient,
                     requestBody: {
                         url: url,
@@ -111,8 +138,14 @@ async function startIndexing() {
                     },
                 });
 
-                console.log(`✅ [${i + 1}/${allUrls.length}] OK: ${url}`);
+                const statusCode = response.status || 200;
+                console.log(`✅ [${i + 1}/${allUrls.length}] [${statusCode}] OK: ${url}`);
                 successCount++;
+
+                // 200 dönen linki anında json dosyasına kaydet
+                if (statusCode === 200) {
+                    saveIndexedUrl(url, indexedUrls);
+                }
             } catch (error) {
                 console.log(
                     `❌ [${i + 1}/${allUrls.length}] Hata (${url}): ${error.response?.data?.error?.message || error.message
@@ -135,6 +168,7 @@ async function startIndexing() {
         console.log(`🏁 İşlem tamamlandı.`);
         console.log(`✅ Başarılı: ${successCount}`);
         console.log(`❌ Hatalı: ${failCount}`);
+        console.log(`💾 indexed-urls.json güncellendi (Toplam: ${indexedUrls.length} link)`);
         console.log("------------------------------------------------");
     } catch (error) {
         console.log(`💥 Kritik Hata: ${error.message}`);
