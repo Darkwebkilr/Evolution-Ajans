@@ -1,0 +1,12 @@
+# Cloudflare Pages / Static Hosting HTTP Response Headers
+
+# Block search engines from indexing internal assets like CSS, JS, and image endpoints
+/_astro/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/_image*
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+# Cache static assets properly
+/favicon*
+  Cache-Control: public, max-age=604800, immutable

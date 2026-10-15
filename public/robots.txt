@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /_astro/
+Disallow: /_image
+Disallow: /_image*
 
 Sitemap: https://evolutionajans.com/sitemap-index.xml
