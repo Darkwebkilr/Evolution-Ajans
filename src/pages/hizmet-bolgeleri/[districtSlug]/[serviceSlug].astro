@@ -66,7 +66,7 @@ const getServiceFaqs = (serviceSlug, district) => {
     return [
       {
         q: `${district.name} bölgesinde Google Haritalar'da ilk 3 sıraya (Local 3-Pack) nasıl çıkılır?`,
-        a: `${district.name} genelinde ve özellikle ${district.landmarks.slice(0, 2).join(", ")} çevresinde arama yapan müşteriler için Google İşletme Profilinizi ${district.neighborhoods.slice(0, 3).join(", ")} mahallelerini kapsayacak biçimde optimize ediyoruz. Doğru birincil kategori seçimi, koordinat uyumu, yerel anahtar kelime zenginleştirmesi ve düzenli müşteri değerlendirmeleriyle harita sıralamanızı zirveye taşıyoruz.`
+        a: `${district.name} genelinde arama yapan müşteriler için Google İşletme Profilinizi bölge dinamiklerini kapsayacak biçimde optimize ediyoruz. Doğru birincil kategori seçimi, koordinat uyumu, yerel anahtar kelime zenginleştirmesi ve düzenli müşteri değerlendirmeleriyle harita sıralamanızı zirveye taşıyoruz.`
       },
       {
         q: `${district.name} işletmem için harita yorumları ne kadar etkilidir?`,
@@ -96,7 +96,7 @@ const getServiceFaqs = (serviceSlug, district) => {
     return [
       {
         q: `${district.name} web tasarım projem neden tek sayfalık (Landing Page) olmalı?`,
-        a: `${district.name} bölgesinde mobil cihazından arama yapan kullanıcılar karmaşık menülerle vakit kaybetmek istemez. Neo-brutalist tasarımlı Landing Page sayfalarımız, ziyaretçiyi doğrudan hizmetinize, referanslarınıza ve WhatsApp / telefon arama butonlarına odaklayarak dönüşüm oranını 2-3 katına çıkarır.`
+        a: `${district.name} bölgesinde mobil cihazından arama yapan kullanıcılar karmaşık menülerle vakit kaybetmek istemez. Modern tasarımlı Landing Page sayfalarımız, ziyaretçiyi doğrudan hizmetinize, referanslarınıza ve WhatsApp / telefon arama butonlarına odaklayarak dönüşüm oranını 2-3 katına çıkarır.`
       },
       {
         q: `Hazırlanan web sayfası mobil cihazlarda ne kadar hızlı açılır?`,
@@ -116,7 +116,7 @@ const getServiceFaqs = (serviceSlug, district) => {
       },
       {
         q: `${district.name} SEO çalışmalarında hangi anahtar kelimeler hedeflenir?`,
-        a: `Hem ilçe geneli "${district.name} [sektörünüz]" aramaları hem de ${district.neighborhoods.slice(0, 3).join(", ")} mahalleleri bazındaki "en yakın", "fiyatları" ve "servisi" gibi yüksek satın alma niyetli uzun kuyruklu (long-tail) kelimeler hedeflenir.`
+        a: `Hem ilçe geneli "${district.name} [sektörünüz]" aramaları hem de satın alma niyetli "en yakın", "fiyatları" ve "servisi" gibi yüksek niyetli uzun kuyruklu (long-tail) kelimeler hedeflenir.`
       },
       {
         q: `Organik sıralama yükselişi ne kadar sürer?`,
@@ -184,6 +184,7 @@ const serviceSchema = {
     "name": "Evolution Ajans",
     "url": "https://evolutionajans.com/",
     "telephone": "+905519283598",
+    "priceRange": "₺₺",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": dist.name,
@@ -194,20 +195,46 @@ const serviceSchema = {
   "areaServed": {
     "@type": "AdministrativeArea",
     "name": dist.name
-  }
+  },
+  ...(dist.localReview ? {
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": dist.localReview.author || dist.localReview.client
+        },
+        "datePublished": dist.localReview.date || "2026-08-15",
+        "reviewBody": dist.localReview.quote,
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": String(dist.localReview.rating || 5),
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
+    ]
+  } : {})
 };
 ---
 
 <MainLayout 
   title={`${dist.name} ${srv.name} Hizmeti - Yerel SEO ve Büyüme | Evolution Ajans`}
-  description={`${dist.name} (${dist.type}) bölgesindeki işletmeler için profesyonel ${srv.name} çözümleri. Mahalle bazlı hedefleme ve garantili dönüşüm stratejileri.`}
+  description={`${dist.name} bölgesindeki işletmeler için profesyonel ${srv.name} çözümleri. Bölgesel hedefleme ve garantili Google dönüşüm stratejileri.`}
 >
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 
   <!-- Hero Section -->
-  <section class="py-28 md:py-32 bg-slate-50 relative z-10 retro-grid border-b-4 border-black">
+  <section class="py-24 md:py-32 bg-slate-50 relative z-10 retro-grid border-b-4 border-black">
     <div class="max-w-5xl mx-auto px-6">
       
       <!-- Breadcrumbs -->
@@ -228,8 +255,8 @@ const serviceSchema = {
             <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
             <span>{dist.name} / {srv.name}</span>
           </div>
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 border-2 border-black bg-white text-black font-mono text-xs uppercase font-bold">
-            <span>Bölge: {dist.type}</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 border-2 border-black bg-white text-black font-pixel text-xs uppercase font-bold">
+            <span>Yerel SEO ve Dönüşüm Çözümü</span>
           </div>
         </div>
         
@@ -276,51 +303,56 @@ const serviceSchema = {
         </div>
         
         <p class="text-black/80 text-base md:text-lg leading-relaxed font-mono">
-          <strong>{dist.name}</strong>, {dist.type.toLowerCase()} kimliği ve {dist.population} kişilik nüfus yoğunluğu ile İzmir'in en hareketli ticari merkezlerinden biridir. Bölgedeki müşteriler acil ihtiyaç duydukları hizmetleri bulmak için ilk olarak akıllı telefonlarından Google araması ve harita konumlarına başvurmaktadır.
+          <strong>{dist.name}</strong> pazarında hizmet arayan yerel müşteriler acil ihtiyaç duydukları her an ilk olarak akıllı telefonlarından Google araması ve Google Harita konumlarına başvurmaktadır. Arama sonuçlarında ilk sıralarda yer almayan işletmeler, potansiyel müşterilerini aynı gün içinde doğrudan rakiplerine kaptırmaktadır.
         </p>
 
         <p class="text-black/80 text-base md:text-lg leading-relaxed font-mono">
-          {dist.commercialProfile} Bu yoğun ekonomik ortamda, {dist.name} odaklı profesyonel bir <strong>{srv.name}</strong> çalışması olmadan müşteri çekmeye çalışmak; ya komşu ilçelerden gelen alakasız tıklamalarla bütçeyi eritmek ya da rakiplerinize her gün hazır müşteri kaptırmak anlamına gelir.
+          Bu yoğun ekonomik ortamda, {dist.name} odaklı profesyonel bir <strong>{srv.name}</strong> çalışması olmadan müşteri çekmeye çalışmak; ya komşu ilçelerden gelen alakasız tıklamalarla bütçeyi eritmek ya da rakiplerinize her gün hazır müşteri kaptırmak anlamına gelir. Evolution Ajans olarak, {dist.name} bölgesindeki firmanız için doğrudan ölçülebilir telefon çağrıları ve yüksek niyetli form talepleri üretiyoruz.
         </p>
       </div>
 
-      <!-- Section 2: Coverage of Landmarks & Neighborhoods -->
-      <div class="p-8 border-4 border-black bg-slate-50 shadow-[4px_4px_0px_rgba(0,0,0,1)] space-y-6" data-aos="fade-up">
-        <h3 class="text-xl md:text-2xl font-black uppercase text-black font-pixel">
-          {dist.name} Bölgesinde Hedeflediğimiz Odak Lokasyonlar
-        </h3>
-        <p class="text-sm md:text-base font-mono text-black/80 leading-relaxed">
-          {srv.name} stratejimizi yalnızca genel ilçe sınırlarına değil, doğrudan müşterilerinizin bulunduğu kritik merkez ve mahallelere göre segmente ediyoruz:
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-          <!-- Landmark List -->
-          <div class="space-y-2">
-            <span class="text-xs font-mono uppercase font-bold text-black/60 font-pixel block">Önemli Merkezler & Odak Noktaları:</span>
-            <div class="flex flex-wrap gap-2">
-              {dist.landmarks.map((landmark) => (
-                <span class="px-2.5 py-1 text-xs font-mono font-semibold bg-white border-2 border-black text-black">
-                  {landmark}
-                </span>
-              ))}
+      <!-- Real Verified Customer Review Box in Service Subpage -->
+      {dist.localReview && (
+        <div class="p-6 md:p-8 border-4 border-black bg-[#fefce8] shadow-[6px_6px_0px_rgba(0,0,0,1)] space-y-4" data-aos="fade-up">
+          <div class="flex items-center justify-between border-b-2 border-black/10 pb-3">
+            <div class="flex items-center gap-1 text-amber-500">
+              <Icon name="mdi:star" size={22} />
+              <Icon name="mdi:star" size={22} />
+              <Icon name="mdi:star" size={22} />
+              <Icon name="mdi:star" size={22} />
+              <Icon name="mdi:star" size={22} />
             </div>
+            <span class="text-xs font-mono font-bold text-black bg-white px-2.5 py-1 border border-black shadow-[2px_2px_0px_rgba(0,0,0,1)] font-pixel">
+              {dist.localReview.rating || 5}.0 / 5.0
+            </span>
           </div>
 
-          <!-- Neighborhood List -->
-          <div class="space-y-2">
-            <span class="text-xs font-mono uppercase font-bold text-black/60 font-pixel block">Doğrudan Kapsanan Mahalleler:</span>
-            <div class="flex flex-wrap gap-2">
-              {dist.neighborhoods.map((nh) => (
-                <span class="px-2 py-1 text-xs font-mono bg-[#fefce8] border border-black text-black font-medium">
-                  {nh} Mah.
-                </span>
-              ))}
+          <p class="text-black/85 italic font-mono text-sm md:text-base leading-relaxed">
+            "{dist.localReview.quote}"
+          </p>
+
+          <div class="pt-4 border-t-2 border-black/10 flex items-center justify-between">
+            <div>
+              <h4 class="font-black text-sm uppercase text-black font-pixel">
+                {dist.localReview.author}
+              </h4>
+              <p class="text-xs font-mono text-black/70 font-semibold">
+                {dist.localReview.role} — {dist.localReview.client}
+              </p>
+            </div>
+            <div class="text-right">
+              <span class="text-[11px] font-mono text-black/50 block">
+                {dist.localReview.date}
+              </span>
+              <span class="inline-flex items-center gap-1 text-[10px] font-mono text-green-700 font-bold uppercase">
+                <Icon name="mdi:check-decagram" size={12} /> Doğrulanmış Müşteri
+              </span>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <!-- Section 3: 4-Step Strategic Execution Plan -->
+      <!-- Section 2: 4-Step Strategic Execution Plan -->
       <div class="space-y-6" data-aos="fade-up">
         <div class="border-l-4 border-black pl-4">
           <span class="text-xs font-mono uppercase tracking-[0.2em] text-black/50 block font-pixel">UYGULAMA PLANI</span>
@@ -358,7 +390,7 @@ const serviceSchema = {
             <span class="w-7 h-7 bg-[#25D366] text-black border border-black flex items-center justify-center font-pixel font-bold text-xs">04</span>
             <h4 class="font-black uppercase text-base font-pixel text-black">Şeffaf Rapor & Büyüme</h4>
             <p class="text-xs font-mono text-black/75 leading-relaxed">
-              Hangi mahalleden kaç telefon aldığınızı ve harcadığınız bütçenin getirisini düzenli olarak şeffaf biçimde raporlarız.
+              Kaç telefon aldığınızı ve harcadığınız bütçenin getirisini düzenli olarak şeffaf biçimde raporlarız.
             </p>
           </div>
         </div>

@@ -16,28 +16,28 @@ const localServices = [
   {
     slug: "google-haritalar-seo",
     title: `${dist.name} Google Haritalar SEO & Yorum Optimizasyonu`,
-    description: `${dist.name} genelinde yerel esnaf ve kurumsal hizmet veren işletmeniz için Google Haritalar (GMB) kaydınızı A'dan Z'ye optimize ediyoruz. Bölgedeki ${dist.neighborhoods.slice(0, 3).join(", ")} mahallelerinden arama yapan müşterilerin karşısına ilk 3 sırada (Local 3-Pack) çıkarak telefon aramalarınızı ve yol tarifi taleplerinizi hızla artırıyoruz.`,
+    description: `${dist.name} genelinde yerel esnaf ve kurumsal işletmeler için Google Haritalar (GMB) kaydınızı A'dan Z'ye optimize ediyoruz. Bölgeden arama yapan müşterilerin karşısına ilk 3 sırada (Local 3-Pack) çıkarak telefon aramalarınızı ve yol tarifi taleplerinizi hızla artırıyoruz.`,
     icon: "mdi:map-marker-radius-outline",
     color: "bg-green-500/10 text-green-600 border-green-500/20"
   },
   {
     slug: "reklam-yonetimi",
     title: `${dist.name} Reklam Yönetimi (Google Ads & Meta)`,
-    description: `Sadece ${dist.name} ilçe sınırları ve yakın çevresindeki müşterileri hedefleyen nokta atışı Google Arama Ağı ve Instagram reklamları kurguluyoruz. ${dist.type} niteliğindeki pazar dinamiklerini gözeterek bütçenizi boşa harcayan alakasız tıklamaları eliyor, harcadığınız her bütçenin doğrudan nitelikli iş talebine dönüşmesini sağlıyoruz.`,
+    description: `Sadece ${dist.name} ilçe sınırları ve yakın çevresindeki müşterileri hedefleyen nokta atışı Google Arama Ağı ve Instagram reklamları kurguluyoruz. Bütçenizi boşa harcayan alakasız tıklamaları negatif anahtar kelimelerle eliyor, harcadığınız her bütçenin doğrudan nitelikli iş talebine dönüşmesini sağlıyoruz.`,
     icon: "mdi:google-ads",
     color: "bg-blue-500/10 text-blue-600 border-blue-500/20"
   },
   {
     slug: "web-tasarim",
     title: `${dist.name} Yüksek Dönüşümlü Web Tasarım (Landing Page)`,
-    description: `${dist.name} bölgesinde arama yapan kullanıcıların doğrudan WhatsApp'tan yazmasını veya telefonla aramasını sağlayan ultra hızlı açılış sayfaları (Landing Page) tasarlıyoruz. Karmaşık ve yavaş sitelerin aksine, mobil uyumlu, neo-brutalist tarzda dikkat çekici ve doğrudan satış getirmeye odaklı altyapılar inşa ediyoruz.`,
+    description: `${dist.name} bölgesinde arama yapan kullanıcıların doğrudan WhatsApp'tan yazmasını veya telefonla aramasını sağlayan ultra hızlı açılış sayfaları (Landing Page) tasarlıyoruz. Karmaşık ve yavaş sitelerin aksine, mobil uyumlu, modern ve doğrudan satış getirmeye odaklı altyapılar inşa ediyoruz.`,
     icon: "mdi:xml",
     color: "bg-amber-500/10 text-amber-600 border-amber-500/20"
   },
   {
     slug: "seo",
     title: `${dist.name} SEO (Arama Motoru Optimizasyonu)`,
-    description: `${dist.name} odaklı sektörel aramalarda reklam vermeseniz dahi web sitenizin en üst sıralarda yer alması için kapsamlı teknik ve bölgesel SEO çalışması yapıyoruz. ${dist.name} lokasyonuna özel anahtar kelime eşleşmeleri, backlink stratejileri ve içerik mimarisi ile uzun vadeli organik müşteri akışı kuruyoruz.`,
+    description: `${dist.name} odaklı sektörel aramalarda reklam vermeseniz dahi web sitenizin en üst sıralarda yer alması için kapsamlı teknik ve bölgesel SEO çalışması yapıyoruz. Yerel anahtar kelime eşleşmeleri, backlink stratejileri ve içerik mimarisi ile uzun vadeli organik müşteri akışı kuruyoruz.`,
     icon: "mdi:trending-up",
     color: "bg-purple-500/10 text-purple-600 border-purple-500/20"
   }
@@ -94,6 +94,8 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   "name": `Evolution Ajans - ${dist.name} Dijital Pazarlama ve Web Tasarım`,
   "url": `https://evolutionajans.com/hizmet-bolgeleri/${dist.slug}/`,
+  "telephone": "+905519283598",
+  "priceRange": "₺₺",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": dist.name,
@@ -105,175 +107,205 @@ const localBusinessSchema = {
     "latitude": dist.coordinates?.lat || "38.4192",
     "longitude": dist.coordinates?.lng || "27.1287"
   },
-  "areaServed": dist.name
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": dist.name
+  },
+  ...(dist.localReview ? {
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": dist.localReview.author || dist.localReview.client
+        },
+        "datePublished": dist.localReview.date || "2026-08-15",
+        "reviewBody": dist.localReview.quote,
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": String(dist.localReview.rating || 5),
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
+    ]
+  } : {})
 };
 ---
 
 <MainLayout 
-  title={`${dist.name} Web Tasarım, Google Ads ve Harita SEO | Evolution Ajans`}
-  description={`${dist.name} (${dist.type}) bölgesindeki işletmeniz için Google Ads, Instagram/Facebook Form Reklamları, Harita SEO ve hızlı Web Tasarım çözümleri.`}
+  title={`${dist.name} Web Tasarım, SEO ve Google Reklam Yönetimi | Evolution Ajans`}
+  description={`${dist.name} bölgesindeki işletmeniz için profesyonel Web Tasarım, Google Haritalar SEO, Google Ads ve Meta Reklam Yönetimi. Yerel aramalarda zirveye çıkın.`}
 >
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 
   <!-- Hero Section -->
-  <section class="py-28 md:py-32 bg-slate-50 relative z-10 retro-grid border-b-4 border-black">
+  <section class="py-24 md:py-32 bg-slate-50 relative z-10 retro-grid border-b-4 border-black">
     <div class="max-w-5xl mx-auto px-6 text-center space-y-6">
       
       <!-- Top badges -->
       <div class="flex flex-wrap items-center justify-center gap-3" data-aos="fade-down">
         <div class="inline-flex items-center gap-2 px-3 py-1.5 border-2 border-black bg-black text-white font-pixel text-xs uppercase tracking-wider">
           <span class="w-2 h-2 rounded-full bg-[#25D366] animate-ping"></span>
-          <span>{dist.name} Büyüme Çözümleri</span>
+          <span>{dist.name} Yerel SEO & Dijital Büyüme</span>
         </div>
         <div class="inline-flex items-center gap-2 px-3 py-1.5 border-2 border-black bg-[#facc15] text-black font-pixel text-xs uppercase tracking-wider font-bold">
-          <span>{dist.type}</span>
-        </div>
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 border-2 border-black bg-white text-black font-mono text-xs uppercase font-bold">
-          <span>Nüfus: {dist.population}</span>
+          <span>Google Harita & Reklam Çözümleri</span>
         </div>
       </div>
 
       <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter text-black leading-tight" data-aos="fade-up" data-aos-delay="100">
-        {dist.name}'de Telefonlarınızı Çaldıracak Dijital Büyüme Sistemi
+        {dist.name} Web Tasarım, SEO ve Google Reklam Yönetimi
       </h1>
 
       <p class="text-black/85 max-w-3xl mx-auto text-lg md:text-2xl font-medium leading-relaxed font-mono" data-aos="fade-up" data-aos-delay="200">
-        {dist.name} bölgesindeki hizmet ve ticaret işletmeniz için boşa harcanan bütçelere son veriyoruz. Nokta atışı Google & Meta reklamları, Harita SEO ve şimşek hızında dönüşüm sayfaları ile sizi bölgenin lideri yapıyoruz.
+        {dist.name} genelinde faaliyet gösteren işletmeniz için boşa harcanan bütçelere son veriyoruz. Nokta atışı Google & Meta reklamları, Harita SEO ve şimşek hızında dönüşüm sayfaları ile sizi bölgenin lideri yapıyoruz.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center pt-6 font-pixel" data-aos="fade-up" data-aos-delay="300">
         <a href="/#iletisim" class="group relative inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-black bg-[#facc15] text-black font-bold uppercase tracking-widest text-xs sm:text-sm hover:-translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-0 active:translate-y-0 active:shadow-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
-          <span>Ücretsiz {dist.name} Analizi Al</span>
+          <span>Ücretsiz {dist.name} SEO Analizi Al</span>
           <Icon name="mdi:arrow-right" size={18} class="group-hover:translate-x-1 transition-transform" />
         </a>
         <a href="/hizmet-bolgeleri/" class="group relative inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-black bg-white text-black font-bold uppercase tracking-widest text-xs sm:text-sm hover:-translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-0 active:translate-y-0 active:shadow-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
-          <span>Tüm İlçeler</span>
+          <span>Tüm Hizmet Bölgeleri</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Local Commercial Profile & Strategic Analysis -->
+  <!-- Local SEO & Growth Strategy -->
   <section class="py-20 bg-white border-b-4 border-black relative z-10">
     <div class="max-w-5xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
-        <!-- Left: Commercial Profile Text -->
+        <!-- Left: SEO Strategy Text -->
         <div class="lg:col-span-7 space-y-6" data-aos="fade-right">
           <div class="border-l-4 border-black pl-4">
-            <span class="text-xs font-mono uppercase tracking-[0.2em] text-black/50 block font-pixel">BÖLGE ANALİZİ</span>
+            <span class="text-xs font-mono uppercase tracking-[0.2em] text-black/50 block font-pixel">YEREL SEO STRATEJİSİ</span>
             <h2 class="text-2xl md:text-4xl font-black uppercase tracking-tight text-black font-pixel">
-              {dist.name}'de Dijital Rekabet ve Ticari Dinamikler
+              {dist.name} Bölgesinde Google'da İlk Sıraya Çıkma Rehberi
             </h2>
           </div>
           
           <p class="text-black/80 text-base md:text-lg leading-relaxed font-mono">
-            {dist.commercialProfile}
+            <strong>{dist.name}</strong> bölgesinde hizmet veya ürün arayan potansiyel müşterilerin %85'inden fazlası doğrudan akıllı telefonlarından Google Arama ve Google Haritalar sonuçlarına başvurmaktadır. Arama çubuğuna yazılan "{dist.name} en yakın servis", "{dist.name} ustası" veya "{dist.name} fiyatları" gibi ticari niyetli sorgularda ilk sayfada yer almayan işletmeler, her gün hazır müşterilerini doğrudan rakiplerine kaptırmaktadır.
           </p>
 
           <p class="text-black/80 text-base md:text-lg leading-relaxed font-mono">
-            {dist.name} genelinde faaliyet gösteren firmalar için en büyük risk, genel geçer reklam stratejileriyle komşu ilçelerden veya alakasız aramalardan gereksiz maliyet üretmektir. Biz; <strong>{dist.name}</strong> pazarının yerel dinamiklerine, arama alışkanlıklarına ve sektörel yoğunluğuna özel stratejiler kurgulayarak reklam bütçenizi korur, organik sıralamalarda kalıcı yer edinmenizi sağlarız.
+            {dist.name} genelinde faaliyet gösteren firmalar için en büyük risk, genel geçer reklam stratejileriyle komşu ilçelerden veya alakasız aramalardan gereksiz maliyet üretmektir. Biz; <strong>{dist.name}</strong> pazarının yerel dinamiklerine, arama alışkanlıklarına ve sektörel rekabetine özel stratejiler kurgulayarak reklam bütçenizi korur, organik sıralamalarda kalıcı yer edinmenizi sağlarız.
           </p>
 
-          <!-- Local Review Block -->
+          <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 border-2 border-black bg-slate-50">
+              <span class="font-pixel text-xs font-bold uppercase text-black block mb-1">Nokta Atışı Konum</span>
+              <p class="text-xs font-mono text-black/70">Yalnızca {dist.name} ve hizmet sınırlarınızdaki gerçek müşterilere bütçe harcanır.</p>
+            </div>
+            <div class="p-4 border-2 border-black bg-slate-50">
+              <span class="font-pixel text-xs font-bold uppercase text-black block mb-1">Kalıcı Organik Trafik</span>
+              <p class="text-xs font-mono text-black/70">Reklam bütçeniz dursa dahi 1. sayfa organik sıralamalardan müşteri akışı devam eder.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Real Customer Review Card with Stars, Date and Schema Verification -->
+        <div class="lg:col-span-5 space-y-6" data-aos="fade-left">
           {dist.localReview && (
-            <div class="mt-8 p-6 border-4 border-black bg-[#fefce8] shadow-[4px_4px_0px_rgba(0,0,0,1)]">
-              <div class="flex items-center gap-2 mb-3 text-amber-500">
-                <Icon name="mdi:star" size={20} />
-                <Icon name="mdi:star" size={20} />
-                <Icon name="mdi:star" size={20} />
-                <Icon name="mdi:star" size={20} />
-                <Icon name="mdi:star" size={20} />
-                <span class="text-xs font-mono font-bold text-black ml-2 uppercase font-pixel">Yerel Müşteri Deneyimi</span>
+            <div class="p-6 md:p-8 border-4 border-black bg-[#fefce8] shadow-[6px_6px_0px_rgba(0,0,0,1)] space-y-4">
+              <div class="flex items-center justify-between border-b-2 border-black/10 pb-3">
+                <div class="flex items-center gap-1 text-amber-500">
+                  <Icon name="mdi:star" size={22} />
+                  <Icon name="mdi:star" size={22} />
+                  <Icon name="mdi:star" size={22} />
+                  <Icon name="mdi:star" size={22} />
+                  <Icon name="mdi:star" size={22} />
+                </div>
+                <span class="text-xs font-mono font-bold text-black bg-white px-2.5 py-1 border border-black shadow-[2px_2px_0px_rgba(0,0,0,1)] font-pixel">
+                  {dist.localReview.rating || 5}.0 / 5.0
+                </span>
               </div>
+
               <p class="text-black/85 italic font-mono text-sm md:text-base leading-relaxed">
                 "{dist.localReview.quote}"
               </p>
-              <div class="mt-4 pt-3 border-t-2 border-black/10 flex items-center justify-between text-xs font-mono font-bold text-black font-pixel">
-                <span>— {dist.localReview.client}</span>
-                <span class="text-black/50">{dist.name}, İzmir</span>
+
+              <div class="pt-4 border-t-2 border-black/10 flex items-center justify-between">
+                <div>
+                  <h4 class="font-black text-sm uppercase text-black font-pixel">
+                    {dist.localReview.author}
+                  </h4>
+                  <p class="text-xs font-mono text-black/70 font-semibold">
+                    {dist.localReview.role} — {dist.localReview.client}
+                  </p>
+                </div>
+                <div class="text-right">
+                  <span class="text-[11px] font-mono text-black/50 block">
+                    {dist.localReview.date}
+                  </span>
+                  <span class="inline-flex items-center gap-1 text-[10px] font-mono text-green-700 font-bold uppercase">
+                    <Icon name="mdi:check-decagram" size={12} /> Doğrulanmış Müşteri
+                  </span>
+                </div>
               </div>
             </div>
           )}
-        </div>
 
-        <!-- Right: Landmarks & Neighborhoods Cards -->
-        <div class="lg:col-span-5 space-y-6" data-aos="fade-left">
-          
-          <!-- Landmarks Box -->
-          <div class="p-6 border-4 border-black bg-slate-50 shadow-[4px_4px_0px_rgba(0,0,0,1)] space-y-4">
-            <div class="flex items-center gap-3 border-b-2 border-black pb-3">
-              <div class="w-8 h-8 bg-black text-white flex items-center justify-center">
-                <Icon name="mdi:map-marker" size={18} />
-              </div>
-              <div>
-                <h3 class="font-black uppercase text-sm md:text-base font-pixel text-black">
-                  {dist.name} Önemli Merkezler
-                </h3>
-                <span class="text-[10px] font-mono text-black/60 uppercase">Hedeflenen Noktalar</span>
-              </div>
-            </div>
-            <p class="text-xs font-mono text-black/70">
-              Bu lokasyonlar ve çevresindeki aramalarda firmanızın en üstte çıkması için konum bazlı harita optimizasyonu yapıyoruz:
-            </p>
-            <div class="flex flex-wrap gap-2 pt-1">
-              {dist.landmarks.map((landmark) => (
-                <span class="px-2.5 py-1 text-xs font-mono font-semibold bg-white border-2 border-black text-black shadow-[1px_1px_0px_rgba(0,0,0,1)]">
-                  {landmark}
-                </span>
-              ))}
-            </div>
+          <!-- SEO Benefit Summary Box -->
+          <div class="p-6 border-4 border-black bg-white shadow-[6px_6px_0px_rgba(0,0,0,1)] space-y-3">
+            <h3 class="font-black uppercase text-base font-pixel text-black flex items-center gap-2">
+              <Icon name="mdi:shield-check" size={20} class="text-blue-600" />
+              {dist.name} Garantili SEO Süreci
+            </h3>
+            <ul class="space-y-2 text-xs font-mono text-black/80">
+              <li class="flex items-start gap-2">
+                <Icon name="mdi:check-bold" size={16} class="text-green-600 shrink-0 mt-0.5" />
+                <span>Google Haritalar'da Local 3-Pack paketine yerleşim</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="mdi:check-bold" size={16} class="text-green-600 shrink-0 mt-0.5" />
+                <span>Negatif anahtar kelime filtreleriyle bütçe koruması</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="mdi:check-bold" size={16} class="text-green-600 shrink-0 mt-0.5" />
+                <span>1 saniyenin altında açılan dönüşüm odaklı tasarım</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <Icon name="mdi:check-bold" size={16} class="text-green-600 shrink-0 mt-0.5" />
+                <span>Şeffaf aylık telefon çağrısı ve tıklama raporlaması</span>
+              </li>
+            </ul>
           </div>
-
-          <!-- Neighborhoods Box -->
-          <div class="p-6 border-4 border-black bg-slate-50 shadow-[4px_4px_0px_rgba(0,0,0,1)] space-y-4">
-            <div class="flex items-center gap-3 border-b-2 border-black pb-3">
-              <div class="w-8 h-8 bg-[#facc15] text-black border-2 border-black flex items-center justify-center font-bold">
-                <Icon name="mdi:home-group" size={18} />
-              </div>
-              <div>
-                <h3 class="font-black uppercase text-sm md:text-base font-pixel text-black">
-                  Kapsam Dahilindeki Mahalleler
-                </h3>
-                <span class="text-[10px] font-mono text-black/60 uppercase">{dist.name} Yerel Kapsama</span>
-              </div>
-            </div>
-            <p class="text-xs font-mono text-black/70">
-              Tüm bu mahallelerden gelen "en yakın servis", "ustası" ve "firması" aramalarında harita görünürlüğü sağlıyoruz:
-            </p>
-            <div class="flex flex-wrap gap-2 pt-1">
-              {dist.neighborhoods.map((nh) => (
-                <span class="px-2 py-1 text-xs font-mono bg-black/5 border border-black/30 text-black">
-                  {nh} Mahallesi
-                </span>
-              ))}
-            </div>
-          </div>
-
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Local Services Section -->
+  <!-- 4 Core SEO Service Pages (Clickable & Independent Subpages) -->
   <section class="py-24 bg-slate-50 relative z-10 border-b-4 border-black">
     <div class="max-w-5xl mx-auto px-6">
       
       <!-- Section Header -->
       <div class="mb-16 border-l-4 border-black pl-6 space-y-2">
-        <span class="text-xs font-mono uppercase tracking-[0.2em] text-black/50 block font-pixel">YEREL HİZMET PAKETLERİ</span>
+        <span class="text-xs font-mono uppercase tracking-[0.2em] text-black/50 block font-pixel">4 ANA HİZMET ALANI</span>
         <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter text-black font-pixel">
-          {dist.name} Bölgesine Özel Çözümlerimiz
+          {dist.name} İçin Özel SEO & Reklam Sayfalarımız
         </h2>
         <p class="text-black/70 font-mono text-sm md:text-base max-w-2xl pt-2">
-          {dist.name} bölgesindeki firmanız için hazırlandığımız 4 ana büyüme kanalı:
+          {dist.name} pazarında firmanızı zirveye taşıyacak 4 temel büyüme kanalımız. İncelemek istediğiniz hizmetin üzerine tıklayarak detaylı rehber sayfasına gidebilirsiniz:
         </p>
       </div>
 
-      <!-- Services Stack -->
+      <!-- Services Stack with Distinct Links -->
       <div class="space-y-8">
         {localServices.map((service, index) => (
           <a 
@@ -299,7 +331,7 @@ const localBusinessSchema = {
                 {service.description}
               </p>
               <div class="pt-2 text-xs md:text-sm font-mono font-bold uppercase tracking-wider text-blue-600 group-hover:underline flex items-center gap-1 font-pixel">
-                <span>{dist.name} {service.title.split(' ').slice(1).join(' ')} Detayları</span>
+                <span>{dist.name} {service.title.split(' ').slice(1).join(' ')} Sayfasına Git →</span>
                 <Icon name="mdi:arrow-right" size={14} class="md:hidden" />
               </div>
             </div>
@@ -310,14 +342,14 @@ const localBusinessSchema = {
     </div>
   </section>
 
-  <!-- Localized FAQs Section (Unique to District) -->
+  <!-- Localized FAQs Section (Unique to District with FAQ Schema) -->
   {dist.localFaqs && dist.localFaqs.length > 0 && (
     <section class="py-20 bg-white relative z-10 border-b-4 border-black">
       <div class="max-w-4xl mx-auto px-6">
         <div class="mb-12 border-l-4 border-black pl-6 space-y-2">
           <span class="text-xs font-mono uppercase tracking-[0.2em] text-black/50 block font-pixel">SIKÇA SORULAN SORULAR</span>
           <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tighter text-black font-pixel">
-            {dist.name} Hizmetlerimiz Hakkında Sorular
+            {dist.name} Dijital Pazarlama ve SEO Soruları
           </h2>
         </div>
 

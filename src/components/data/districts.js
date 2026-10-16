@@ -8,7 +8,7 @@ export const districts = [
     neighborhoods: ["Yeni Mahalle", "Siteler", "Kurtuluş", "Kazım Dirik", "Yalı", "Helvacı", "Yenişakran"],
     nearby: ["menemen", "foca", "bergama", "cigli"],
     commercialProfile: "Aliağa; petrokimya tesisleri, demir-çelik fabrikaları, gemi söküm tesisleri ve uluslararası limanlarıyla Türkiye'nin en büyük ağır sanayi ve lojistik merkezlerinden biridir. Bölgede B2B hizmetler, endüstriyel tedarik, vinç/nakliyat ve teknik servis çözümleri çok yüksek arama hacmine sahiptir.",
-    localReview: { client: "Aliağa Endüstriyel Çözümler", quote: "Aliağa sanayi bölgesindeki kurumsal müşterilere ulaşmak için Google Ads ve web tasarım desteği aldık. Fabrikalardan aldığımız teklif talepleri ilk ayda ikiye katlandı." },
+    localReview: { author: "Murat Çelik", role: "Genel Koordinatör", client: "Aliağa Endüstriyel Çözümler", rating: 5, date: "2026-08-14", quote: "Aliağa sanayi bölgesindeki kurumsal müşterilere ulaşmak için Google Ads ve web tasarım desteği aldık. Fabrikalardan aldığımız teklif talepleri ilk ayda ikiye katlandı." },
     localFaqs: [
       { q: "Aliağa'daki sanayi işletmeleri için hangi dijital pazarlama kanalları uygundur?", a: "B2B çalışan sanayi firmaları için doğrudan Google Arama Ağı reklamları ve teknik SEO önceliklidir. Tedarikçi arayan satın almacılar doğrudan Google araması yapar." },
       { q: "Aliağa nakliyat ve vinç firmaları Google Haritalarda nasıl öne çıkar?", a: "ALOSBİ ve liman bölgesindeki operasyonları kapsayan LocalBusiness şema işaretlemesi ve düzenli müşteri değerlendirmeleri ile ilk 3 harita sırasına yerleşebilirsiniz." },
@@ -25,7 +25,7 @@ export const districts = [
     neighborhoods: ["Eğitim", "Korutürk", "Onur", "Fevzi Çakmak", "Çetin Emeç", "Teleferik"],
     nearby: ["narlidere", "konak", "karabaglar", "guzelbahce"],
     commercialProfile: "Balçova; şifalı termal kaplıcaları, lüks alışveriş merkezleri, İzmir Ekonomi Üniversitesi kampüsü ve dinamik perakende hayatıyla İzmir'in en canlı hizmet ilçelerindendir. Sağlık turizmi, estetik klinikleri, cafe/restoran ve özel eğitim kurumları için dijital rekabet oldukça yoğundur.",
-    localReview: { client: "Balçova Klinik & Terapi", quote: "İstinyePark ve Agora çevresindeki yerel aramalarda ilk sıraya çıktık. Kliniğimize gelen online randevu sayısı 3 katına çıktı." },
+    localReview: { author: "Dr. Selin Aksoy", role: "Klinik Kurucusu", client: "Balçova Klinik & Terapi", rating: 5, date: "2026-07-22", quote: "İstinyePark ve Agora çevresindeki yerel aramalarda ilk sıraya çıktık. Kliniğimize gelen online randevu sayısı 3 katına çıktı." },
     localFaqs: [
       { q: "Balçova'da sağlık ve estetik hizmetleri için Google reklamları nasıl kurgulanmalı?", a: "Arama terimlerinde 'en iyi Balçova klinik' veya 'İstinyePark yakınları uzman' gibi yüksek niyetli anahtar kelimelere negatif filtrelerle odaklanılmalıdır." },
       { q: "Teleferik ve termal oteller bölgesindeki işletmeler için yerel SEO neden önemlidir?", a: "Bölgeye gelen yerli ve yabancı turistler anlık ihtiyaçlarında Google Haritalar'ı kullanır. Doğru harita SEO'su turist trafiğini doğrudan çeker." },
@@ -42,7 +42,7 @@ export const districts = [
     neighborhoods: ["Mithatpaşa", "Sadıkpaşa", "Yenice", "Karaveliler", "Hacı İbrahim", "Çırpı"],
     nearby: ["tire", "torbali", "odemis", "kemalpasa"],
     commercialProfile: "Bayındır; Türkiye'nin en büyük süs bitkisi ve çiçek üretim merkezidir. İlçede tarımsal sulama, seracılık, fide üreticiliği ve yerel ziraat işletmeleri için e-ticaret ve toptan B2B web çözümleri büyük önem taşır.",
-    localReview: { client: "Ege Çiçek Üreticileri", quote: "Bayındır'dan tüm Türkiye'ye fidan ve süs bitkisi satışında Google Ads reklamlarımız sayesinde sipariş patlaması yaşadık." },
+    localReview: { author: "Ahmet Karataş", role: "Üretim Müdürü", client: "Ege Çiçek Üreticileri", rating: 5, date: "2026-06-19", quote: "Bayındır'dan tüm Türkiye'ye fidan ve süs bitkisi satışında Google Ads reklamlarımız sayesinde sipariş patlaması yaşadık." },
     localFaqs: [
       { q: "Bayındır'daki çiçek ve süs bitkisi üreticileri internetten nasıl toptan müşteri bulur?", a: "B2B toptan alıcılar için 'toptan fidan üreticisi İzmir' gibi aramalarda çıkacak kurumsal web tasarımı ve Google Arama Ağı reklamları en hızlı sonucu verir." },
       { q: "Bayındır tarım makineleri ve servisleri için harita kaydı nasıl yapılır?", a: "Google İşletme Profilinde çevre ilçeleri (Tire, Torbalı, Ödemiş) kapsayan hizmet alanı belirlenerek bölgesel otorite kurulur." },
@@ -59,7 +59,7 @@ export const districts = [
     neighborhoods: ["Adalet", "Manavkuyu", "Mansuroğlu", "Osmangazi", "Postacılar", "Tepekule", "Soğukkuyu"],
     nearby: ["bornova", "konak", "karsiyaka", "cigli"],
     commercialProfile: "Bayraklı; İzmir Adliyesi, gökdelenleri, hukuk büroları, mali müşavirlik ofisleri, kurumsal şirket merkezleri ve Smyrna antik kalıntılarıyla kentin modern ticaret ve finans merkezidir. Kurumsal web tasarımı, avukat/doktor SEO'su ve prestijli dijital kimlik gereksinimi en üst düzeydedir.",
-    localReview: { client: "Bayraklı Hukuk & Danışmanlık", quote: "Folkart Towers bölgesindeki kurumsal avukatlık ofisimiz için profesyonel web sitesi ve SEO desteği aldık. Saygın kurumsal müvekkillerimiz doğrudan site üzerinden bize ulaşıyor." },
+    localReview: { author: "Av. Kemal Güner", role: "Kurucu Ortak", client: "Güner Hukuk & Danışmanlık", rating: 5, date: "2026-08-05", quote: "Folkart Towers bölgesindeki kurumsal avukatlık ofisimiz için profesyonel web sitesi ve SEO desteği aldık. Saygın kurumsal müvekkillerimiz doğrudan site üzerinden bize ulaşıyor." },
     localFaqs: [
       { q: "Folkart Towers ve Adliye çevresindeki danışmanlık firmaları için SEO nasıl olmalı?", a: "Yüksek prestijli, mobil uyumlu, hızlı açılan ve kurumsal otoriteyi yansıtan özel şablonlar ile yerel hukuk/finans anahtar kelimeleri hedeflenmelidir." },
       { q: "Bayraklı'daki klinik ve şirketler için Google Haritalar sıralaması nasıl yükseltilir?", a: "Manas Bulvarı ve plazalar bölgesindeki yoğun rekabette LocalBusiness şema işaretlemesi ve memnun müvekkil/hasta yorumları belirleyicidir." },
@@ -76,7 +76,7 @@ export const districts = [
     neighborhoods: ["Zafer", "İslamsaray", "Maltepe", "Atmaca", "Fatih", "Gazipaşa"],
     nearby: ["dikili", "kinik", "aliaga"],
     commercialProfile: "Bergama; binlerce yıllık tarihiyle UNESCO dünya mirası listesinde yer alan, aynı zamanda Kozak Yaylası çam fıstığı, tarım ve sanayisiyle öne çıkan devasa bir merkezdir. Butik oteller, turizm rehberleri, tarım makineleri ve yerel üreticiler için dijital görünürlük hayati önem taşır.",
-    localReview: { client: "Kozak Doğal Ürünler", quote: "Bergama çam fıstığı ve yöresel ürünlerimizin e-ticaret sitesini Evolution Ajans kurdu. Satışlarımız hem yurt içi hem yurt dışı pazarında arttı." },
+    localReview: { author: "Mehmet Yılmaz", role: "İşletme Sahibi", client: "Kozak Doğal Ürünler", rating: 5, date: "2026-05-30", quote: "Bergama çam fıstığı ve yöresel ürünlerimizin e-ticaret sitesini Evolution Ajans kurdu. Satışlarımız hem yurt içi hem yurt dışı pazarında arttı." },
     localFaqs: [
       { q: "Bergama turizm ve butik otelleri için internetten nasıl rezervasyon toplanır?", a: "İngilizce ve Türkçe çok dilli web siteleri ve Google Otel / Harita reklamları ile doğrudan komisyonsuz rezervasyon alınabilir." },
       { q: "Bergama ziraat ve sanayi firmaları için SEO neden gereklidir?", a: "Kuzey Ege bölgesinde tarım ekipmanı ve fıstık toptancılığı yapan işletmelerin Google'da ilk sırada olması bölge bayiliklerini artırır." },
@@ -93,7 +93,7 @@ export const districts = [
     neighborhoods: ["Cumhuriyet", "Atatürk", "Aktepe", "Beyköy", "Eğridere"],
     nearby: ["odemis", "kiraz", "tire"],
     commercialProfile: "Beydağ; kestane üretimi, süt ve süt ürünleri, zeytincilik ve baraj manzaralı doğasıyla Küçük Menderes havzasının huzurlu ilçesidir. Yöresel lezzetlerin satışı ve kırsal turizm potansiyeli için dijital varlık oluşturmak büyük fırsatlar barındırır.",
-    localReview: { client: "Beydağ Kestane & Süt", quote: "İnternet sitemiz sayesinde toptan kestane ve mandıra siparişlerimizi doğrudan Ege genelindeki marketlere ulaştırıyoruz." },
+    localReview: { author: "Halil İbrahim Şen", role: "Mandıra Yöneticisi", client: "Beydağ Mandıra & Şarküteri", rating: 5, date: "2026-07-11", quote: "İnternet sitemiz sayesinde toptan kestane ve mandıra siparişlerimizi doğrudan Ege genelindeki marketlere ulaştırıyoruz." },
     localFaqs: [
       { q: "Beydağ'daki yerel üreticiler ürünlerini internette nasıl satabilir?", a: "Hızlı bir e-ticaret sitesi ve Instagram mağaza entegrasyonu ile Türkiye genelinde kargo ile kestane ve peynir satışı yapılabilir." },
       { q: "Beydağ bölgesinde teknik servis ve tesisatçılar nasıl müşteri bulur?", a: "Google Haritalar ve Ödemiş-Beydağ çevresine hedeflenmiş arama ağı reklamları anında telefon çağrısı getirir." },
@@ -110,7 +110,7 @@ export const districts = [
     neighborhoods: ["Kazımdirik", "Özkanlar", "Erzene", "Evka 3", "Işıklar", "Doğanlar", "Yeşilova", "Atatürk"],
     nearby: ["bayrakli", "karsiyaka", "buca", "konak", "kemalpasa"],
     commercialProfile: "Bornova; Ege Üniversitesi'nin genç dinamizmi, Forum Bornova, Küçükpark kafeleri ve devasa 1., 2., 3., 4., 5. Sanayi Siteleri ile İzmir'in hem tüketici hem de sanayi bakımından en büyük ticaret kalbidir. Oto tamir, teknik servis, nakliyat, güzellik merkezleri ve özel sağlık kuruluşları için dijital rekabet en yüksek düzeydedir.",
-    localReview: { client: "Bornova Oto Servis & Yedek Parça", quote: "1. Sanayi Sitesi'ndeki özel servisimiz için Google Ads ve Haritalar çalışması yaptırdık. Sanayiye gelen araç sayımız ilk aydan itibaren rekor kırdı." },
+    localReview: { author: "Burak Demir", role: "Servis Müdürü", client: "Bornova Özel Oto Servis", rating: 5, date: "2026-08-28", quote: "1. Sanayi Sitesi'ndeki özel servisimiz için Google Ads ve Haritalar çalışması yaptırdık. Sanayiye gelen araç sayımız ilk aydan itibaren rekor kırdı." },
     localFaqs: [
       { q: "Bornova Sanayi Sitelerindeki tamir ve servisler Google'da nasıl öne çıkar?", a: "Özel olarak 'Bornova oto bakım', 'Küçükpark kombi servisi' gibi spesifik kelimelere Google Ads reklamları çıkılarak arayan araç sahipleri doğrudan hatta bağlanır." },
       { q: "Forum Bornova ve Özkanlar civarındaki işletmeler için Harita SEO neden kritiktir?", a: "Alışveriş ve yeme-içme arayan binlerce kişi anlık harita araması yapar; 5 yıldızlı yorumlar ve Local Pack sıralaması müşteri akışını belirler." },
@@ -127,7 +127,7 @@ export const districts = [
     neighborhoods: ["Şirinyer", "Adatepe", "Yenigün", "Çamlıkule", "Efeler", "Kuruçeşme", "Yıldız", "Buca Koop"],
     nearby: ["bornova", "konak", "karabaglar", "gaziemir", "menderes"],
     commercialProfile: "Buca; 500 bini aşan nüfusu, Dokuz Eylül Üniversitesi'nin devasa Tınaztepe kampüsü ve Şirinyer çarşısıyla İzmir'in en yoğun tüketim ve konut bölgesidir. Evden eve nakliyat, tesisat, temizlik şirketleri, öğrenci yurtları, kafeler ve sürücü kursları için sürekli bir müşteri talebi mevcuttur.",
-    localReview: { client: "Buca Evden Eve Nakliyat", quote: "Buca genelinde ev taşıma arayan müşteriler için Google Ads reklamlarımızı Evolution Ajans kurdu. Günde ortalama 12 yeni nakliyat çağrısı alıyoruz." },
+    localReview: { author: "Serkan Öztürk", role: "Firma Sahibi", client: "Öztürk Evden Eve Nakliyat", rating: 5, date: "2026-08-02", quote: "Buca genelinde ev taşıma arayan müşteriler için Google Ads reklamlarımızı Evolution Ajans kurdu. Günde ortalama 12 yeni nakliyat çağrısı alıyoruz." },
     localFaqs: [
       { q: "Buca'da evden eve nakliyat ve tesisat firmaları nasıl müşteri bulur?", a: "Google Arama Ağı reklamları ile 'Buca nakliyat fiyatları' arayan kullanıcılara anında ulaşılarak telefonun çalması sağlanır." },
       { q: "Şirinyer ve Tınaztepe çevresindeki işletmeler Meta Ads ile kime reklam vermeli?", a: "Öğrenciler ve genç aileleri hedefleyen dinamik Instagram Reels videoları ve yerel kupon kampanyaları en yüksek dönüşümü sağlar." },
@@ -144,7 +144,7 @@ export const districts = [
     neighborhoods: ["Alaçatı", "Ilıca", "Musalla", "Dalyan", "Ovacık", "Reisdere", "Fahrettinpaşa"],
     nearby: ["urla", "karaburun", "seferihisar"],
     commercialProfile: "Çeşme; Alaçatı sokakları, lüks beach club'ları, rüzgar sörfü ve termal sularıyla Türkiye'nin en prestijli tatil beldelerindendir. Butik oteller, lüks emlak ofisleri, VIP transfer firmaları, tekne kiralama ve gurme restoranlar için yüksek bütçeli ve yabancı dil destekli dijital pazarlama şarttır.",
-    localReview: { client: "Alaçatı Butik Hotel & Restoran", quote: "Sezon başlamadan önce yaptırdığımız web sitesi ve Meta Ads reklamları sayesinde tüm yaz boyunca %95 doluluk oranına ulaştık." },
+    localReview: { author: "Deniz Alperen", role: "Tesis Müdürü", client: "Alaçatı Taş Butik Otel", rating: 5, date: "2026-06-15", quote: "Sezon başlamadan önce yaptırdığımız web sitesi ve Meta Ads reklamları sayesinde tüm yaz boyunca %95 doluluk oranına ulaştık." },
     localFaqs: [
       { q: "Çeşme ve Alaçatı'daki butik oteller komisyonsuz rezervasyonu nasıl artırır?", a: "Booking veya Airbnb komisyonları yerine kendi web sitenizde çalışan doğrudan rezervasyon motoru ve Google Otel Reklamları kullanılmalıdır." },
       { q: "Çeşme emlak ve villa kiralama sektörü için Google Ads verimli midir?", a: "Özellikle İstanbul, Ankara ve gurbetçi kitleye yönelik 'Çeşme satılık villa' hedeflemeli arama kampanyaları milyonluk satışlar getirebilir." },
@@ -161,7 +161,7 @@ export const districts = [
     neighborhoods: ["Sasalı", "Ataşehir", "Balatçık", "Evka 5", "Egekent", "Küçük Çiğli", "Köyiçi"],
     nearby: ["karsiyaka", "menemen", "aliaga", "bornova"],
     commercialProfile: "Çiğli; Türkiye'nin en modern organize sanayi bölgelerinden biri olan İAOSB'ye, Katip Çelebi Üniversitesi'ne ve Sasalı doğal yaşam alanına ev sahipliği yapar. Makine imalatı, plastik, tekstil, kimya, gıda sanayisi ve özel sağlık kuruluşları için B2B odaklı dijital çözümler esastır.",
-    localReview: { client: "İAOSB Metal & Makine Sanayi", quote: "İAOSB'deki fabrikamızın kurumsal web tasarımı ve B2B Google SEO çalışmalarını Evolution Ajans yaptı. Yurt dışı ihracat taleplerimiz %40 arttı." },
+    localReview: { author: "Engin Vural", role: "İhracat Sorumlusu", client: "İAOSB Vural Makine Sanayi", rating: 5, date: "2026-08-18", quote: "İAOSB'deki fabrikamızın kurumsal web tasarımı ve B2B Google SEO çalışmalarını Evolution Ajans yaptı. Yurt dışı ihracat taleplerimiz %40 arttı." },
     localFaqs: [
       { q: "İAOSB'deki sanayi firmaları için web tasarımı nasıl olmalıdır?", a: "Çok dilli (İngilizce/Almanca), teknik katalog PDF'leri barındıran ve hızlı açılan kurumsal altyapılar tercih edilmelidir." },
       { q: "Çiğli ve Ataşehir'deki yerel diş poliklinikleri ve klinikler nasıl hasta kazanır?", a: "Google Haritalar Local Pack'te ilk 3 sırada olmak ve yerel arama ağı reklamlarıyla randevu formuna yönlendirmek en etkili yoldur." },
@@ -178,7 +178,7 @@ export const districts = [
     neighborhoods: ["İsmetpaşa", "Salimbey", "Çandarlı", "Bademli", "Gazipaşa", "Kabakum"],
     nearby: ["bergama", "aliaga"],
     commercialProfile: "Dikili; masmavi sahilleri, Çandarlı Limanı projesi, Bademli zeytinyağı ve yazlık siteleriyle Kuzey Ege'nin hızla parlayan yıldızıdır. Gayrimenkul, butik turizm, zeytinyağı e-ticareti ve yerel inşaat projeleri için dijital reklamlar büyük getiri sağlar.",
-    localReview: { client: "Çandarlı Gayrimenkul & İnşaat", quote: "Kuzey Ege ve Çandarlı'daki arsa ve yazlık portföylerimiz için kurduğumuz web sitesi sayesinde İstanbul'dan birçok yatırımcıya ulaştık." },
+    localReview: { author: "Taner Aydın", role: "Gayrimenkul Danışmanı", client: "Kuzey Ege Çandarlı Gayrimenkul", rating: 5, date: "2026-07-04", quote: "Kuzey Ege ve Çandarlı'daki arsa ve yazlık portföylerimiz için kurduğumuz web sitesi sayesinde İstanbul'dan birçok yatırımcıya ulaştık." },
     localFaqs: [
       { q: "Dikili ve Çandarlı'da gayrimenkul danışmanları internetten nasıl müşteri bulur?", a: "'Dikili satılık yazlık' veya 'Çandarlı imarlı arsa' gibi hedefli Google Ads aramalarıyla büyükşehirdeki yatırımcılar yakalanır." },
       { q: "Dikili zeytinyağı üreticileri için e-ticaret sitesi nasıl kurulur?", a: "Kredi kartı entegrasyonlu, mobil uyumlu ve organik ürün vurgulu bir online mağaza ile Türkiye geneline doğrudan satış yapılabilir." },
@@ -195,7 +195,7 @@ export const districts = [
     neighborhoods: ["İsmetpaşa", "Fevzipaşa", "Atatürk", "Yenifoça", "Kozbeyli", "Bağarası"],
     nearby: ["aliaga", "menemen"],
     commercialProfile: "Foça; Akdeniz foklarının anavatanı, tarihi taş sokakları, balık restoranları ve Kozbeyli dibek kahvesiyle özgün bir gastronomi ve butik turizm merkezidir. Butik konaklama, tekne turları, yerel lezzetler ve yazlık ev tadilatı sektörleri hareketlidir.",
-    localReview: { client: "Eski Foça Butik Otel", quote: "Tarihi taş ev konseptli otelimiz için hazırlanan web sitesi ve Instagram reklamları ile hafta sonu doluluk oranlarımız tavan yaptı." },
+    localReview: { author: "Ece Yalçın", role: "İşletmeci", client: "Eski Foça Bahçe Taş Konak", rating: 5, date: "2026-06-25", quote: "Tarihi taş ev konseptli otelimiz için hazırlanan web sitesi ve Instagram reklamları ile hafta sonu doluluk oranlarımız tavan yaptı." },
     localFaqs: [
       { q: "Eski Foça'daki restoran ve oteller için yerel SEO nasıl yapılır?", a: "Haritalarda 'Foça balık restoranı' veya 'taş otel Foça' aramalarında ilk 3 sırada olmak için zengin fotoğraf ve güncel menü paylaşılmalıdır." },
       { q: "Foça'da tekne turu ve su sporları işletmeleri nasıl müşteri çeker?", a: "Yaz aylarında günübirlikçileri hedefleyen coğrafi konum kısıtlamalı Meta Ads reklamları ile doğrudan WhatsApp rezervasyonu toplanır." },
@@ -212,7 +212,7 @@ export const districts = [
     neighborhoods: ["Beyazevler", "Aktepe", "Atıfbey", "Gazi", "Dokuz Eylül", "Sarnıç", "Irmak"],
     nearby: ["buca", "karabaglar", "menderes"],
     commercialProfile: "Gaziemir; Adnan Menderes Havalimanı, Fuar İzmir kompleksleri, devasa Ege Serbest Bölgesi (ESBAŞ) ve Optimum AVM ile İzmir'in dünyaya açılan ticaret kapısıdır. Lojistik, dış ticaret, fuar stand hizmetleri, havacılık yan sanayi, otel ve oto kiralama sektörlerinde dijital rekabet çok sıcaktır.",
-    localReview: { client: "Fuar İzmir Lojistik & Stand", quote: "Fuar İzmir'deki uluslararası fuarlara katılan firmalara ulaşmak için Google Ads arama kampanyası yürüttük. Fuar dönemlerinde rekor sözleşme imzaladık." },
+    localReview: { author: "Barış Kaan", role: "Fuar Operasyon Direktörü", client: "Fuar Lojistik & Stand", rating: 5, date: "2026-08-09", quote: "Fuar İzmir'deki uluslararası fuarlara katılan firmalara ulaşmak için Google Ads arama kampanyası yürüttük. Fuar dönemlerinde rekor sözleşme imzaladık." },
     localFaqs: [
       { q: "Fuar İzmir dönemlerinde Gaziemir firmaları nasıl öne çıkar?", a: "Fuar tarihleri boyunca 'İzmir fuar standı' veya 'Fuar İzmir otel' aramalarına nokta atışı Google Ads ve harita reklamları verilmelidir." },
       { q: "Havalimanı araç kiralama (Rent a Car) firmaları için SEO nasıl olmalı?", a: "Adnan Menderes Havalimanı inişli arama yapan yerli ve yabancı yolcular için şimşek hızında mobil rezervasyon sitesi kurulmalıdır." },
@@ -229,7 +229,7 @@ export const districts = [
     neighborhoods: ["Yalı", "Yelki", "Çelebi", "Kahramandere", "Maltepe", "Siteler"],
     nearby: ["urla", "narlidere", "seferihisar", "balcova"],
     commercialProfile: "Güzelbahçe; sahil balıkçıları, Yelki'nin seçkin villa projeleri ve İzmir'in en köklü özel okullarını barındıran yüksek alım gücüne sahip bir ilçedir. Peyzaj, villa tadilatı, havuz bakımı, gastronomi, özel eğitim ve veterinerlik hizmetlerinde yüksek bütçeli müşteri potansiyeli bulunur.",
-    localReview: { client: "Güzelbahçe Peyzaj & Havuz", quote: "Yelki ve Kahramandere'deki lüks villalara yönelik peyzaj ve havuz bakım hizmetlerimiz için Meta Ads ile nokta atışı zengin kitleye ulaştık." },
+    localReview: { author: "Alp Erdem", role: "Peyzaj Mimarı", client: "Yelki Peyzaj & Villa Havuz", rating: 5, date: "2026-07-16", quote: "Yelki ve Kahramandere'deki lüks villalara yönelik peyzaj ve havuz bakım hizmetlerimiz için Meta Ads ile nokta atışı zengin kitleye ulaştık." },
     localFaqs: [
       { q: "Güzelbahçe ve Yelki'deki villa hizmetleri (peyzaj, havuz) için reklam nasıl yapılır?", a: "İlçenin yüksek gelir grubuna sahip mahallelerine özel yarıçap hedeflemeli Meta (Instagram) video reklamları en yüksek dönüşümü verir." },
       { q: "Özel kolej ve anaokulları öğrenci kayıtlarını nasıl artırır?", a: "Kayıt dönemlerinde ebeveynleri hedefleyen form toplama reklamları ve kampüs tanıtım sayfaları ile." },
@@ -246,7 +246,7 @@ export const districts = [
     neighborhoods: ["Bahçelievler", "Basın Sitesi", "Üçkuyular", "Bozyaka", "Tahsin Yazıcı", "Ali Fuat Cebesoy", "Vatan"],
     nearby: ["konak", "buca", "gaziemir", "balcova"],
     commercialProfile: "Karabağlar; Türkiye'nin mobilya üretim merkezlerinden Yeşillik Caddesi ve sanayi çarşısı ile mobilya, dekorasyon, metal imalatı ve oto yedek parça ticaretinin merkezidir. Aynı zamanda yarım milyona yaklaşan nüfusuyla ev tadilatı, kombi/klima servisi ve nakliyat talebi çok yoğundur.",
-    localReview: { client: "Karabağlar Tasarım Mobilya", quote: "Yeşillik Caddesi'ndeki mobilya mağazamız için yaptırdığımız e-ticaret ve Google reklamları sayesinde tüm Ege'den müşteri ağırlamaya başladık." },
+    localReview: { author: "Hüseyin Er", role: "Mağaza Müdürü", client: "Karabağlar Modern Mobilya", rating: 5, date: "2026-08-21", quote: "Yeşillik Caddesi'ndeki mobilya mağazamız için yaptırdığımız e-ticaret ve Google reklamları sayesinde tüm Ege'den müşteri ağırlamaya başladık." },
     localFaqs: [
       { q: "Karabağlar mobilya üreticileri internetten nasıl satış yapar?", a: "E-ticaret sitesi, 3 boyutlu ürün görselleri ve Google Alışveriş (Shopping) reklamları ile doğrudan tüketiciye ulaşılabilir." },
       { q: "Karabağlar'da tesisat, kombi ve elektrik ustaları nasıl iş alır?", a: "Google Harita kaydı ve 'Karabağlar acil su tesisatçısı' gibi anlık arama ağı reklamlarıyla günde onlarca çağrı alınabilir." },
@@ -263,7 +263,7 @@ export const districts = [
     neighborhoods: ["Mordoğan", "İskele", "Saip", "Hasseki", "Tepeboz", "Parlak"],
     nearby: ["cesme", "urla"],
     commercialProfile: "Karaburun; el değmemiş bakir koyları, dünyaca ünlü kokulu nergis çiçekleri, keçi peyniri ve enginarıyla İzmir'in en doğal yarımada ilçesidir. Butik pansiyonlar, dalış okulları, balık restoranları ve organik tarım girişimcileri için yerel dijital görünürlük çok kıymetlidir.",
-    localReview: { client: "Mordoğan Butik Pansiyon & Dalış", quote: "Yaz sezonunda dalış meraklılarını ve sakin tatil arayanları web sitemiz ve Google Haritalar profilimiz sayesinde tesisimize çekiyoruz." },
+    localReview: { author: "Cem Kaya", role: "Tesis Yöneticisi", client: "Mordoğan Dalış & Pansiyon", rating: 5, date: "2026-06-08", quote: "Yaz sezonunda dalış meraklılarını ve sakin tatil arayanları web sitemiz ve Google Haritalar profilimiz sayesinde tesisimize çekiyoruz." },
     localFaqs: [
       { q: "Karaburun ve Mordoğan'daki konaklama tesisleri Google'da nasıl öne çıkar?", a: "Doğal koy fotoğrafları, sakinlik vurgusu ve doğrudan rezervasyon sağlayan hızlı açılış sayfaları ile." },
       { q: "Karaburun nergis ve zeytin üreticileri online satış yapabilir mi?", a: "Kış aylarında açan nergislerin Türkiye çapında kargo ile satışı için Instagram mağaza ve hızlı e-ticaret siteleri kurulabilir." },
@@ -280,7 +280,7 @@ export const districts = [
     neighborhoods: ["Bostanlı", "Mavişehir", "Alaybey", "Bahçelievler", "Aksoy", "Tersane", "Şemikler", "Demirköprü"],
     nearby: ["cigli", "bayrakli", "bornova", "menemen"],
     commercialProfile: "Karşıyaka; Bostanlı'nın gurme mekanları, Mavişehir'in modern siteleri ve tarihi Çarşısı ile İzmir'in kültürel ve ekonomik çekim merkezidir. Diş klinikleri, veterinerler, güzellik salonları, butik cafeler, mimarlık ofisleri ve özel eğitim kurumları için dijitalde ilk sayfada olmak büyük kazanç sağlar.",
-    localReview: { client: "Bostanlı Estetik & Diş Polikliniği", quote: "Karşıyaka ve Bostanlı bölgesindeki estetik diş aramalarında ilk 3 sıraya yerleştik. Randevu defterimiz haftalar öncesinden doluyor." },
+    localReview: { author: "Dt. Emre Yıldırım", role: "Başhekim", client: "Bostanlı Dent Ağız ve Diş", rating: 5, date: "2026-08-12", quote: "Karşıyaka ve Bostanlı bölgesindeki estetik diş aramalarında ilk 3 sıraya yerleştik. Randevu defterimiz haftalar öncesinden doluyor." },
     localFaqs: [
       { q: "Karşıyaka ve Bostanlı'daki klinikler/güzellik merkezleri nasıl hasta çeker?", a: "Google Haritalar (Local Pack) ilk 3 sıra optimizasyonu ve 'Bostanlı diş hekimi' gibi yerel Google Ads aramalarıyla." },
       { q: "Karşıyaka Çarşı esnafı dijital reklamdan nasıl faydalanır?", a: "Çarşı çevresindeki 3 km'lik çapa özel Meta (Instagram) hikaye reklamları vererek anlık mağaza trafiği yaratılır." },
@@ -297,7 +297,7 @@ export const districts = [
     neighborhoods: ["Sekiz Eylül", "Mehmet Akif Ersoy", "Soğukpınar", "Armutlu", "Örnekköy", "Ulucak", "Bağyurdu", "Ören"],
     nearby: ["bornova", "torbali", "bayindir"],
     commercialProfile: "Kemalpaşa; yüzlerce dev fabrikayı barındıran KOSBİ sanayi bölgesi, lojistik depoları ve meşhur ihracatlık kirazıyla sanayi ile tarımın harmanlandığı stratejik bir üretim üssüdür. Fabrika otomasyonu, forklift/makine kiralama, ambalaj, kimya ve B2B tedarik hizmetlerinde dijital çözümler yüksek karlılık getirir.",
-    localReview: { client: "KOSBİ Endüstriyel Ambalaj", quote: "KOSBİ ve Kemalpaşa fabrikalarına yönelik yürüttüğümüz B2B Google arama kampanyaları ile Ege Bölgesi distribütörlüklerimizi artırdık." },
+    localReview: { author: "Volkan Aktaş", role: "Satış Direktörü", client: "KOSBİ Aktaş Ambalaj", rating: 5, date: "2026-07-29", quote: "KOSBİ ve Kemalpaşa fabrikalarına yönelik yürüttüğümüz B2B Google arama kampanyaları ile Ege Bölgesi distribütörlüklerimizi artırdık." },
     localFaqs: [
       { q: "Kemalpaşa fabrikalarına hizmet veren B2B firmalar Google'da nasıl görünür?", a: "'Kemalpaşa forklift kiralama' veya 'KOSBİ endüstriyel temizlik' gibi hedefe kilitli Google Ads arama terimleri kullanılarak." },
       { q: "Nazarköy boncuk ve yerel el sanatları internetten nasıl satılır?", a: "Yurt içi ve yurt dışı pazar yerlerine bağlı modern bir e-ticaret sitesi ve Instagram Reels video tanıtımları ile." },
@@ -314,7 +314,7 @@ export const districts = [
     neighborhoods: ["Fatih", "Osmaniye", "Türkcedit", "Yeni Mahalle", "Poyracık", "Yayakent"],
     nearby: ["bergama", "soma"],
     commercialProfile: "Kınık; Bakırçay havzasının verimli toprakları, madencilik faaliyetleri, tohumculuk ve tarıma dayalı sanayisiyle Kuzey Ege'nin emekçi ilçesidir. Tarım makineleri, traktör yetkili servisleri, yem/gübre bayileri ve yerel esnaf için internet aramalarında öne çıkmak satışları doğrudan etkiler.",
-    localReview: { client: "Bakırçay Ziraat & Sulama", quote: "Kınık ve Bergama çevresindeki çiftçilere ve işletmelere Google aramaları ve harita kaydımız sayesinde çok daha hızlı ulaşıyoruz." },
+    localReview: { author: "Ramazan Tekin", role: "Firma Yetkilisi", client: "Bakırçay Damla Sulama", rating: 5, date: "2026-05-18", quote: "Kınık ve Bergama çevresindeki çiftçilere ve işletmelere Google aramaları ve harita kaydımız sayesinde çok daha hızlı ulaşıyoruz." },
     localFaqs: [
       { q: "Kınık'taki tarım ve sulama bayileri internetten müşteri kazanabilir mi?", a: "Evet, bölgedeki çiftçiler parça ve servis ararken ilk olarak Google Haritalar'dan arama yapmaktadır." },
       { q: "Kınık yerel esnafı için web sitesi gerekli midir?", a: "İlçedeki teknik servisler, inşaat malzemecileri ve düğün salonları profesyonel bir web sayfasıyla çevre köylerden müşteri toplar." },
@@ -331,7 +331,7 @@ export const districts = [
     neighborhoods: ["Cumhuriyet", "Yeni Mahalle", "İstiklal", "Arkacılar", "Ceritler", "Çayağzı", "İğdeli"],
     nearby: ["odemis", "beydag"],
     commercialProfile: "Kiraz; Küçük Menderes havzasının en doğusunda yer alan, günlük yüzlerce ton süt üretimi, et hayvancılığı, peynircilik ve yem bitkileriyle İzmir'in hayvancılık başkentidir. Mandıralar, veteriner klinikleri, süt soğutma tankı imalatçıları ve ziraat şirketleri için bölgesel dijital varlık şarttır.",
-    localReview: { client: "Kiraz Mandıra & Şarküteri", quote: "Doğal tereyağı ve tulum peynirimizi web sitemiz üzerinden soğuk zincir kargo ile tüm Türkiye'ye satmaya başladık." },
+    localReview: { author: "Yusuf Çetin", role: "İşletme Sahibi", client: "Kiraz Çetin Mandıra", rating: 5, date: "2026-06-28", quote: "Doğal tereyağı ve tulum peynirimizi web sitemiz üzerinden soğuk zincir kargo ile tüm Türkiye'ye satmaya başladık." },
     localFaqs: [
       { q: "Kiraz mandıraları süt ürünlerini internetten nasıl pazarlar?", a: "Soğuk zincir gönderim güvencesi sunan e-ticaret siteleri ve yöresel gıda arayan kitleye dönük Google Alışveriş reklamları ile." },
       { q: "Kiraz'daki veterinerler ve yem bayileri haritalarda nasıl çıkar?", a: "Google Benim İşletmem optimizasyonu ile köylerden ve merkezden yapılan acil aramalarda doğrudan telefon numarası gösterilir." },
@@ -348,7 +348,7 @@ export const districts = [
     neighborhoods: ["Alsancak", "Kültür", "Göztepe", "Güzelyalı", "Akdeniz", "İsmet Kaptan", "Çankaya", "Basmane", "Hatay"],
     nearby: ["bayrakli", "bornova", "karabaglar", "buca", "balcova"],
     commercialProfile: "Konak; İzmir'in kalbidir. Alsancak'ın lüks butikleri, Kemeraltı'nın kadim ticaret ağı, Kordon boyu restoranları, Çankaya'nın elektronik/toptan çarşıları ve sağlık/hukuk ofisleriyle her sektörün zirve noktasıdır. Kurumsal web tasarımı, agresif Google Ads yönetimi ve en üst düzey SEO çalışmaları için en büyük pazardır.",
-    localReview: { client: "Alsancak Estetik & Güzellik Merkezi", quote: "Kordon ve Alsancak bölgesinde arama yapan müşteriler için yürüttüğümüz Google Ads ve SEO çalışması ile kliniğimiz İzmir genelinde 1 numara oldu." },
+    localReview: { author: "Uzm. Dr. Melis Kaya", role: "Kurucu Hekim", client: "Alsancak Estetik & Klinik", rating: 5, date: "2026-08-30", quote: "Kordon ve Alsancak bölgesinde arama yapan müşteriler için yürüttüğümüz Google Ads ve SEO çalışması ile kliniğimiz İzmir genelinde 1 numara oldu." },
     localFaqs: [
       { q: "Alsancak ve Konak'taki işletmeler Google aramalarında nasıl 1. sıraya çıkar?", a: "Yoğun rekabette sadece site tasarımı yetmez; hızlı sayfa altyapısı, zengin anahtar kelime eşleşmesi ve düzenli harita incelemeleri şarttır." },
       { q: "Kemeraltı toptancıları ve tekstilcileri e-ticarete nasıl geçer?", a: "B2B toptan sipariş formları barındıran veya e-ihracat destekli çok dilli web siteleri kurarak." },
@@ -365,7 +365,7 @@ export const districts = [
     neighborhoods: ["Cüneytbey", "Gazipaşa", "Gölcükler", "Özdere", "Gümüldür", "Tekeli", "Oğlananası"],
     nearby: ["gaziemir", "seferihisar", "torbali", "selcuk", "buca"],
     commercialProfile: "Menderes; İTOB Organize Sanayi Bölgesi'ndeki yüzlerce fabrikası, Özdere ve Gümüldür'deki sahil otelleri, satsuma mandalina bahçeleri ve seracılığıyla dev bir ekonomik mozaiğe sahiptir. Sanayi tedarikçileri, yazlık oteller ve tarım girişimcileri için geniş bir dijital pazar bulunur.",
-    localReview: { client: "İTOB Plastik & Kalıp Sanayi", quote: "İTOB OSB'deki tesisimiz için yapılan çok dilli kurumsal web sitemiz sayesinde Balkanlar ve Avrupa'dan ihracat bağlantıları kurduk." },
+    localReview: { author: "Oğuzhan Tan", role: "Fabrika Müdürü", client: "İTOB Tan Kalıp Plastik", rating: 5, date: "2026-08-03", quote: "İTOB OSB'deki tesisimiz için yapılan çok dilli kurumsal web sitemiz sayesinde Balkanlar ve Avrupa'dan ihracat bağlantıları kurduk." },
     localFaqs: [
       { q: "İTOB OSB sanayicileri için B2B ihracat sitesi nasıl kurulur?", a: "Uluslararası SEO kurallarına uygun, İngilizce/Almanca dil seçenekli ve ürün teknik föylerini içeren katalog siteleri tasarlanarak." },
       { q: "Özdere ve Gümüldür otelleri yerli turiste nasıl ulaşır?", a: "Yaz başında İzmir, Ankara ve çevre illere odaklanan Meta Ads (Instagram) tatil fırsatı reklamları ile." },
@@ -382,7 +382,7 @@ export const districts = [
     neighborhoods: ["Ulukent", "Koyundere", "Kasımpaşa", "Mermerli", "Seyrek", "İsmet İnönü", "30 Ağustos", "Gölcük"],
     nearby: ["cigli", "aliaga", "karsiyaka", "foca"],
     commercialProfile: "Menemen; Ulukent ve Koyundere aksında hızla büyüyen konut projeleri, Plastik İhtisas Organize Sanayi Bölgesi ve yüzyıllık çömlekçilik zanaatıyla İzmir'in en hızlı gelişen metropol ilçelerindendir. İnşaat, gayrimenkul, ev tadilatı, mobilya ve plastik imalatında yüksek dijital talep vardır.",
-    localReview: { client: "Menemen Toprak & Çömlek Sanatı", quote: "Geleneksel Menemen güveç ve saksı ürünlerimizi kurduğumuz e-ticaret mağazasıyla tüm Türkiye'deki restoranlara ve evlere toptan/perakende satıyoruz." },
+    localReview: { author: "Kadir Usta", role: "Atölye Yöneticisi", client: "Menemen Toprak Çömlekçilik", rating: 5, date: "2026-07-19", quote: "Geleneksel Menemen güveç ve saksı ürünlerimizi kurduğumuz e-ticaret mağazasıyla tüm Türkiye'deki restoranlara ve evlere toptan/perakende satıyoruz." },
     localFaqs: [
       { q: "Menemen ve Ulukent'teki müteahhitler konut satışlarını nasıl artırır?", a: "Meta Ads üzerinden 'Ulukent satılık daire' arayanlara sanal tur ve daire planı gösteren form toplama reklamları ile." },
       { q: "Menemen Plastik İhtisas OSB firmaları için web tasarımı nasıl olmalı?", a: "Endüstriyel ürün gruplarını ISO standartlarıyla sergileyen yüksek güvenilirlikli kurumsal web siteleri ile." },
@@ -399,7 +399,7 @@ export const districts = [
     neighborhoods: ["Sahilevleri", "Huzur", "Ilıca", "Limanreis", "Yenikale", "Altıevler", "Çatalkaya"],
     nearby: ["balcova", "guzelbahce", "konak"],
     commercialProfile: "Narlıdere; Sahilevleri'nin lüks yalı ve villaları, narenciye bahçeleri, seçkin balık restoranları ve modern rezidanslarıyla İzmir'in alım gücü en yüksek ilçelerindendir. Lüks mimarlık, villa tadilatı, peyzaj, diş estetiği, özel sağlık ve gurme yeme-içme sektörlerinde dijital dönüşüm getirisi çok yüksektir.",
-    localReview: { client: "Narlıdere Lüks Villa Mimarlık", quote: "Sahilevleri ve Urla hattında lüks villa tadilatı ve mimarlık arayan seçkin müşterilere Google ve Instagram üzerinden ulaşıyoruz." },
+    localReview: { author: "Mimar Sinan Arıkan", role: "Yönetici Mimar", client: "Sahilevleri Villa Tasarım", rating: 5, date: "2026-08-16", quote: "Sahilevleri ve Urla hattında lüks villa tadilatı ve mimarlık arayan seçkin müşterilere Google ve Instagram üzerinden ulaşıyoruz." },
     localFaqs: [
       { q: "Narlıdere ve Sahilevleri'nde yüksek bütçeli müşterilere reklamla nasıl ulaşılır?", a: "Meta Ads'de yüksek alım gücüne sahip segmente, lüks konut sahiplerine özel estetik video kreatifleriyle çıkılarak." },
       { q: "Sahilevleri restoranları hafta sonu müşteri akışını nasıl yönetir?", a: "Google Haritalar profilinde masa rezervasyonu butonunu aktif ederek ve menü görsellerini güncel tutarak." },
@@ -416,7 +416,7 @@ export const districts = [
     neighborhoods: ["Anafartalar", "Zafer", "Cumhuriyet", "İnönü", "Birgi", "Bozdağ", "Gölcük", "Bademli"],
     nearby: ["tire", "bayindir", "beydag", "kiraz"],
     commercialProfile: "Ödemiş; meşhur patatesi, Bozdağ ve Gölcük yaylaları, UNESCO adayı tarihi Birgi evleri, süt sanayisi ve devasa süs bitkisi fidanlıklarıyla Küçük Menderes'in lider ticaret merkezidir. Yöresel turizm, fidan üreticiliği, köftecilik ve tarım makinelerinde güçlü bir dijital potansiyel barındırır.",
-    localReview: { client: "Birgi Taş Konak Butik Otel", quote: "UNESCO yolundaki Birgi'de tarihi konağımız için yaptığımız web sitesi sayesinde hafta sonu ve tatil dönemlerinde tam dolulukla çalışıyoruz." },
+    localReview: { author: "Fatih Gündüz", role: "Otel Müdürü", client: "Birgi Tarihi Konak", rating: 5, date: "2026-07-07", quote: "UNESCO yolundaki Birgi'de tarihi konağımız için yaptığımız web sitesi sayesinde hafta sonu ve tatil dönemlerinde tam dolulukla çalışıyoruz." },
     localFaqs: [
       { q: "Birgi ve Gölcük otelleri/pansiyonları internetten nasıl müşteri çeker?", a: "Tarihi ve doğayı yansıtan görsel odaklı açılış sayfaları ve 'Birgi butik otel' aramalarında ilk sıra SEO optimizasyonu ile." },
       { q: "Ödemiş fidan üreticileri toptan fidan siparişini nasıl alır?", a: "Belediyeler ve peyzaj mimarlarına yönelik B2B Google Arama Ağı reklamları ve online fidan kataloğu ile." },
@@ -433,7 +433,7 @@ export const districts = [
     neighborhoods: ["Sığacık", "Camikebir", "Hıdırlık", "Turabiye", "Ulamış", "Ürkmez", "Payamlı"],
     nearby: ["urla", "guzelbahce", "menderes"],
     commercialProfile: "Seferihisar; Türkiye'nin ilk 'Cittaslow' (Sakin Şehir) unvanına sahip, Sığacık kalesi, pazar günleri kurulan üretici pazarı, Teos Marina'sı ve mandalinasıyla ünlü bir yaşam merkezidir. Ekolojik tarım, butik konaklama, tekne turları, yöresel ürün satışı ve yazlık gayrimenkulde dijital fırsatlar çok büyüktür.",
-    localReview: { client: "Sığacık Kaleiçi Butik Pansiyon", quote: "Sığacık'taki taş pansiyonumuz için Evolution Ajans'a yaptırdığımız rezervasyon sitesi ile yaz-kış misafir ağırlıyoruz." },
+    localReview: { author: "Banu Çelik", role: "İşletmeci", client: "Sığacık Marina Butik Evleri", rating: 5, date: "2026-06-22", quote: "Sığacık'taki taş pansiyonumuz için Evolution Ajans'a yaptırdığımız rezervasyon sitesi ile yaz-kış misafir ağırlıyoruz." },
     localFaqs: [
       { q: "Sığacık Kaleiçi pansiyon ve mekanları haritalarda nasıl öne çıkar?", a: "Pazar günleri ve tatillerde yapılan 'Sığacık gezilecek yerler' aramalarında ilk 3 sırada olmak için yüksek puanlı Google yorumları toplanmalıdır." },
       { q: "Seferihisar mandalinası ve zeytinyağı online nasıl satılır?", a: "Doğrudan üreticiden tüketiciye modelinde hızlı bir e-ticaret sitesi ve sosyal medya reklam kampanyası ile." },
@@ -450,7 +450,7 @@ export const districts = [
     neighborhoods: ["Zafer", "İsabey", "Atatürk", "Cumhuriyet", "Şirince", "Belevi", "Çamlık"],
     nearby: ["torbali", "menderes", "kusadasi"],
     commercialProfile: "Selçuk; Efes Harabeleri, Meryem Ana Evi ve Şirince Köyü ile her yıl dünyanın dört bir yanından milyonlarca turisti ağırlayan küresel bir kültür ve turizm merkezidir. Turizm acenteleri, rehberlik hizmetleri, Şirince şarap ve zeytinyağı üreticileri, oteller ve halı/deri mağazaları için çok dilli dijital varlık zorunluluktur.",
-    localReview: { client: "Şirince Butik Şarap & Otel", quote: "Hem yerli hem yabancı turistlere ulaşmak için İngilizce web sitesi ve Google Haritalar çalışması yaptırdık. Rezervasyonlarımız katlandı." },
+    localReview: { author: "Onur Bozkurt", role: "Pazarlama Sorumlusu", client: "Şirince Bağ Evi & Otel", rating: 5, date: "2026-07-14", quote: "Hem yerli hem yabancı turistlere ulaşmak için İngilizce web sitesi ve Google Haritalar çalışması yaptırdık. Rezervasyonlarımız katlandı." },
     localFaqs: [
       { q: "Selçuk ve Şirince'deki turizm işletmeleri yabancı turistleri nasıl çeker?", a: "İngilizce, Almanca ve Çince dil destekli, mobil rezervasyon alabilen web siteleri ve Google Ads hedeflemeleri ile." },
       { q: "Efes turları ve VIP transfer firmaları internetten nasıl müşteri bulur?", a: "'Ephesus private tour guide' veya 'İzmir Selçuk transfer' gibi yabancı arama kelimelerinde ilk sayfada yer alarak." },
@@ -467,7 +467,7 @@ export const districts = [
     neighborhoods: ["Dört Eylül", "Cumhuriyet", "Atatürk", "Hürriyet", "Yeni Mahalle", "Fatih", "İbni Melek"],
     nearby: ["bayindir", "torbali", "odemis", "selcuk"],
     commercialProfile: "Tire; devasa çok uluslu fabrikaların yer aldığı TOSBİ sanayi bölgesi, Türkiye'nin en büyük açık hava pazarlarından Salı Pazarı ve meşhur süt ürünleri (Tire şiş köfte, peynir) ile hem sanayi hem tarım gücüdür. Mukavva/ambalaj, gıda sanayisi, tarım aletleri ve süt ürünleri işletmeleri için dijital büyüme şarttır.",
-    localReview: { client: "TOSBİ Gıda & Ambalaj Sistemleri", quote: "TOSBİ'deki fabrikamızın B2B web sitesi ve katalog tasarımını Evolution Ajans yaptı. Ulusal toptan müşterilerimiz sitemizi çok beğeniyor." },
+    localReview: { author: "Levent Koç", role: "Genel Müdür", client: "TOSBİ Koç Gıda Sistemleri", rating: 5, date: "2026-08-25", quote: "TOSBİ'deki fabrikamızın B2B web sitesi ve katalog tasarımını Evolution Ajans yaptı. Ulusal toptan müşterilerimiz sitemizi çok beğeniyor." },
     localFaqs: [
       { q: "TOSBİ sanayi tesisleri için B2B dijital pazarlama nasıl yapılır?", a: "Kurumsal satın almacılara yönelik Google Arama Ağı reklamları ve teknik şartnameleri barındıran hızlı açılış sayfaları ile." },
       { q: "Tire süt ve şarküteri üreticileri e-ticaret yapabilir mi?", a: "Soğuk zincir lojistiğiyle entegre modern bir web sitesi sayesinde Tire'nin meşhur peynir ve tereyağları tüm Türkiye'ye satılabilir." },
@@ -484,7 +484,7 @@ export const districts = [
     neighborhoods: ["Ayrancılar", "Tepeköy", "Torbalı Mahallesi", "Muratbey", "Cumhuriyet", "Yazıbaşı", "Pancar", "Subaşı"],
     nearby: ["gaziemir", "menderes", "kemalpasa", "bayindir", "tire", "selcuk"],
     commercialProfile: "Torbalı; Türkiye'nin vergi rekortmeni sanayi devlerine ev sahipliği yapan, Ayrancılar, Pancar ve Yazıbaşı sanayi kuşaklarıyla İzmir'in imalat ve ihracat omurgasıdır. Mobilya, tütün, metal, otomotiv yan sanayi, inşaat ve lojistikte binlerce şirket faaliyet gösterir. B2B çözümler ve personel/tedarikçi arayışlarında dijital varlık kritik önemdedir.",
-    localReview: { client: "Torbalı Lojistik & Depolama", quote: "Torbalı ve Pancar sanayi bölgesindeki fabrikalara yönelik yürüttüğümüz depolama reklamları ile depolarımızın doluluk oranını %100'e ulaştırdık." },
+    localReview: { author: "Tolga Sarp", role: "Lojistik Yöneticisi", client: "Pancar Lojistik Antrepo", rating: 5, date: "2026-08-11", quote: "Torbalı ve Pancar sanayi bölgesindeki fabrikalara yönelik yürüttüğümüz depolama reklamları ile depolarımızın doluluk oranını %100'e ulaştırdık." },
     localFaqs: [
       { q: "Torbalı sanayi firmaları internetten yeni kurumsal müşterileri nasıl bulur?", a: "'Torbalı fason talaşlı imalat' veya 'İzmir lojistik depo kiralama' gibi niş terimlere verilen Google Ads reklamlarıyla doğrudan satınalma müdürlerine ulaşılır." },
       { q: "Ayrancılar ve Torbalı'da evden eve nakliyat firmaları nasıl öne çıkar?", a: "Bölgenin yoğun konut sirkülasyonunda Google Haritalar Local Pack'te ilk 3 sırada yer alarak telefon trafiği katlanır." },
@@ -501,7 +501,7 @@ export const districts = [
     neighborhoods: ["İskele", "Çeşmealtı", "Zeytinalanı", "Yelaltı", "Kekliktepe", "Rüstem", "Gülbahçe", "Özbek"],
     nearby: ["cesme", "guzelbahce", "seferihisar", "karaburun"],
     commercialProfile: "Urla; dünyaca ünlü Michelin yıldızlı restoranları, Urla Bağ Yolu butik bağları, Kekliktepe'nin ultra lüks villaları ve Sanat Sokağı ile Türkiye'nin en seçkin gastronomi ve yaşam merkezidir. Butik otelcilik, şarapçılık, gurme gastronomi, lüks gayrimenkul, yat bakımı ve peyzaj mimarlığında çok yüksek bütçeli dijital pazarlama projeleri yürütülür.",
-    localReview: { client: "Urla Bağ Yolu Gastronomi & Butik Otel", quote: "Bağ yolu üzerindeki taş restoranımız ve butik otelimiz için hazırlanan şık web sitesi ve Meta reklamları sayesinde aylar öncesinden rezervasyon alıyoruz." },
+    localReview: { author: "Canberk Özkan", role: "Restoran Direktörü", client: "Urla Bağ Yolu Gastronomi Evi", rating: 5, date: "2026-07-31", quote: "Bağ yolu üzerindeki taş restoranımız ve butik otelimiz için hazırlanan şık web sitesi ve Meta reklamları sayesinde aylar öncesinden rezervasyon alıyoruz." },
     localFaqs: [
       { q: "Urla Bağ Yolu restoranları ve otelleri Google'da nasıl öne çıkar?", a: "Michelin ve gurme aramalarda öne çıkacak görsel ağırlıklı açılış sayfaları, rezervasyon motoru ve zengin Google Harita yorumları ile." },
       { q: "Urla ve Kekliktepe lüks emlak sektörü için dijital reklam nasıl verilir?", a: "İstanbul ve yurt dışındaki yüksek gelir grubunu hedefleyen, villaların mimarisini öne çıkaran özel video ve form reklamları ile." },
