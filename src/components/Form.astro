@@ -4,114 +4,149 @@ import { Icon } from "astro-icon/components";
 
 <section
   id="iletisim"
-  class="relative w-full py-32 bg-white overflow-hidden border-t-4 border-black retro-grid"
+  class="relative w-full py-24 md:py-36 bg-[#FBF9F5] overflow-hidden border-b border-dashed border-[#181816]/15"
 >
-
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       
-      <!-- Contact Info / Typography -->
-      <div class="space-y-12" data-aos="fade-right">
-        <div>
-          <span class="inline-block px-4 py-2 border-2 border-black bg-black text-white text-xs md:text-sm font-mono uppercase tracking-[0.3em] font-pixel mb-6">
-            Ücretsiz Check-Up
-          </span>
-          <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] xl:text-[70px] font-black uppercase tracking-tighter leading-none">
-            ÜCRETSİZ CHECK-UP İÇİN <br/>
-            <span class="text-blue-600 block mt-2">BİLGİLERİNİZİ BIRAKIN</span>
+      <!-- Contact Info / Typography (5 Cols) -->
+      <div class="lg:col-span-5 space-y-8">
+        <div class="space-y-4">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#536248] bg-[#EBF0E6] px-3 py-1 rounded-full border border-[#536248]/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#536248]"></span>
+            <span>[ 10 // DİJİTAL CHECK-UP ]</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-[#181816] leading-tight">
+            Sitenizi ve bütçenizi <br />
+            <span class="italic font-normal text-[#BE5836]">ücretsiz inceleyelim</span>.
           </h2>
+
+          <p class="text-base text-[#4A4742] leading-relaxed">
+            Mevcut web siteniz veya reklam bütçeniz nerede boşa gidiyor? Bilgilerinizi bırakın; sektörünüze özel eksikleri ve fırsatları detaylıca çıkarıp 24 saat içinde aktaralım.
+          </p>
         </div>
 
-        <p class="text-black/80 text-lg md:text-xl lg:text-2xl leading-relaxed max-w-xl font-medium">
-          Siteniz ve reklam bütçeniz nerede boşa gidiyor? Bilgilerinizi bırakın, tüm eksiklikleri ve iyileştirme fırsatlarını raporlayıp telefon görüşmesinde aktarayım.
-        </p>
-
-        <div class="space-y-6 pt-6 border-t-2 border-black/10">
-          <div class="flex items-center gap-6 group">
-            <div class="w-14 h-14 rounded-none border-2 border-black bg-slate-100 flex items-center justify-center text-black group-hover:bg-[#facc15] transition-all duration-300">
-              <Icon name="mdi:phone-outline" size={24} />
+        <!-- Contact Detail Cards -->
+        <div class="space-y-4 pt-4 border-t border-dashed border-[#181816]/15">
+          <div class="p-5 rounded-2xl bg-white border border-[#181816]/10 flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-[#FAEDE8] text-[#BE5836] flex items-center justify-center shrink-0">
+              <Icon name="mdi:phone-outline" size={20} />
             </div>
             <div>
-              <p class="text-xs font-mono uppercase tracking-widest text-black/55 font-pixel mb-1">Telefon / WhatsApp</p>
-              <a href="tel:+905519283598" class="text-lg md:text-2xl font-bold text-black hover:text-blue-600 transition-colors">+90 551 928 35 98</a>
+              <p class="text-[10px] font-mono uppercase tracking-widest text-[#6E6A62]">Doğrudan Hat / WhatsApp</p>
+              <a href="tel:+905519283598" class="text-base font-semibold text-[#181816] hover:text-[#BE5836] transition-colors">+90 551 928 35 98</a>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white border border-[#181816]/10 flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-[#EBF0E6] text-[#536248] flex items-center justify-center shrink-0">
+              <Icon name="mdi:email-outline" size={20} />
+            </div>
+            <div>
+              <p class="text-[10px] font-mono uppercase tracking-widest text-[#6E6A62]">E-Posta</p>
+              <a href="mailto:ismethaktan39@gmail.com" class="text-sm font-semibold text-[#181816] hover:text-[#BE5836] transition-colors">ismethaktan39@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white border border-[#181816]/10 flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-[#F4EFE6] text-[#4A4742] flex items-center justify-center shrink-0">
+              <Icon name="mdi:map-marker-outline" size={20} />
+            </div>
+            <div>
+              <p class="text-[10px] font-mono uppercase tracking-widest text-[#6E6A62]">Atölye Konumu</p>
+              <p class="text-xs text-[#181816]">Folkart Towers, Bayraklı / İzmir</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Form Concept -->
-      <div class="relative" data-aos="fade-left">
+      <!-- Form (7 Cols) -->
+      <div class="lg:col-span-7">
         <form
           id="contact-form"
-          class="relative bg-white border-4 border-black rounded-none p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] z-10"
+          class="bg-white border border-[#181816]/12 rounded-[28px] p-8 sm:p-12 shadow-[0_4px_30px_rgba(24,24,22,0.03)]"
         >
-          <!-- Web3Forms Config -->
           <input type="hidden" name="access_key" value="0d040a39-0e41-40fa-8148-865c250a7adf" />
           <input type="hidden" name="subject" value="Evolution Ajans - Yeni İletişim Formu Mesajı" />
           <input type="hidden" name="from_name" value="Evolution Ajans Web Sitesi" />
+
           <div class="space-y-6">
-            <!-- Name Input -->
-            <div class="relative group">
-              <label for="name" class="block text-xs sm:text-sm uppercase font-bold mb-2 font-pixel text-black">Adınız Soyadınız / Firma Adı</label>
+            <div>
+              <label for="name" class="block text-xs uppercase tracking-wider font-mono text-[#4A4742] mb-2">Adınız Soyadınız / İşletmeniz</label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 required
-                class="w-full bg-slate-50 border-2 border-black p-4 text-black text-base focus:outline-none focus:bg-white focus:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all font-mono"
-                placeholder="Örn: Ahmet Yılmaz / Vizyon Nakliyat"
+                placeholder="Örn: Ahmet Yılmaz - Ege Nakliyat"
+                class="w-full px-4 py-3.5 rounded-xl bg-[#FBF9F5] border border-[#181816]/15 text-[#181816] placeholder-[#6E6A62]/50 text-sm focus:outline-none focus:border-[#BE5836] transition-colors"
               />
             </div>
 
-            <!-- Phone Input -->
-            <div class="relative group">
-              <label for="phone" class="block text-xs sm:text-sm uppercase font-bold mb-2 font-pixel text-black">Telefon Numarası</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                required
-                class="w-full bg-slate-50 border-2 border-black p-4 text-black text-base focus:outline-none focus:bg-white focus:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all font-mono"
-                placeholder="Örn: 0555 555 55 55"
-              />
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="phone" class="block text-xs uppercase tracking-wider font-mono text-[#4A4742] mb-2">Telefon Numaranız</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="05XX XXX XX XX"
+                  class="w-full px-4 py-3.5 rounded-xl bg-[#FBF9F5] border border-[#181816]/15 text-[#181816] placeholder-[#6E6A62]/50 text-sm focus:outline-none focus:border-[#BE5836] transition-colors"
+                />
+              </div>
+
+              <div>
+                <label for="service" class="block text-xs uppercase tracking-wider font-mono text-[#4A4742] mb-2">İhtiyaç Duyulan Hizmet</label>
+                <select
+                  id="service"
+                  name="service"
+                  class="w-full px-4 py-3.5 rounded-xl bg-[#FBF9F5] border border-[#181816]/15 text-[#181816] text-sm focus:outline-none focus:border-[#BE5836] transition-colors"
+                >
+                  <option value="Google Ads ve Sıcak Müşteri Reklamları">Google Ads ve Arama Reklamları</option>
+                  <option value="Yüksek Dönüşümlü Web Tasarımı">Yüksek Dönüşümlü Web Tasarımı</option>
+                  <option value="Google Haritalar Yerel SEO">Google Haritalar Yerel SEO</option>
+                  <option value="Meta (Instagram/Facebook) Reklamları">Meta (Instagram/Facebook) Reklamları</option>
+                  <option value="Komple Büyüme Paketi">Komple Büyüme Paketi</option>
+                </select>
+              </div>
             </div>
 
-            <!-- Website Input (Optional) -->
-            <div class="relative group">
-              <label for="website" class="block text-xs sm:text-sm uppercase font-bold mb-2 font-pixel text-black">Mevcut Web Siteniz (Opsiyonel)</label>
+            <div>
+              <label for="website" class="block text-xs uppercase tracking-wider font-mono text-[#4A4742] mb-2">Mevcut Web Siteniz (Varsa)</label>
               <input
                 type="text"
                 id="website"
                 name="website"
-                class="w-full bg-slate-50 border-2 border-black p-4 text-black text-base focus:outline-none focus:bg-white focus:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all font-mono"
-                placeholder="Örn: www.firmam.com"
+                placeholder="www.firmaniz.com"
+                class="w-full px-4 py-3.5 rounded-xl bg-[#FBF9F5] border border-[#181816]/15 text-[#181816] placeholder-[#6E6A62]/50 text-sm focus:outline-none focus:border-[#BE5836] transition-colors"
               />
             </div>
 
-            <!-- Budget Select Box -->
-            <div class="relative group">
-              <label for="budget" class="block text-xs sm:text-sm uppercase font-bold mb-2 font-pixel text-black">Aylık Reklam Bütçeniz</label>
-              <select
-                id="budget"
-                name="budget"
-                required
-                class="w-full bg-slate-50 border-2 border-black p-4 text-black text-base focus:outline-none focus:bg-white focus:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all font-mono appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-[right_1rem_center] bg-no-repeat pr-10"
-              >
-                <option value="" disabled selected>Seçiniz...</option>
-                <option value="10.000 TL - 20.000 TL">10.000 TL - 20.000 TL</option>
-                <option value="20.000 TL - 50.000 TL">20.000 TL - 50.000 TL</option>
-                <option value="50.000 TL ve Üzeri">50.000 TL ve Üzeri</option>
-              </select>
+            <div>
+              <label for="message" class="block text-xs uppercase tracking-wider font-mono text-[#4A4742] mb-2">İşletmeniz ve Hedefiniz Hakkında Kısa Not</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Örneğin: Günlük telefon aramalarımızı artırmak istiyoruz..."
+                class="w-full px-4 py-3.5 rounded-xl bg-[#FBF9F5] border border-[#181816]/15 text-[#181816] placeholder-[#6E6A62]/50 text-sm focus:outline-none focus:border-[#BE5836] transition-colors resize-none"
+              ></textarea>
             </div>
 
             <!-- Submit Button -->
             <button
               type="submit"
-              class="w-full group relative inline-flex items-center justify-center gap-4 px-8 py-4 bg-[#facc15] text-black border-2 border-black rounded-none transition-all hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-0 active:translate-y-0 active:shadow-none font-pixel text-xs sm:text-sm"
+              id="submit-btn"
+              class="w-full py-4 px-8 rounded-full bg-[#BE5836] text-white text-xs uppercase tracking-widest font-medium hover:bg-[#9E4324] transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer"
             >
-              <span class="relative z-10 font-bold uppercase tracking-widest">Ücretsiz Analizimi İste</span>
-              <Icon name="mdi:send" size={18} class="relative z-10 text-black" />
+              <span id="btn-text">Ücretsiz Analiz Talebini Gönder</span>
+              <span class="text-sm">→</span>
             </button>
+
+            <!-- Status Message -->
+            <div id="form-status" class="hidden text-center text-xs font-mono p-3 rounded-xl"></div>
           </div>
         </form>
       </div>
@@ -121,48 +156,39 @@ import { Icon } from "astro-icon/components";
 </section>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contact-form");
-    if (form) {
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        
-        const btn = form.querySelector('button[type="submit"]');
-        if (!btn) return;
-        const originalText = btn.innerHTML;
-        
-        // Yükleme durumu
-        btn.innerHTML = `<span class="relative z-10 text-sm font-bold uppercase tracking-widest text-white">Gönderiliyor...</span><div class="absolute inset-0 bg-blue-600 z-0"></div>`;
-        btn.setAttribute("disabled", "true");
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const status = document.getElementById("form-status");
+  const btnText = document.getElementById("btn-text");
 
-        try {
-          const formData = new FormData(form as HTMLFormElement);
-          const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-          });
-          const result = await response.json();
-          
-          if (response.status === 200 || result.success) {
-            btn.innerHTML = `<span class="relative z-10 text-sm font-bold uppercase tracking-widest text-white">Başarıyla İletildi</span><div class="absolute inset-0 bg-green-500 z-0"></div>`;
-            (form as HTMLFormElement).reset();
-            setTimeout(() => {
-              window.location.href = "/tesekkurler";
-            }, 1000);
-          } else {
-            console.error(result);
-            btn.innerHTML = `<span class="relative z-10 text-sm font-bold uppercase tracking-widest text-white">Hata Oluştu</span><div class="absolute inset-0 bg-red-600 z-0"></div>`;
-          }
-        } catch (error) {
-          console.error(error);
-          btn.innerHTML = `<span class="relative z-10 text-sm font-bold uppercase tracking-widest text-white">Hata Oluştu</span><div class="absolute inset-0 bg-red-600 z-0"></div>`;
-        } finally {
-          setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.removeAttribute("disabled");
-          }, 3000);
-        }
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (btnText) btnText.textContent = "Gönderiliyor...";
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
       });
+
+      const result = await response.json();
+
+      if (result.success) {
+        if (status) {
+          status.className = "block text-center text-xs font-mono p-3 rounded-xl bg-[#EBF0E6] text-[#3E4A35] border border-[#536248]/30";
+          status.textContent = "✓ Teşekkürler! Mesajınız alındı, en geç 24 saat içinde dönüş yapacağız.";
+        }
+        form.reset();
+      } else {
+        throw new Error();
+      }
+    } catch {
+      if (status) {
+        status.className = "block text-center text-xs font-mono p-3 rounded-xl bg-[#FAEDE8] text-[#9E4324] border border-[#BE5836]/30";
+        status.textContent = "Bir hata oluştu. Lütfen doğrudan WhatsApp veya telefon ile ulaşın.";
+      }
+    } finally {
+      if (btnText) btnText.textContent = "Ücretsiz Analiz Talebini Gönder";
     }
   });
 </script>

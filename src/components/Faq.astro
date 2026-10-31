@@ -1,20 +1,20 @@
 ---
 const faqItems = [
   {
-    q: "Neden retro-atari tarzı bir tasarım tercih ettiniz?",
-    a: "Çünkü dijital dünyadaki binlerce birbirinin kopyası kurumsal şablondan sıyrılmak istiyoruz. Bu özgün tasarım, markanızın hafızalarda kalmasını sağlar, kreatif cesaretinizi gösterir ve Google'dan gelen ziyaretçileri şaşırtarak dönüşüm oranlarını artırır."
+    q: "Neden editoryal ve organik bir tasarım dili tercih ediyorsunuz?",
+    a: "Çünkü dijital dünyadaki birbirinin kopyası yapay zeka şablonlarından, yapay neon SaaS tasarımlarından sıyrılıp; markanıza güvenilirlik, karakter ve zanaatkar bir estetik kazandırmak istiyoruz. Krem kağıt dokusu, editoryal tipografi ve sıcak renk paletimiz işletmenizi özenli ve prestijli konumlandırır."
   },
   {
     q: "SEO (Arama Motoru Optimizasyonu) çalışmaları ne kadar sürede sonuç verir?",
-    a: "SEO organik ve kalıcı bir büyüme sürecidir. Sitenizde yaptığımız optimizasyonlar ve Google Indexing API entegrasyonu sayesinde ilk haftalarda hızlı indeks alıp yükseliş görürüz. Ancak tam ve kalıcı sonuçları genellikle 3 ila 6 ay arasında elde ederiz."
+    a: "SEO organik ve kalıcı bir büyüme sürecidir. Sitenizde yaptığımız optimizasyonlar ve Google Indexing API entegrasyonu sayesinde ilk haftalarda hızlı indeks alıp sıralama kazanırız. Kalıcı ve zirve sonuçları genellikle 3 ila 6 ay arasında elde ederiz."
   },
   {
     q: "Yeni bir web sitesinin tasarımı ve yayına alınması ne kadar sürer?",
-    a: "Projenizin kapsamına ve özel isteklerinize bağlı olarak tasarım ve kodlama süreci genellikle 2 ila 4 hafta arasında tamamlanmaktadır. Bu süreçte siteniz tüm mobil cihazlarla tam uyumlu ve SEO altyapısı hazır şekilde teslim edilir."
+    a: "Projenizin kapsamına ve sektörel ihtiyaçlarınıza bağlı olarak landing page projeleri 3 ila 5 günde, kapsamlı kurumsal siteler ise 2 ila 3 haftada tamamlanmaktadır. Tüm mobil cihazlarla tam uyumlu ve Google Indexing altyapısıyla teslim edilir."
   },
   {
-    q: "Evolution Ajans olarak hangi dijital hizmetleri sunuyorsunuz?",
-    a: "A'dan Z'ye dijital reklamcılık ve yazılım hizmetleri sunuyoruz. Başlıca odak alanlarımız: Kurumsal Web Tasarım, Google SEO Hizmeti, Meta (Instagram/Facebook) Reklam Yönetimi, Sosyal Medya Yönetimi ve Marka Kimliği Tasarımıdır."
+    q: "Evolution Ajans olarak hangi temel hizmetleri sunuyorsunuz?",
+    a: "Doğrudan müşteri kazandıran dijital reklamcılık ve yazılım hizmetleri sunuyoruz. Başlıca odak alanlarımız: Yüksek Dönüşümlü Web Tasarım, Google Haritalar Yerel SEO, Google Ads Arama Ağı Yönetimi ve Meta (Instagram/Facebook) Reklam Yönetimidir."
   }
 ];
 
@@ -34,69 +34,69 @@ const faqSchema = {
 
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-<section class="py-24 bg-white border-t-4 border-black relative z-10">
+<section class="py-24 md:py-36 bg-[#F4EFE6] border-b border-dashed border-[#181816]/15 relative z-10">
   <div class="max-w-4xl mx-auto px-6">
+    
+    <!-- Section Header -->
     <div class="text-center mb-16 space-y-4">
-      <span class="inline-block px-4 py-2 border-2 border-black bg-black text-white text-[10px] font-mono uppercase tracking-[0.3em] font-pixel">
-        Sorular & Cevaplar
-      </span>
-      <h2 class="text-2xl md:text-4xl font-black uppercase tracking-tighter text-black">
-        SIKÇA SORULAN SORULAR
+      <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#536248] bg-[#EBF0E6] px-3 py-1 rounded-full border border-[#536248]/20">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#536248]"></span>
+        <span>[ 09 // MERAK EDİLENLER ]</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif tracking-tight text-[#181816]">
+        Sıkça Sorulan <span class="italic font-normal text-[#536248]">Sorular</span>
       </h2>
+      <p class="text-sm sm:text-base text-[#6E6A62] max-w-xl mx-auto">
+        Çalışma modelimiz, teslim süreleri ve performans süreçlerimiz hakkında aklınıza takılabilecek yanıtlar.
+      </p>
     </div>
 
+    <!-- Accordion Items -->
     <div class="space-y-4">
       {faqItems.map((item, index) => (
-        <div class="faq-item group bg-white border-4 border-black p-6 rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-[2px] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] transition-all duration-200 cursor-pointer" data-index={index}>
-          <div class="faq-trigger flex justify-between items-center select-none font-pixel text-[10px] sm:text-xs font-bold text-black uppercase">
+        <div 
+          class="faq-item group bg-white border border-[#181816]/12 rounded-[20px] p-6 shadow-[0_2px_12px_rgba(24,24,22,0.02)] transition-all duration-200 cursor-pointer hover:border-[#BE5836]/30" 
+          data-index={index}
+        >
+          <div class="faq-trigger flex justify-between items-center select-none font-serif text-lg sm:text-xl text-[#181816] group-hover:text-[#BE5836] transition-colors">
             <span class="pr-4">{item.q}</span>
-            <span class="faq-icon text-lg font-bold transition-transform duration-200 select-none">+</span>
+            <span class="faq-icon text-sm font-mono text-[#6E6A62] group-hover:text-[#BE5836] transition-transform duration-200 select-none">
+              [+]
+            </span>
           </div>
           <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-            <div class="mt-4 text-black/75 text-sm leading-relaxed border-t-2 border-black/10 pt-4 font-mono">
+            <div class="mt-4 text-[#4A4742] text-sm sm:text-base leading-relaxed border-t border-dashed border-[#181816]/10 pt-4 font-sans">
               <p>{item.a}</p>
             </div>
           </div>
         </div>
       ))}
     </div>
+
   </div>
 </section>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const items = document.querySelectorAll(".faq-item");
-    items.forEach((item) => {
-      const trigger = item.querySelector(".faq-trigger");
-      const content = item.querySelector(".faq-content") as HTMLElement;
-      const icon = item.querySelector(".faq-icon");
+  document.querySelectorAll(".faq-item").forEach((item) => {
+    const trigger = item.querySelector(".faq-trigger");
+    const content = item.querySelector(".faq-content") as HTMLElement;
+    const icon = item.querySelector(".faq-icon");
 
-      trigger?.addEventListener("click", (e) => {
-        e.preventDefault();
-        const isOpen = item.classList.contains("active");
-        
-        // Close all items
-        items.forEach((otherItem) => {
-          otherItem.classList.remove("active");
-          const otherContent = otherItem.querySelector(".faq-content") as HTMLElement;
-          const otherIcon = otherItem.querySelector(".faq-icon");
-          if (otherContent) otherContent.style.maxHeight = "0px";
-          if (otherIcon) {
-            otherIcon.textContent = "+";
-          }
-        });
-
-        // Toggle clicked item
-        if (!isOpen) {
-          item.classList.add("active");
-          if (content) {
-            content.style.maxHeight = content.scrollHeight + 16 + "px";
-          }
-          if (icon) {
-            icon.textContent = "−";
-          }
-        }
+    trigger?.addEventListener("click", () => {
+      const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+      
+      // Close all others
+      document.querySelectorAll(".faq-content").forEach((c) => {
+        (c as HTMLElement).style.maxHeight = "0px";
       });
+      document.querySelectorAll(".faq-icon").forEach((i) => {
+        i.textContent = "[+]";
+      });
+
+      if (!isOpen) {
+        content.style.maxHeight = content.scrollHeight + "px";
+        if (icon) icon.textContent = "[−]";
+      }
     });
   });
 </script>

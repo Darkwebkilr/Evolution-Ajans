@@ -1,17 +1,18 @@
 ---
+// Brands.astro - Editorial Partner Marquee
 ---
 
-<div class="py-6 bg-black text-white border-y-4 border-black overflow-hidden select-none font-pixel text-[8px] sm:text-[10px] tracking-widest uppercase relative z-20">
+<div class="py-5 bg-[#F4EFE6] text-[#4A4742] border-b border-dashed border-[#181816]/15 overflow-hidden select-none font-mono text-[11px] tracking-[0.25em] uppercase relative z-20">
   <div class="flex whitespace-nowrap gap-16 animate-marquee">
     {Array(4).fill([
-      "⚡ TEKNO HOLDİNG",
-      "★ KREATİF GRUP",
-      "⚡ VİZYON BOYA",
-      "★ EGE İNŞAAT",
-      "⚡ MODA DÜNYASI",
-      "★ ATLAS DİJİTAL"
+      "★ VİZYON GRUP",
+      "• EGE TEKNİK SERVİS",
+      "★ ATLAS DİJİTAL",
+      "• AKDENİZ TAŞIMACILIK",
+      "★ KREATİF MİMARLIK",
+      "• İZMİR ENDÜSTRİYEL"
     ]).flat().map(brand => (
-      <span class="flex items-center gap-2">{brand}</span>
+      <span class="flex items-center gap-3 hover:text-[#BE5836] transition-colors">{brand}</span>
     ))}
   </div>
 </div>
@@ -23,7 +24,7 @@
   }
   .animate-marquee {
     display: flex;
-    animation: marquee 25s linear infinite;
+    animation: marquee 35s linear infinite;
     width: max-content;
   }
 </style>

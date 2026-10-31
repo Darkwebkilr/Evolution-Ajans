@@ -11,25 +11,28 @@ const nav = [
 ];
 ---
 
-<header class="fixed top-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl z-60 pointer-events-none flex justify-between items-center">
-  <!-- LOGO BOX -->
-  <a href="/" class="pointer-events-auto bg-white border-4 border-black px-5 py-3 shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-[2px] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] transition-all flex items-center justify-center">
-    <img
-      class="w-[90px] md:w-[110px] h-auto object-contain"
-      src="/img/Logo.png"
-      width="200"
-      height="200"
-      alt="Evolution Logo"
-    />
+<header class="fixed top-5 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-6xl z-50 pointer-events-none flex justify-between items-center transition-all duration-300">
+  
+  <!-- LOGO -->
+  <a 
+    href="/" 
+    class="pointer-events-auto bg-[#FBF9F5]/95 backdrop-blur-md border border-[#181816]/15 rounded-full px-5 py-2.5 shadow-sm hover:border-[#BE5836]/40 transition-all flex items-center gap-3 group"
+  >
+    <span class="font-serif text-lg tracking-tight font-normal text-[#181816] group-hover:text-[#BE5836] transition-colors">
+      Evolution <span class="italic font-light text-[#BE5836]">Ajans</span>
+    </span>
+    <span class="hidden sm:inline-block text-[9px] font-mono tracking-[0.2em] uppercase text-[#536248] bg-[#EBF0E6] px-2 py-0.5 rounded-full border border-[#536248]/20">
+      İzmir
+    </span>
   </a>
 
-  <!-- DESKTOP NAVIGATION BOX -->
-  <nav class="hidden lg:flex pointer-events-auto bg-white border-4 border-black px-8 py-4.5 shadow-[4px_4px_0px_rgba(0,0,0,1)] gap-8 items-center">
+  <!-- DESKTOP NAVIGATION -->
+  <nav class="hidden lg:flex pointer-events-auto bg-[#FBF9F5]/95 backdrop-blur-md border border-[#181816]/15 rounded-full px-6 py-2.5 shadow-sm gap-7 items-center">
     {
       nav.map((item) => (
         <a
           href={item.link}
-          class="text-sm lg:text-base uppercase font-bold text-black/70 hover:text-black transition-colors duration-300 font-pixel"
+          class="text-xs uppercase tracking-widest font-medium text-[#181816]/75 hover:text-[#BE5836] transition-colors duration-200"
         >
           {item.name}
         </a>
@@ -37,133 +40,98 @@ const nav = [
     }
   </nav>
 
-  <!-- CALL TO ACTION BOX -->
-  <a
-    href="tel:+905519283598"
-    class="hidden lg:flex pointer-events-auto bg-[#facc15] border-4 border-black px-5 py-4 shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-[2px] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] transition-all font-pixel text-xs lg:text-sm font-bold uppercase text-black"
-  >
-    Hemen Ara
-  </a>
+  <!-- CALL TO ACTION & CONTACT -->
+  <div class="hidden lg:flex pointer-events-auto items-center gap-3">
+    <a
+      href="tel:+905519283598"
+      class="bg-[#BE5836] text-white rounded-full px-5 py-2.5 text-xs font-medium uppercase tracking-widest hover:bg-[#9E4324] transition-all shadow-sm flex items-center gap-2 group"
+    >
+      <span>Görüşme Başlat</span>
+      <span class="text-xs group-hover:translate-x-0.5 transition-transform">→</span>
+    </a>
+  </div>
 
-  <!-- MOBILE TOGGLE BOX -->
+  <!-- MOBILE TOGGLE BUTTON -->
   <button
     id="menu-toggle"
-    class="lg:hidden pointer-events-auto bg-white border-4 border-black w-12 h-12 flex flex-col justify-center items-center gap-[5px] shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-[2px] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] transition-all z-[60]"
-    aria-label="Toggle Menu"
+    class="lg:hidden pointer-events-auto bg-[#FBF9F5]/95 backdrop-blur-md border border-[#181816]/15 w-11 h-11 rounded-full flex flex-col justify-center items-center gap-1.5 shadow-sm hover:border-[#BE5836]/40 transition-all z-[60]"
+    aria-label="Menüyü Aç"
   >
-    <span class="block w-6 h-[2.5px] bg-black transition-all duration-300"></span>
-    <span class="block w-6 h-[2.5px] bg-black transition-all duration-300"></span>
-    <span class="block w-6 h-[2.5px] bg-black transition-all duration-300"></span>
+    <span class="block w-4 h-[1.5px] bg-[#181816] transition-all duration-300"></span>
+    <span class="block w-4 h-[1.5px] bg-[#181816] transition-all duration-300"></span>
   </button>
 </header>
 
-<!-- FULLSCREEN MOBILE MENU -->
+<!-- FULLSCREEN MOBILE MENU (Editorial Warm Paper) -->
 <div
   id="mobile-overlay"
-  class="fixed inset-0 bg-[#f8fafc] z-[55] flex flex-col justify-center px-8 sm:px-12 pointer-events-none opacity-0 invisible transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] border-b-4 border-black"
+  class="fixed inset-0 bg-[#FBF9F5] z-[55] flex flex-col justify-between p-8 sm:p-12 pointer-events-none opacity-0 invisible transition-all duration-500 ease-out"
 >
-  <!-- Background Texture/Noise -->
-  <div
-    class="absolute inset-0 opacity-[0.02] pointer-events-none mix-blend-overlay"
-    style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"
-  >
+  <!-- Top Bar in Mobile Overlay -->
+  <div class="flex justify-between items-center border-b border-dashed border-[#181816]/15 pb-6">
+    <span class="font-serif text-xl tracking-tight text-[#181816]">
+      Evolution <span class="italic text-[#BE5836]">Ajans</span>
+    </span>
+    <span class="text-[10px] font-mono tracking-widest uppercase text-[#536248] bg-[#EBF0E6] px-3 py-1 rounded-full">
+      [ MENÜ ]
+    </span>
   </div>
 
-  <nav class="relative z-[70] flex flex-col gap-6 mt-16 pointer-events-auto nav">
+  <!-- Navigation Links -->
+  <nav class="relative z-[70] flex flex-col gap-4 my-auto pointer-events-auto">
     {
       nav.map((item, index) => (
-        <a href={item.link} class="mobile-link block overflow-hidden font-pixel">
-          <span
-            class="block text-2xl sm:text-4xl font-extrabold uppercase tracking-tighter text-black/40 hover:text-black hover:translate-x-4 transition-all duration-500 origin-left"
-            style={`transform: translateY(120%); transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1) ${index * 0.1}s, color 0.4s ease, padding 0.4s ease;`}
-          >
+        <a 
+          href={item.link} 
+          class="mobile-link group flex items-baseline justify-between border-b border-[#181816]/10 py-3 transition-colors"
+        >
+          <span class="font-serif text-2xl sm:text-3xl text-[#181816] group-hover:italic group-hover:text-[#BE5836] transition-all">
             {item.name}
+          </span>
+          <span class="font-mono text-xs text-[#6E6A62] group-hover:text-[#BE5836] transition-colors">
+            0{index + 1} //
           </span>
         </a>
       ))
     }
   </nav>
 
-  <div
-    class="absolute bottom-12 left-8 sm:left-12 flex flex-col gap-4 mobile-footer opacity-0 translate-y-8 transition-all duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] delay-300 pointer-events-auto"
-  >
-    <a
-      href="mailto:ismethaktan39@gmail.com"
-      class="text-black/60 hover:text-black text-sm tracking-widest uppercase transition-colors font-mono"
-      >ismethaktan39@gmail.com</a
-    >
-    <a
-      href="tel:+905519283598"
-      class="text-black/60 hover:text-black text-sm tracking-widest uppercase transition-colors font-mono"
-      >+90 551 928 35 98</a
-    >
-    <p class="text-black/40 text-xs tracking-[0.2em] uppercase mt-4 font-mono">
-      Evolution Ajans © {new Date().getFullYear()}
-    </p>
+  <!-- Mobile Footer Info -->
+  <div class="border-t border-dashed border-[#181816]/15 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs font-mono text-[#6E6A62] pointer-events-auto">
+    <div>
+      <a href="tel:+905519283598" class="text-[#181816] hover:text-[#BE5836] block font-semibold">+90 551 928 35 98</a>
+      <a href="mailto:ismethaktan39@gmail.com" class="hover:text-[#BE5836] block mt-1">ismethaktan39@gmail.com</a>
+    </div>
+    <div class="text-[10px] uppercase tracking-widest text-[#536248]">
+      [ İZMİR // FOLKART TOWERS ]
+    </div>
   </div>
 </div>
 
-<style>
-  /* Active states for Mobile Menu */
-  #mobile-overlay.active {
-    pointer-events: auto;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  #mobile-overlay.active .mobile-link span {
-    transform: translateY(0) !important;
-  }
-
-  #mobile-overlay.active .mobile-footer {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Hamburger transition active state */
-  #menu-toggle.active span:nth-child(1) {
-    transform: translateY(7.5px) rotate(45deg);
-  }
-  #menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-  #menu-toggle.active span:nth-child(3) {
-    transform: translateY(-7.5px) rotate(-45deg);
-  }
-</style>
-
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Mobile Menu Toggle Logic
-    const toggle = document.getElementById("menu-toggle");
-    const overlay = document.getElementById("mobile-overlay");
-    const body = document.body;
+  const toggleBtn = document.getElementById("menu-toggle");
+  const overlay = document.getElementById("mobile-overlay");
+  const links = document.querySelectorAll(".mobile-link");
 
-    if (toggle && overlay) {
-      // Toggle click
-      toggle.addEventListener("click", () => {
-        const isActive = toggle.classList.contains("active");
+  let isOpen = false;
 
-        if (isActive) {
-          toggle.classList.remove("active");
-          overlay.classList.remove("active");
-          body.style.overflow = "";
-        } else {
-          toggle.classList.add("active");
-          overlay.classList.add("active");
-          body.style.overflow = "hidden";
-        }
-      });
-
-      // Auto close on link click
-      const links = overlay.querySelectorAll("a");
-      links.forEach((link) => {
-        link.addEventListener("click", () => {
-          toggle.classList.remove("active");
-          overlay.classList.remove("active");
-          body.style.overflow = "";
-        });
-      });
+  function toggleMenu() {
+    isOpen = !isOpen;
+    if (isOpen) {
+      overlay?.classList.remove("opacity-0", "invisible", "pointer-events-none");
+      overlay?.classList.add("opacity-100", "pointer-events-auto");
+      document.body.style.overflow = "hidden";
+    } else {
+      overlay?.classList.add("opacity-0", "invisible", "pointer-events-none");
+      overlay?.classList.remove("opacity-100", "pointer-events-auto");
+      document.body.style.overflow = "";
     }
+  }
+
+  toggleBtn?.addEventListener("click", toggleMenu);
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      if (isOpen) toggleMenu();
+    });
   });
 </script>

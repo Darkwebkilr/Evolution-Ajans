@@ -40,19 +40,14 @@ const offersSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(offersSchema)} />
 
   <!-- Breadcrumb Bar -->
-  <div class="pt-28 pb-4 bg-slate-50 border-b-2 border-black/10">
-    <div class="max-w-7xl mx-auto px-6">
-      <nav class="flex items-center gap-2 text-xs md:text-sm font-mono text-black/60 font-bold uppercase font-pixel">
-        <a href="/" class="hover:text-black transition-colors">Ana Sayfa</a>
-        <span>/</span>
-        <span class="text-black bg-[#facc15] px-2 py-0.5 border border-black">Paketler</span>
-      </nav>
-    </div>
+  <div class="max-w-6xl mx-auto px-6 pt-12">
+    <nav class="font-mono text-xs text-[#6E6A62] flex items-center gap-2">
+      <a href="/" class="hover:text-[#BE5836] transition-colors">Ana Sayfa</a>
+      <span>/</span>
+      <span class="text-[#181816] font-medium">Büyüme Paketleri</span>
+    </nav>
   </div>
 
-  <!-- Reusable Pricing Component -->
   <Pricing />
-
-  <!-- Free Analysis Form -->
   <Form />
 </MainLayout>

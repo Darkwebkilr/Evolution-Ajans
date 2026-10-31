@@ -1,95 +1,127 @@
 ---
-// EvolutionHero.astro
-// Framework: Astro.js + Tailwind CSS
-// Aesthetic: Refined Luxury / High-Tech Elegance
-import { Image } from "astro:assets";
+// Hero.astro - Warm Editorial / Crafted Design Studio Aesthetic
 import { Icon } from "astro-icon/components";
-
-// Placeholder for rocket image if needed, or we use a clean CSS-based geometric approach.
 ---
 
-<section class="relative min-h-[75vh] w-full bg-[#f8fafc] text-black overflow-hidden flex items-center justify-center py-12 md:py-16 retro-grid">
+<section class="relative min-h-[82vh] w-full bg-[#FBF9F5] text-[#181816] flex items-center justify-center pt-28 pb-20 md:pt-36 md:pb-28 border-b border-dashed border-[#181816]/15">
   
-  <div class="max-w-7xl w-full mx-auto px-6 lg:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+  <div class="max-w-6xl w-full mx-auto px-6 lg:px-8 relative z-10">
     
-    <!-- Typographic Left Column -->
-    <div class="lg:col-span-7 flex flex-col items-start space-y-8">
+    <!-- Top Editorial Metadata Row -->
+    <div class="flex items-center justify-between border-b border-[#181816]/10 pb-5 mb-12 text-[11px] font-mono tracking-[0.2em] uppercase text-[#6E6A62]">
+      <div class="flex items-center gap-3">
+        <span class="w-2 h-2 rounded-full bg-[#536248]"></span>
+        <span class="text-[#536248] font-medium">[ 01 // DİJİTAL ATÖLYE ]</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-6">
+        <span>İZMİR // BAYRAKLI</span>
+        <span>•</span>
+        <span>SEO, WEB & DÖNÜŞÜM</span>
+      </div>
+      <span class="text-[#BE5836] font-medium">EST. 2026</span>
+    </div>
+
+    <!-- Asymmetrical 12-Column Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
       
-      <div class="inline-flex items-center gap-3 px-4 py-2 border-2 border-black bg-black text-white" data-aos="fade-down">
-        <span class="w-2 h-2 rounded-full bg-[#25D366] animate-ping"></span>
-        <span class="text-[10px] font-mono uppercase tracking-[0.2em] font-bold font-pixel">EVOLUTION BÜYÜME TÜNELİ</span>
+      <!-- Typographic Left Column (7 Cols) -->
+      <div class="lg:col-span-7 flex flex-col items-start space-y-8">
+        
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF0E6] border border-[#536248]/25 text-[#3E4A35] text-xs font-mono tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#536248]"></span>
+          <span>Doğrudan Müşteri Getiren Dijital Büyüme</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif tracking-tight leading-[1.08] text-[#181816]">
+          Rakipleriniz iş toplarken, <br class="hidden sm:block" />
+          siz geride <span class="italic font-normal text-[#BE5836]">kalmayın</span>.
+        </h1>
+
+        <p class="text-base sm:text-lg text-[#4A4742] font-sans leading-relaxed max-w-xl font-normal">
+          Web siteniz ve reklamlarınız nerede kan kaybediyor? Şabloncu ajans tuzaklarına düşmeden; sadece sizin için telefon çaldıran Google & Meta sistemleri ve yüksek dönüşümlü arayüzler kuruyoruz.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 w-full sm:w-auto">
+          <a 
+            href="#iletisim" 
+            class="group inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-full bg-[#BE5836] text-white text-xs uppercase tracking-widest font-medium hover:bg-[#9E4324] transition-all shadow-sm"
+          >
+            <span>Ücretsiz Analiz İsteyin</span>
+            <span class="text-sm group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+          
+          <a 
+            href="https://wa.me/905519283598?text=Merhaba,%20sitemin%20ve%20reklamlarımın%20ücretsiz%20analizi%20için%20ulaşıyorum." 
+            target="_blank" 
+            class="inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-[#FFFFFF] border border-[#181816]/15 text-[#181816] text-xs uppercase tracking-widest font-medium hover:bg-[#F3EFE6] hover:border-[#181816]/30 transition-all shadow-sm"
+          >
+            <span>Hızlı WhatsApp</span>
+            <span class="text-xs text-[#536248]">↗</span>
+          </a>
+        </div>
+
+        <!-- Micro Social Proof -->
+        <div class="pt-6 border-t border-[#181816]/10 w-full flex items-center gap-6 text-xs text-[#6E6A62] font-mono">
+          <div class="flex items-center gap-1.5 text-[#BE5836]">
+            <span>★★★★★</span>
+          </div>
+          <span>30+ Aktif İşletme Sistemi</span>
+          <span class="hidden sm:inline">•</span>
+          <span class="hidden sm:inline text-[#536248]">Canlı Panel Doğrulaması</span>
+        </div>
+
       </div>
 
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black uppercase tracking-tighter leading-none" data-aos="fade-up" data-aos-delay="100">
-        <span class="block text-black leading-tight">Rakipleriniz İnternetten İşi Toplarken Siz İzlemeyin.</span>
-        <span class="block text-blue-600 mt-4 leading-tight">Telefonlarınızı Çaldıracak Sistemi Kurayım.</span>
-      </h1>
+      <!-- Editorial Card / Visual Right Column (5 Cols) -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative bg-white border border-[#181816]/12 rounded-[28px] p-8 sm:p-10 shadow-[0_4px_30px_rgba(24,24,22,0.04)] overflow-hidden">
+          
+          <!-- Subtle Top Label -->
+          <div class="flex items-center justify-between pb-6 border-b border-dashed border-[#181816]/15 mb-6">
+            <span class="text-[10px] font-mono tracking-widest uppercase text-[#536248]">
+              [ ATÖLYE MANİFESTOSU ]
+            </span>
+            <span class="text-xs font-serif italic text-[#6E6A62]">
+              Sıfır Dolgu, Saf Dönüşüm
+            </span>
+          </div>
 
-      <p class="text-base md:text-lg text-black/85 font-medium max-w-2xl leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-        Web siteniz ve reklamlarınız nerede kan kaybediyor? Sadece gerçekten işe yarayan Google/Meta reklamları ve hızlı açılış sayfalarıyla, yerel hizmetiniz için (nakliyat, servis vb.) her gün yeni müşteri talebi almanızı sağlıyorum.
-      </p>
+          <!-- Quote / Core Metric -->
+          <div class="space-y-6">
+            <p class="font-serif text-2xl text-[#181816] leading-snug">
+              "Bir işletmenin web sitesi sanat galerisi değil; <span class="italic text-[#BE5836]">her gün yeni iş getiren</span> en çalışkan elemanı olmalıdır."
+            </p>
 
-      <div class="flex flex-col sm:flex-row gap-6 pt-4 w-full sm:w-auto font-pixel" data-aos="fade-up" data-aos-delay="300">
-        <a href="#iletisim" class="group relative inline-flex items-center justify-center gap-4 px-8 py-4 border-2 border-black bg-[#facc15] text-black font-bold uppercase tracking-widest text-xs hover:-translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-0 active:translate-y-0 active:shadow-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
-          <span class="relative z-10">Sitemin Hatalarını Ücretsiz Analiz Et</span>
-          <Icon name="mdi:arrow-down" size={20} class="relative z-10" />
-        </a>
-        
-        <a href="https://wa.me/905519283598?text=Merhaba,%20sitemin%20ve%20reklamlarımın%20ücretsiz%20analizi%20için%20ulaşıyorum." target="_blank" class="group relative inline-flex items-center justify-center gap-4 px-8 py-4 border-2 border-black bg-white text-black font-bold uppercase tracking-widest text-xs hover:-translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-0 active:translate-y-0 active:shadow-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all">
-          <span>Hızlı WhatsApp</span>
-          <Icon name="mdi:whatsapp" size={20} class="relative z-10" />
-        </a>
-      </div>
-    </div>
-
-    <!-- Geometric/Visual Right Column -->
-    <div class="lg:col-span-5 relative hidden lg:flex justify-center items-center" data-aos="zoom-in" data-aos-delay="400">
-      <div class="relative w-full aspect-square max-w-[500px]">
-        <!-- Rotating Outer Rings -->
-        <div class="absolute inset-0 border border-black/10 rounded-full animate-[spin_20s_linear_infinite]"></div>
-        <div class="absolute inset-8 border border-black/5 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
-        <div class="absolute inset-16 border border-dashed border-black/20 rounded-full animate-[spin_30s_linear_infinite]"></div>
-        
-        <!-- Central Element (Abstract modern shape) -->
-        <div class="absolute inset-0 flex items-center justify-center">
-           <div class="relative w-48 h-48 bg-[#facc15] border-4 border-black text-black rotate-12 animate-[pulse_4s_ease-in-out_infinite] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group">
-              <div class="absolute inset-0 flex items-center justify-center">
-                 <Icon name="mdi:rocket-launch-outline" size={64} class="text-black group-hover:-translate-y-4 group-hover:translate-x-4 group-hover:opacity-0 transition-all duration-500" />
-                 <Icon name="mdi:rocket-launch" size={64} class="text-black absolute opacity-0 translate-y-4 -translate-x-4 group-hover:translate-y-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500" />
+            <div class="space-y-3 pt-4 font-mono text-xs text-[#4A4742]">
+              <div class="flex items-center justify-between py-2 border-b border-[#181816]/8">
+                <span class="text-[#6E6A62]">Odak Yaklaşım:</span>
+                <span class="font-semibold text-[#181816]">Bölgesel Hakimiyet & SEO</span>
               </div>
-           </div>
-        </div>
+              <div class="flex items-center justify-between py-2 border-b border-[#181816]/8">
+                <span class="text-[#6E6A62]">Teknoloji:</span>
+                <span class="font-semibold text-[#181816]">Astro SSG + Sıfır Bloat</span>
+              </div>
+              <div class="flex items-center justify-between py-2 border-b border-[#181816]/8">
+                <span class="text-[#6E6A62]">İndeksleme:</span>
+                <span class="font-semibold text-[#536248]">Google Indexing API</span>
+              </div>
+            </div>
 
-        <!-- Floating Badges -->
-        <div class="absolute top-10 right-10 bg-white border-2 border-black px-4 py-2 flex items-center gap-2 animate-[bounce_3s_infinite] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-           <Icon name="mdi:star-four-points" class="text-yellow-500" />
-           <span class="text-[9px] font-mono font-bold font-pixel">5+ Yıl Deneyim</span>
-        </div>
-        
-        <div class="absolute bottom-20 left-0 bg-white border-2 border-black px-4 py-2 flex items-center gap-2 animate-[bounce_4s_infinite_reverse] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-           <Icon name="mdi:code-braces" class="text-blue-600" />
-           <span class="text-[9px] font-mono font-bold font-pixel">Modern Tech</span>
-        </div>
+            <!-- Soft terracotta footer seal -->
+            <div class="pt-4 flex items-center justify-between text-[11px] font-mono text-[#6E6A62]">
+              <span class="inline-flex items-center gap-1.5 text-[#536248]">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#536248]"></span>
+                Danışmanlık Kontenjanı Açık
+              </span>
+              <span class="text-[#BE5836] font-medium">İZMİR 2026</span>
+            </div>
+          </div>
 
+        </div>
       </div>
-    </div>
-    
-  </div>
 
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce hidden md:flex">
-    <span class="text-[10px] uppercase tracking-[0.3em] font-mono">Keşfet</span>
-    <div class="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"></div>
+    </div>
+
   </div>
 </section>
-
-<script>
-  import AOS from "aos";
-  document.addEventListener("DOMContentLoaded", () => {
-    AOS.init({
-      duration: 1200,
-      once: true,
-      easing: 'ease-out-cubic'
-    });
-  });
-</script>

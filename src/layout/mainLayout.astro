@@ -125,6 +125,8 @@ const webSiteSchema = {
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link
             rel="icon"
@@ -202,7 +204,7 @@ const webSiteSchema = {
             set:html={JSON.stringify(webPageSchema)}
         />
     </head>
-    <body class="bg-[#f8fafc] text-black">
+    <body class="bg-[#FBF9F5] text-[#181816] font-sans paper-grain selection:bg-[#BE5836]/20 selection:text-[#181816]">
         <Wpbutton />
         <Header />
         <main class="pt-28 md:pt-36">

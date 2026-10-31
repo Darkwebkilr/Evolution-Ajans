@@ -3,86 +3,107 @@ import { Icon } from "astro-icon/components";
 
 const results = [
   {
-    title: "Google Ads Raporu",
-    description: "Yönettiğimiz kampanyalardan biri olan Google Ads arama ağı reklamlarının gösterim, tıklama ve maliyet detaylarını içeren canlı sistem panel ekranı.",
+    title: "Google Ads Canlı Kampanya Raporu",
+    description: "Yönettiğimiz aktif arama ağı kampanyalarımızın anlık gösterim, tıklama ve gerçek dönüşüm maliyetlerini içeren şeffaf panel dökümü.",
     metric: "Google Ads Paneli",
     image: "/google-ads-ss.webp",
-    badge: "PANEL GÖRÜNTÜSÜ",
-    color: "text-green-600"
+    badge: "01 // ARAMA AĞI",
+    tag: "CANLI PANEL",
   },
   {
-    title: "Google Ads Ham Müşteri Listesi",
-    description: "Google Ads reklamları üzerinden web sitemize gelip form dolduran veya doğrudan telefonla arayan potansiyel müşterilerin anlık çağrı ve talep listesi.",
-    metric: "Ham Müşteri Listesi",
+    title: "Google Ads Sıcak Müşteri Talep Listesi",
+    description: "Reklamlar üzerinden doğrudan telefonla arayan veya form dolduran nitelikli alıcıların anlık çağrı ve teklif talebi kayıtları.",
+    metric: "Ham Müşteri Verisi",
     image: "/google-ads-ham-musteriler.webp",
-    badge: "MÜŞTERİ LİSTESİ",
-    color: "text-blue-600"
+    badge: "02 // ÇAĞRI AKIŞI",
+    tag: "DOĞRULANMIŞ LİSTE",
   },
   {
-    title: "Meta Ads Form Paneli",
-    description: "Instagram ve Facebook üzerinde aktif olan form toplama kampanyalarımızın form sayılarını, gösterimlerini ve erişim verilerini gösteren Meta Business reklam paneli ekranı.",
+    title: "Meta Ads Form & Potansiyel Müşteri Akışı",
+    description: "Instagram ve Facebook hedeflemeleriyle işletmeye doğrudan gelen potansiyel müşteri formlarını ve düşük maliyetli erişim metriklerini gösteren panel.",
     metric: "Meta Ads Paneli",
     image: "/meta-ads-ss.webp",
-    badge: "FORM VERİLERİ",
-    color: "text-purple-600"
+    badge: "03 // META DÖNÜŞÜM",
+    tag: "FORM VERİLERİ",
   }
 ];
 ---
 
-<section id="sonuclar" class="py-32 bg-slate-50 border-t-4 border-black relative z-10 retro-grid">
-  <div class="max-w-7xl mx-auto px-6">
+<section id="sonuclar" class="py-24 md:py-36 bg-[#FBF9F5] border-b border-dashed border-[#181816]/15 relative z-10">
+  <div class="max-w-6xl mx-auto px-6">
     
-    <!-- Title -->
-    <div class="text-center mb-28 space-y-4">
-      <span class="inline-block px-4 py-2 border-2 border-black bg-black text-white text-xs md:text-sm font-mono uppercase tracking-[0.3em] font-pixel">
-        Canlı Panel Kanıtları
-      </span>
-      <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter text-black">
-        GERÇEK SONUÇLAR
+    <!-- Editorial Section Header -->
+    <div class="max-w-3xl mb-20 space-y-4">
+      <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#536248] bg-[#EBF0E6] px-3 py-1 rounded-full border border-[#536248]/20">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#536248]"></span>
+        <span>[ 02 // ŞEFFAF BELGELER ]</span>
+      </div>
+      
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight text-[#181816]">
+        Kurgusal başarı hikayeleri değil, <br />
+        <span class="italic font-normal text-[#BE5836]">canlı panel kayıtları</span>.
       </h2>
-      <p class="text-black/75 max-w-2xl mx-auto text-lg md:text-xl font-medium">
-        Yönettiğimiz panellerden alınan gerçek ekran görüntüleri. Resimlerin üzerine tıklayarak tam boyutta büyütebilir ve verileri detaylıca inceleyebilirsiniz.
+      
+      <p class="text-base sm:text-lg text-[#6E6A62] font-sans leading-relaxed">
+        Yönettiğimiz panellerden alınan gerçek ekran görüntüleri. Resimlere tıklayarak büyütebilir, harcanan bütçenin getirdiği müşteri taleplerini şeffafça inceleyebilirsiniz.
       </p>
     </div>
 
-    <!-- Stacked Vertical Showcase List -->
-    <div class="space-y-32">
+    <!-- Editorial Showcase List -->
+    <div class="space-y-16">
       {results.map((item, index) => (
-        <div class="flex flex-col gap-10 items-stretch" data-aos="fade-up">
+        <div class="bg-white border border-[#181816]/12 rounded-[28px] p-6 sm:p-10 shadow-[0_4px_24px_rgba(24,24,22,0.03)] hover:border-[#BE5836]/30 transition-all duration-300">
           
-          <!-- Text Header Above Image -->
-          <div class="max-w-5xl mx-auto w-full space-y-4 border-l-4 border-black pl-6">
-            <div class="flex flex-wrap items-center gap-3">
-              <span class="text-[10px] font-mono bg-black text-white px-3 py-1.5 uppercase tracking-wider font-bold font-pixel">
-                {item.badge}
-              </span>
-              <span class={`text-lg md:text-xl font-black font-pixel tracking-tighter ${item.color}`}>
-                ★ {item.metric}
-              </span>
-            </div>
-            <h3 class="text-2xl md:text-3xl font-black text-black font-pixel uppercase tracking-tight">
-              {item.title}
-            </h3>
-            <p class="text-black/85 text-base md:text-lg leading-relaxed font-mono">
-              {item.description}
-            </p>
-          </div>
-
-          <!-- Large Image Wrapper -->
-          <div class="w-full max-w-5xl mx-auto relative group overflow-hidden border-4 border-black bg-white shadow-[8px_8px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_rgba(0,0,0,1)] hover:-translate-x-[4px] hover:-translate-y-[4px] transition-all duration-300">
-            <img 
-              src={item.image} 
-              alt={item.title} 
-              loading="lazy"
-              decoding="async"
-              class="zoomable-image w-full h-auto object-contain cursor-zoom-in" 
-            />
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            <!-- Floating Zoom Icon -->
-            <div class="absolute bottom-6 right-6 bg-black text-white border-2 border-white px-4 py-2 font-pixel text-xs flex items-center gap-2 uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none select-none">
-              <Icon name="mdi:magnify-plus" size={16} />
-              <span>Tam Boyut Gör</span>
+            <!-- Information Column (5 cols) -->
+            <div class="lg:col-span-5 space-y-6">
+              <div class="flex items-center gap-3">
+                <span class="text-xs font-mono tracking-widest uppercase text-[#BE5836] bg-[#FAEDE8] px-3 py-1 rounded-full border border-[#BE5836]/20">
+                  {item.badge}
+                </span>
+                <span class="text-xs font-mono text-[#536248] uppercase tracking-wider">
+                  {item.tag}
+                </span>
+              </div>
+
+              <h3 class="text-2xl sm:text-3xl font-serif text-[#181816] tracking-tight leading-snug">
+                {item.title}
+              </h3>
+
+              <p class="text-sm sm:text-base text-[#4A4742] leading-relaxed">
+                {item.description}
+              </p>
+
+              <div class="pt-4 border-t border-dashed border-[#181816]/15 flex items-center justify-between text-xs font-mono text-[#6E6A62]">
+                <span class="text-[#536248] font-medium">• {item.metric}</span>
+                <span class="text-[#BE5836] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  Tam Boyut Büyüt ↗
+                </span>
+              </div>
             </div>
+
+            <!-- Image Column (7 cols) with rounded organic framing -->
+            <div class="lg:col-span-7">
+              <div 
+                class="screenshot-trigger cursor-zoom-in relative rounded-[20px] overflow-hidden border border-[#181816]/10 bg-[#F4EFE6] group"
+                data-img={item.image}
+                data-title={item.title}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-[#181816]/0 group-hover:bg-[#181816]/10 transition-colors flex items-center justify-center">
+                  <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 backdrop-blur-sm text-[#181816] text-xs font-mono tracking-wider uppercase px-4 py-2 rounded-full shadow-sm">
+                    Görseli İncele
+                  </span>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -90,56 +111,49 @@ const results = [
     </div>
 
   </div>
+
+  <!-- Lightbox Modal -->
+  <div id="image-modal" class="fixed inset-0 bg-[#181816]/85 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
+    <div class="relative max-w-5xl w-full bg-[#FBF9F5] rounded-[24px] overflow-hidden p-4 sm:p-6 shadow-2xl">
+      <div class="flex justify-between items-center pb-4 border-b border-[#181816]/10 mb-4">
+        <h4 id="modal-title" class="font-serif text-lg text-[#181816]"></h4>
+        <button id="modal-close" class="w-8 h-8 rounded-full border border-[#181816]/20 flex items-center justify-center text-xs font-mono hover:bg-[#BE5836] hover:text-white transition-colors" aria-label="Kapat">
+          ✕
+        </button>
+      </div>
+      <img id="modal-img" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain rounded-lg" />
+    </div>
+  </div>
 </section>
 
-<!-- Lightbox Modal -->
-<div id="lightbox-modal" class="fixed inset-0 z-[150] bg-black/95 hidden flex items-center justify-center p-4 cursor-zoom-out select-none">
-  <div class="relative max-w-5xl max-h-[85vh] w-full h-full flex items-center justify-center">
-    <!-- Close button -->
-    <button id="lightbox-close" class="absolute -top-12 right-0 text-white hover:text-red-500 font-mono text-xs font-bold uppercase tracking-widest flex items-center gap-2 px-4 py-2 border-2 border-white hover:border-red-500 bg-black transition-all">
-      KAPAT [ESC]
-    </button>
-    <!-- Image -->
-    <img id="lightbox-image" src="" alt="Zoomed Result" class="max-w-full max-h-full object-contain border-4 border-white shadow-[0_0_50px_rgba(255,255,255,0.15)]" />
-  </div>
-</div>
-
 <script>
-  const images = document.querySelectorAll('.zoomable-image') as NodeListOf<HTMLImageElement>;
-  const modal = document.getElementById('lightbox-modal');
-  const modalImg = document.getElementById('lightbox-image') as HTMLImageElement;
-  const closeBtn = document.getElementById('lightbox-close');
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("modal-img") as HTMLImageElement;
+  const modalTitle = document.getElementById("modal-title");
+  const closeBtn = document.getElementById("modal-close");
 
-  images.forEach(img => {
-    img.addEventListener('click', () => {
-      if (modal && modalImg) {
-        modalImg.src = img.src;
-        modalImg.alt = img.alt;
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // stop scrolling
+  document.querySelectorAll(".screenshot-trigger").forEach((el) => {
+    el.addEventListener("click", () => {
+      const imgSrc = el.getAttribute("data-img") || "";
+      const title = el.getAttribute("data-title") || "";
+      if (modal && modalImg && modalTitle) {
+        modalImg.src = imgSrc;
+        modalTitle.textContent = title;
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
       }
     });
   });
 
-  function closeModal() {
-    if (modal) {
-      modal.classList.add('hidden');
-      document.body.style.overflow = ''; // restore scrolling
-    }
-  }
+  closeBtn?.addEventListener("click", () => {
+    modal?.classList.add("hidden");
+    modal?.classList.remove("flex");
+  });
 
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      // Close only if clicked outside the image itself or close button
-      if (e.target === modal || e.target === closeBtn || (e.target as HTMLElement).closest('#lightbox-close')) {
-        closeModal();
-      }
-    });
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeModal();
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
     }
   });
 </script>

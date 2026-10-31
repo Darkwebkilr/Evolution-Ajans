@@ -25,7 +25,7 @@ const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "name": "Hakkımızda - Evolution Ajans",
-  "description": "İzmir merkezli 360° dijital reklam ve web ajansı. Evolution Ajans hakkında detaylı bilgi ve vizyonumuz.",
+  "description": "İzmir merkezli dijital reklam ve web ajansı. Evolution Ajans hakkında detaylı bilgi, felsefemiz ve ekibimiz.",
   "url": "https://evolutionajans.com/hakkimizda/",
   "mainEntity": {
     "@type": "ProfessionalService",
@@ -36,141 +36,89 @@ const aboutPageSchema = {
 
 <MainLayout 
   title="Hakkımızda | İzmir Web Tasarım ve Reklam Ajansı - Evolution Ajans" 
-  description="İzmir merkezli 360° reklam ajansı. Markanızın dijital evrimini yöneten, yaratıcılık ve teknolojiyi birleştiren çok yönlü bir çözüm ortağıyız."
+  description="İzmir merkezli bağımsız dijital atölye. Markanızın büyümesini yöneten, samimi zanaatkarlık ve modern yazılım altyapısını birleştiren çözüm ortağınız."
 >
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
 
-  <section class="relative overflow-hidden py-24 md:py-40 retro-grid">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+  <!-- Breadcrumbs -->
+  <div class="max-w-6xl mx-auto px-6 pt-12">
+    <nav class="font-mono text-xs text-[#6E6A62] flex items-center gap-2">
+      <a href="/" class="hover:text-[#BE5836] transition-colors">Ana Sayfa</a>
+      <span>/</span>
+      <span class="text-[#181816] font-medium">Hakkımızda</span>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24 border-b border-dashed border-[#181816]/15">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left Side: Hero Title -->
-        <div class="lg:col-span-7 space-y-8" data-aos="fade-right">
-          <span class="inline-block px-4 py-2 border-2 border-black bg-black text-white text-[10px] font-mono uppercase tracking-[0.3em] font-pixel">
-            Biz Kimiz?
-          </span>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-none mb-8">
-            İZMİR'DEN <br/>
-            <span class="text-blue-600">DÜNYAYA</span>
+        <div class="lg:col-span-8 space-y-6">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#536248] bg-[#EBF0E6] px-3 py-1 rounded-full border border-[#536248]/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#536248]"></span>
+            <span>[ ATÖLYE HİKAYESİ ]</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight text-[#181816] leading-[1.1]">
+            İzmir'in dinamizmiyle <br />
+            <span class="italic font-normal text-[#BE5836]">dijitalde somut sonuçlar</span>.
           </h1>
-          <p class="text-lg md:text-xl text-black/70 font-light leading-relaxed max-w-2xl">
-            Evolution Ajans, İzmir'in dinamik ruhunu dijitalin sınırsız gücüyle birleştiren, 360 derece hizmet veren çok yönlü bir reklam ajansıdır.
+
+          <p class="text-base sm:text-lg text-[#4A4742] leading-relaxed max-w-2xl font-sans">
+            Evolution Ajans; ezbere şablonların, jenerik ajans klişelerinin ve boşa harcanan reklam bütçelerinin karşısında duran butik bir dijital büyüme atölyesidir.
           </p>
         </div>
 
-        <!-- Right Side: Abstract Visual/Stats -->
-        <div class="lg:col-span-5 relative" data-aos="zoom-in" data-aos-delay="200">
-           <div class="aspect-square relative flex items-center justify-center">
-              <!-- Animated Circle -->
-              <div class="absolute inset-0 border-4 border-dashed border-black/10 rounded-full animate-[spin_20s_linear_infinite]"></div>
-              <div class="absolute inset-10 border-2 border-black/5 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
-              
-              <div class="text-center space-y-2 z-10">
-                <span class="text-5xl md:text-6xl font-bold text-black block tracking-tighter font-pixel">5+</span>
-                <span class="text-[9px] font-mono uppercase tracking-[0.4em] text-black/50 block font-pixel">Yıllık Evrim</span>
-              </div>
-           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Content Section with Asymmetric Layout -->
-  <section class="py-24 bg-white border-y-4 border-black retro-grid">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
-        
-        <div class="space-y-12" data-aos="fade-up">
-          <h2 class="text-3xl md:text-4xl font-extrabold uppercase tracking-tight">
-            Sadece bir ajans değil, <br/>
-            <span class="text-black/50 italic font-light">stratejik bir ortağız.</span>
-          </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-             <div class="space-y-4">
-                <div class="w-12 h-12 rounded-none border-2 border-black bg-blue-100 flex items-center justify-center text-blue-600">
-                   <Icon name="mdi:flare" size={24} />
-                </div>
-                <h4 class="text-base font-bold uppercase tracking-wide font-pixel">Yaratıcılık</h4>
-                <p class="text-black/60 text-sm leading-relaxed">
-                   İzmir'in ilham veren dokusunu modern tasarım trendleriyle harmanlıyoruz.
-                </p>
-             </div>
-             <div class="space-y-4">
-                <div class="w-12 h-12 rounded-none border-2 border-black bg-purple-100 flex items-center justify-center text-purple-600">
-                   <Icon name="mdi:rocket-launch" size={24} />
-                </div>
-                <h4 class="text-base font-bold uppercase tracking-wide font-pixel">Teknoloji</h4>
-                <p class="text-black/60 text-sm leading-relaxed">
-                   En güncel dijital araçları kullanarak markanızın performansını maksimize ediyoruz.
-                </p>
-             </div>
-          </div>
-        </div>
-
-        <div class="bg-white p-10 rounded-none border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] space-y-8" data-aos="fade-left" data-aos-delay="300">
-          <p class="text-base md:text-lg text-black/80 leading-relaxed font-light">
-            İzmir merkezli ofisimizde, web tasarımdan SEO'ya, sosyal medya yönetiminden kurumsal kimlik inşasına kadar geniş bir yelpazede hizmet veriyoruz. Bizim için her marka, dijital bir evrimin parçasıdır. 
-          </p>
-          <p class="text-base md:text-lg text-black/80 leading-relaxed font-light">
-            Geleneksel reklamcılığın sınırlarını zorluyor, veriye dayalı stratejilerle markanızı sadece görünür değil, aynı zamanda etkileşim kuran bir güce dönüştürüyoruz.
-          </p>
-          <div class="pt-8 flex items-center gap-4">
-             <div class="h-1 w-20 bg-black"></div>
-             <span class="text-[9px] font-mono uppercase tracking-[0.3em] text-black/50 font-pixel">Evolution Ads Team</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Visual Values Section -->
-  <section class="py-32 overflow-hidden bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-       <div class="flex flex-col items-center text-center mb-24 space-y-6">
-          <h3 class="text-3xl md:text-5xl font-black uppercase tracking-tighter" data-aos="fade-up">
-            BİZİ <span class="text-purple-600">FARKLI</span> KILAN NE?
-          </h3>
-          <p class="text-black/50 max-w-xl text-base font-light font-mono" data-aos="fade-up" data-aos-delay="100">
-            Sıradan bir ajansın ötesinde, büyüme hedeflerinize odaklanan bir ekosistem sunuyoruz.
-          </p>
-       </div>
-
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { title: "Çok Yönlü Yaklaşım", icon: "mdi:all-inclusive", desc: "360 derece reklamcılık anlayışıyla markanızın her noktasına dokunuyoruz." },
-            { title: "Yerel Güç, Küresel Vizyon", icon: "mdi:earth", desc: "İzmir'deki köklerimizden aldığımız güçle küresel standartlarda işler üretiyoruz." },
-            { title: "Veri Odaklı Kararlar", icon: "mdi:chart-timeline-variant", desc: "Yaratıcılığımızı sayılarla destekliyor, sonuçları tesadüfe bırakmıyoruz." }
-          ].map((val, i) => (
-            <div 
-              class="group p-10 bg-white border-4 border-black rounded-none hover:bg-slate-50 transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-[4px] hover:-translate-y-[4px]"
-              data-aos="fade-up"
-              data-aos-delay={i * 150}
-            >
-              <div class="mb-8 p-4 w-16 h-16 rounded-none border-2 border-black bg-blue-100 flex items-center justify-center text-black group-hover:bg-[#facc15] transition-all duration-300">
-                 <Icon name={val.icon} size={32} />
-              </div>
-              <h4 class="text-xs sm:text-sm font-bold uppercase mb-4 tracking-tight group-hover:text-blue-600 transition-colors duration-300 font-pixel">{val.title}</h4>
-              <p class="text-black/70 leading-relaxed transition-colors duration-300">
-                {val.desc}
-              </p>
+        <div class="lg:col-span-4">
+          <div class="bg-white border border-[#181816]/12 rounded-[28px] p-8 shadow-[0_4px_24px_rgba(24,24,22,0.03)] space-y-4">
+            <span class="text-xs font-mono text-[#536248] uppercase tracking-widest block">
+              [ 2026 GÜNCELLEMESİ ]
+            </span>
+            <p class="font-serif text-xl text-[#181816]">
+              "Daha fazla gösterim değil; daha fazla doğrulanmış müşteri telefonu."
+            </p>
+            <div class="pt-4 border-t border-[#181816]/10 text-xs font-mono text-[#6E6A62]">
+              Folkart Towers, Bayraklı / İzmir
             </div>
-          ))}
-       </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-24 max-w-7xl mx-auto px-6 mb-24 font-pixel" data-aos="zoom-in">
-    <div class="relative bg-[#facc15] border-4 border-black rounded-none p-12 md:p-24 overflow-hidden text-center group shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-       <h2 class="text-3xl md:text-5xl font-black text-black uppercase tracking-tighter mb-10 relative z-10 leading-none">
-          EVRİMİN <br/> BİR PARÇASI OLUN
-       </h2>
-       <a href="/iletisim/" class="inline-flex items-center gap-4 bg-white border-2 border-black text-black px-8 py-4 rounded-none text-xs font-bold uppercase tracking-widest hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-0 active:translate-y-0 active:shadow-none transition-all relative z-10">
-          Bizimle Tanışın
-          <Icon name="mdi:arrow-right" size={24} />
-       </a>
+  <!-- Philosophy & Details -->
+  <section class="py-24 bg-[#F4EFE6] border-b border-dashed border-[#181816]/15">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="bg-white border border-[#181816]/12 rounded-[24px] p-8 shadow-sm space-y-4">
+          <span class="font-mono text-xs text-[#BE5836] uppercase tracking-wider block">01 // ŞEFFAFLIK</span>
+          <h2 class="font-serif text-2xl text-[#181816]">Gizli Komisyon Yok</h2>
+          <p class="text-sm text-[#4A4742] leading-relaxed">
+            Google ve Meta reklam panelleri doğrudan sizin adınıza açılır, harcamaları kuruşu kuruşuna canlı izlersiniz.
+          </p>
+        </div>
+
+        <div class="bg-white border border-[#181816]/12 rounded-[24px] p-8 shadow-sm space-y-4">
+          <span class="font-mono text-xs text-[#536248] uppercase tracking-wider block">02 // HIZ & ERİŞİM</span>
+          <h2 class="font-serif text-2xl text-[#181816]">Astro SSG Mimarisi</h2>
+          <p class="text-sm text-[#4A4742] leading-relaxed">
+            Ağır WordPress eklentileriyle boğuşmak yerine şimşek hızında statik kodlama ile Google PageSpeed 95+ garantisi.
+          </p>
+        </div>
+
+        <div class="bg-white border border-[#181816]/12 rounded-[24px] p-8 shadow-sm space-y-4">
+          <span class="font-mono text-xs text-[#BE5836] uppercase tracking-wider block">03 // BÖLGESEL SEO</span>
+          <h2 class="font-serif text-2xl text-[#181816]">Harita Hakimiyeti</h2>
+          <p class="text-sm text-[#4A4742] leading-relaxed">
+            İzmir'in 30 ilçesinde mahalle bazlı yerel aramalarda telefonunuzun çalmasını sağlayan kalıcı optimizasyon.
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 

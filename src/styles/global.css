@@ -1,59 +1,109 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "aos/dist/aos.css";
 @import "tailwindcss";
 
 @theme {
-  --font-pixel: "Space Grotesk", sans-serif;
-  --font-mono: "Share Tech Mono", monospace;
+  --font-serif: "Fraunces", "Instrument Serif", Georgia, serif;
+  --font-instrument: "Instrument Serif", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-pixel: "Fraunces", Georgia, serif;
+
+  --color-paper: #FBF9F5;
+  --color-paper-card: #FFFFFF;
+  --color-paper-subtle: #F4EFE6;
+  --color-paper-border: rgba(24, 24, 22, 0.12);
+
+  --color-charcoal: #181816;
+  --color-charcoal-body: #34322E;
+  --color-charcoal-muted: #6E6A62;
+
+  --color-olive: #536248;
+  --color-olive-soft: #EBF0E6;
+  --color-olive-dark: #3E4A35;
+
+  --color-terracotta: #BE5836;
+  --color-terracotta-soft: #FAEDE8;
+  --color-terracotta-dark: #9E4324;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #FBF9F5;
+    color: #181816;
   }
 
   body {
-    font-family: "Share Tech Mono", monospace;
-    background-color: #f8fafc;
-    color: #000000;
-  }
-
-  h1, h2, h3, h4, h5, h6, .font-pixel {
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 800;
-  }
-
-  .nav a {
+    font-family: var(--font-sans);
+    background-color: #FBF9F5;
+    color: #34322E;
     position: relative;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    padding: 0.25rem 0;
+    overflow-x: hidden;
   }
 
-  /* alt çizgi oluştur */
-  .nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 100%;
-    height: 2px;
-    background-color: #000000;
-    transform: scaleX(0);
-    transform-origin: right center;
-    transition: transform 0.25s ease;
+  /* Editorial Headings */
+  h1, h2, h3, h4, .font-serif, .font-pixel {
+    font-family: var(--font-serif);
+    color: #181816;
+    letter-spacing: -0.025em;
   }
 
-  /* hover olduğunda sağdan sola büyüsün */
-  .nav a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left center;
+  p {
+    color: #34322E;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-.retro-grid {
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+/* Subtle organic paper grain overlay */
+.paper-grain {
+  background-color: #FBF9F5;
+  position: relative;
+}
+
+.paper-grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Editorial subtle dashed dividers */
+.border-dashed-editorial {
+  border-bottom: 1px dashed rgba(24, 24, 22, 0.16);
+}
+
+/* Editorial badge / tag */
+.editorial-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #536248;
+  background-color: #EBF0E6;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(83, 98, 72, 0.2);
+}
+
+.editorial-tag-terracotta {
+  color: #9E4324;
+  background-color: #FAEDE8;
+  border: 1px solid rgba(190, 88, 54, 0.25);
 }

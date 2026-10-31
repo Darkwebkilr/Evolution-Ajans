@@ -91,11 +91,11 @@ const blogPostingSchema = {
       <span class="text-black font-bold truncate max-w-xs">{post.data.title}</span>
     </nav>
 
-    <article class="max-w-4xl mx-auto bg-white border-4 border-black p-6 sm:p-10 md:p-14 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+    <article class="max-w-4xl mx-auto bg-white border border-[#181816]/12 rounded-[28px] p-8 sm:p-12 md:p-16 shadow-[0_4px_30px_rgba(24,24,22,0.03)]">
       <!-- Metadata Bar -->
-      <div class="text-[10px] font-mono text-black/60 font-pixel mb-6 pb-4 border-b-2 border-black/10 flex justify-between items-center flex-wrap gap-2">
+      <div class="text-xs font-mono text-[#6E6A62] mb-8 pb-5 border-b border-dashed border-[#181816]/15 flex justify-between items-center flex-wrap gap-3">
         <div class="flex items-center gap-3">
-          <span class="bg-black text-white px-2 py-0.5 uppercase tracking-wider font-bold">Blog</span>
+          <span class="bg-[#EBF0E6] text-[#536248] px-2.5 py-0.5 uppercase tracking-wider text-[10px] rounded-full">Blog</span>
           <span>Yazar: <strong>{post.data.author}</strong></span>
         </div>
         <div class="flex items-center gap-3 flex-wrap">
@@ -106,7 +106,7 @@ const blogPostingSchema = {
       </div>
 
       <!-- Article Title -->
-      <h1 class="text-2xl sm:text-3xl md:text-4xl font-black text-black mb-8 tracking-tight leading-tight font-pixel uppercase">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-serif text-[#181816] mb-8 tracking-tight leading-tight">
         {post.data.title}
       </h1>
 
@@ -122,22 +122,22 @@ const blogPostingSchema = {
       )}
 
       <!-- Article Body -->
-      <div class="article-content max-w-none text-black font-mono">
+      <div class="article-content max-w-none text-[#34322E] font-sans leading-relaxed">
         <Content />
       </div>
 
       <!-- Conversion Box at the end of article -->
-      <div class="mt-12 p-6 sm:p-8 bg-black text-white border-4 border-black relative overflow-hidden">
-        <h3 class="text-lg sm:text-xl font-black font-pixel uppercase tracking-tight mb-3">
+      <div class="mt-16 p-8 sm:p-10 bg-[#FAEDE8] border border-[#BE5836]/30 rounded-[24px] relative overflow-hidden">
+        <h3 class="text-2xl font-serif text-[#181816] tracking-tight mb-3">
           İşletmenizi Dijitalde Bir Adım Öne Taşıyalım
         </h3>
-        <p class="text-white/80 font-mono text-xs sm:text-sm leading-relaxed mb-6 max-w-2xl">
+        <p class="text-[#4A4742] text-sm leading-relaxed mb-6 max-w-2xl font-sans">
           Evolution Ajans olarak İzmir ve tüm Türkiye'deki işletmelere özel SEO, kurumsal web tasarım ve Google Ads reklam yönetimi hizmetleri sunuyoruz. Ücretsiz dijital analiz için hemen iletişime geçin.
         </p>
         <div class="flex flex-wrap gap-4">
           <a
             href="/iletisim/"
-            class="inline-block bg-white text-black font-pixel font-black text-xs uppercase px-6 py-3 border-2 border-white hover:bg-black hover:text-white transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)]"
+            class="inline-block bg-[#BE5836] text-white text-xs uppercase tracking-widest font-medium px-6 py-3 rounded-full hover:bg-[#9E4324] transition-all shadow-sm"
           >
             Ücretsiz Teklif Al →
           </a>
@@ -145,7 +145,7 @@ const blogPostingSchema = {
             href="https://wa.me/905519283598"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block bg-emerald-500 text-white font-pixel font-black text-xs uppercase px-6 py-3 border-2 border-emerald-400 hover:bg-emerald-600 transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,0.4)]"
+            class="inline-block bg-white border border-[#181816]/15 text-[#181816] text-xs uppercase tracking-widest font-medium px-6 py-3 rounded-full hover:bg-[#F3EFE6] transition-all shadow-sm"
           >
             WhatsApp ile Danış →
           </a>
@@ -153,8 +153,8 @@ const blogPostingSchema = {
       </div>
 
       <!-- Navigation footer -->
-      <div class="mt-10 pt-6 border-t-2 border-black/10 flex justify-between items-center">
-        <a href="/blog/" class="font-pixel text-xs font-black uppercase text-black hover:underline underline-offset-4 flex items-center gap-2">
+      <div class="mt-12 pt-6 border-t border-dashed border-[#181816]/15 flex justify-between items-center">
+        <a href="/blog/" class="text-xs font-mono uppercase text-[#181816] hover:text-[#BE5836] transition-colors flex items-center gap-2">
           ← Tüm Blog Yazılarına Dön
         </a>
       </div>
