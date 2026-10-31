@@ -3,36 +3,22 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="relative min-h-[82vh] w-full bg-[#FBF9F5] text-[#181816] flex items-center justify-center pt-28 pb-20 md:pt-36 md:pb-28 border-b border-dashed border-[#181816]/15">
+<section class="relative min-h-[78vh] w-full bg-[#FBF9F5] text-[#181816] flex items-center justify-center pt-28 pb-16 md:pt-36 md:pb-24 border-b border-dashed border-[#181816]/15">
   
   <div class="max-w-6xl w-full mx-auto px-6 lg:px-8 relative z-10">
     
-    <!-- Top Editorial Metadata Row -->
-    <div class="flex items-center justify-between border-b border-[#181816]/10 pb-5 mb-12 text-[11px] font-mono tracking-[0.2em] uppercase text-[#6E6A62]">
-      <div class="flex items-center gap-3">
-        <span class="w-2 h-2 rounded-full bg-[#536248]"></span>
-        <span class="text-[#536248] font-medium">[ 01 // DİJİTAL ATÖLYE ]</span>
-      </div>
-      <div class="hidden sm:flex items-center gap-6">
-        <span>İZMİR // BAYRAKLI</span>
-        <span>•</span>
-        <span>SEO, WEB & DÖNÜŞÜM</span>
-      </div>
-      <span class="text-[#BE5836] font-medium">EST. 2026</span>
-    </div>
-
     <!-- Asymmetrical 12-Column Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
       
-      <!-- Typographic Left Column (7 Cols) -->
-      <div class="lg:col-span-7 flex flex-col items-start space-y-8">
+      <!-- Typographic Left Column (6 Cols) -->
+      <div class="lg:col-span-6 flex flex-col items-start space-y-6">
         
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF0E6] border border-[#536248]/25 text-[#3E4A35] text-xs font-mono tracking-wider">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EBF0E6] border border-[#536248]/25 text-[#3E4A35] text-xs font-mono tracking-wider">
           <span class="w-1.5 h-1.5 rounded-full bg-[#536248]"></span>
           <span>Doğrudan Müşteri Getiren Dijital Büyüme</span>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif tracking-tight leading-[1.08] text-[#181816]">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight leading-[1.08] text-[#181816]">
           Rakipleriniz iş toplarken, <br class="hidden sm:block" />
           siz geride <span class="italic font-normal text-[#BE5836]">kalmayın</span>.
         </h1>
@@ -61,60 +47,69 @@ import { Icon } from "astro-icon/components";
           </a>
         </div>
 
-        <!-- Micro Social Proof -->
-        <div class="pt-6 border-t border-[#181816]/10 w-full flex items-center gap-6 text-xs text-[#6E6A62] font-mono">
-          <div class="flex items-center gap-1.5 text-[#BE5836]">
-            <span>★★★★★</span>
-          </div>
-          <span>30+ Aktif İşletme Sistemi</span>
-          <span class="hidden sm:inline">•</span>
-          <span class="hidden sm:inline text-[#536248]">Canlı Panel Doğrulaması</span>
-        </div>
-
       </div>
 
-      <!-- Editorial Card / Visual Right Column (5 Cols) -->
-      <div class="lg:col-span-5 relative">
-        <div class="relative bg-white border border-[#181816]/12 rounded-[28px] p-8 sm:p-10 shadow-[0_4px_30px_rgba(24,24,22,0.04)] overflow-hidden">
+      <!-- Coding Screen / Terminal Window Right Column (6 Cols) -->
+      <div class="lg:col-span-6 relative">
+        <div class="relative bg-[#1A1917] border border-[#181816]/20 rounded-[22px] shadow-[0_12px_40px_rgba(24,24,22,0.12)] overflow-hidden font-mono text-xs">
           
-          <!-- Subtle Top Label -->
-          <div class="flex items-center justify-between pb-6 border-b border-dashed border-[#181816]/15 mb-6">
-            <span class="text-[10px] font-mono tracking-widest uppercase text-[#536248]">
-              [ ATÖLYE MANİFESTOSU ]
-            </span>
-            <span class="text-xs font-serif italic text-[#6E6A62]">
-              Sıfır Dolgu, Saf Dönüşüm
-            </span>
-          </div>
-
-          <!-- Quote / Core Metric -->
-          <div class="space-y-6">
-            <p class="font-serif text-2xl text-[#181816] leading-snug">
-              "Bir işletmenin web sitesi sanat galerisi değil; <span class="italic text-[#BE5836]">her gün yeni iş getiren</span> en çalışkan elemanı olmalıdır."
-            </p>
-
-            <div class="space-y-3 pt-4 font-mono text-xs text-[#4A4742]">
-              <div class="flex items-center justify-between py-2 border-b border-[#181816]/8">
-                <span class="text-[#6E6A62]">Odak Yaklaşım:</span>
-                <span class="font-semibold text-[#181816]">Bölgesel Hakimiyet & SEO</span>
-              </div>
-              <div class="flex items-center justify-between py-2 border-b border-[#181816]/8">
-                <span class="text-[#6E6A62]">Teknoloji:</span>
-                <span class="font-semibold text-[#181816]">Astro SSG + Sıfır Bloat</span>
-              </div>
-              <div class="flex items-center justify-between py-2 border-b border-[#181816]/8">
-                <span class="text-[#6E6A62]">İndeksleme:</span>
-                <span class="font-semibold text-[#536248]">Google Indexing API</span>
-              </div>
+          <!-- Code Window Header / Top Bar -->
+          <div class="flex items-center justify-between px-5 py-3.5 bg-[#23211D] border-b border-[#33312B] select-none">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-[#BE5836]/90 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-[#D4A359]/80 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-[#536248]/90 inline-block"></span>
             </div>
 
-            <!-- Soft terracotta footer seal -->
-            <div class="pt-4 flex items-center justify-between text-[11px] font-mono text-[#6E6A62]">
-              <span class="inline-flex items-center gap-1.5 text-[#536248]">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#536248]"></span>
-                Danışmanlık Kontenjanı Açık
-              </span>
-              <span class="text-[#BE5836] font-medium">İZMİR 2026</span>
+            <div class="flex items-center gap-2 text-[11px] text-[#A6A095] tracking-wider font-mono">
+              <Icon name="mdi:code-tags" class="text-[#BE5836]" size={14} />
+              <span>growth-engine.config.ts</span>
+            </div>
+
+            <div class="flex items-center gap-1.5 text-[10px] text-[#536248] tracking-widest">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#536248] animate-pulse"></span>
+              <span class="text-[#8E9B82]">CANLI</span>
+            </div>
+          </div>
+
+          <!-- Code Content Area -->
+          <div class="p-5 sm:p-6 text-[12px] sm:text-[13px] leading-[1.7] overflow-x-auto text-[#E8E4DC] selection:bg-[#BE5836]/40">
+            <pre class="font-mono"><code><span class="text-[#8E9B82]">// ⚡ Evolution Ajans — Yüksek Performanslı Sistem</span>
+<span class="text-[#BE5836]">import</span> &#123; <span class="text-[#D4A359]">defineGrowthEngine</span> &#125; <span class="text-[#BE5836]">from</span> <span class="text-[#8E9B82]">"@evolution/core"</span>;
+
+<span class="text-[#BE5836]">export default</span> <span class="text-[#D4A359]">defineGrowthEngine</span>(&#123;
+  <span class="text-[#A6A095]">hedefBölge:</span> <span class="text-[#8E9B82]">"İzmir (30 İlçe Kapsamı)"</span>,
+  <span class="text-[#A6A095]">mimari:</span> <span class="text-[#8E9B82]">"Astro SSG + Sıfır Bloat"</span>,
+
+  <span class="text-[#A6A095]">performans:</span> &#123;
+    <span class="text-[#A6A095]">pageSpeedSkoru:</span> <span class="text-[#D4A359]">100</span>,
+    <span class="text-[#A6A095]">ilkAçılışSüresi:</span> <span class="text-[#8E9B82]">"&lt; 0.6s"</span>,
+    <span class="text-[#A6A095]">coreWebVitals:</span> <span class="text-[#8E9B82]">"KUSURSUZ (Tüm Metrikler Yeşil)"</span>
+  &#125;,
+
+  <span class="text-[#A6A095]">yerelSEO:</span> &#123;
+    <span class="text-[#A6A095]">googleHaritaPaketi:</span> <span class="text-[#8E9B82]">"Zirve (#1 Sıra Hedefi)"</span>,
+    <span class="text-[#A6A095]">otomatikİndeks:</span> <span class="text-[#BE5836]">true</span>, <span class="text-[#8E9B82]">// Google Indexing API</span>
+    <span class="text-[#A6A095]">yapılandırılmışVeri:</span> <span class="text-[#8E9B82]">"Schema.org LocalBusiness"</span>
+  &#125;,
+
+  <span class="text-[#A6A095]">dönüşümOdaklı:</span> &#123;
+    <span class="text-[#A6A095]">çağrıTakibi:</span> <span class="text-[#8E9B82]">"Doğrudan Telefon &amp; WhatsApp"</span>,
+    <span class="text-[#A6A095]">reklamİsrafÖnleme:</span> <span class="text-[#8E9B82]">"-%40 Negatif Filtreleme"</span>,
+    <span class="text-[#A6A095]">sonuç:</span> <span class="text-[#8E9B82]">"Günlük Doğrulanmış Müşteri Talebi"</span>
+  &#125;
+&#125;);</code></pre>
+          </div>
+
+          <!-- Code Window Status Footer -->
+          <div class="px-5 py-2.5 bg-[#23211D] border-t border-[#33312B] flex items-center justify-between text-[10px] text-[#A6A095] select-none">
+            <div class="flex items-center gap-4">
+              <span>TypeScript 5.8</span>
+              <span>UTF-8</span>
+              <span class="text-[#8E9B82]">● 0 Hata</span>
+            </div>
+            <div class="text-[#BE5836]">
+              Astro 5.x
             </div>
           </div>
 
