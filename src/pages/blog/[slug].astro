@@ -49,7 +49,7 @@ const blogPostingSchema = {
   "description": post.data.description,
   "url": currentUrl,
   "datePublished": new Date(post.data.pubDate).toISOString(),
-  "dateModified": new Date(post.data.pubDate).toISOString(),
+  "dateModified": post.data.updatedDate ? new Date(post.data.updatedDate).toISOString() : new Date(post.data.pubDate).toISOString(),
   "author": {
     "@type": "Organization",
     "name": post.data.author || "Evolution Ajans",
@@ -75,6 +75,8 @@ const blogPostingSchema = {
   description={post.data.description}
   image={post.data.image}
   type="article"
+  datePublished={new Date(post.data.pubDate).toISOString()}
+  dateModified={post.data.updatedDate ? new Date(post.data.updatedDate).toISOString() : new Date(post.data.pubDate).toISOString()}
 >
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
@@ -96,7 +98,11 @@ const blogPostingSchema = {
           <span class="bg-black text-white px-2 py-0.5 uppercase tracking-wider font-bold">Blog</span>
           <span>Yazar: <strong>{post.data.author}</strong></span>
         </div>
-        <span>Yayın Tarihi: {new Date(post.data.pubDate).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })}</span>
+        <div class="flex items-center gap-3 flex-wrap">
+          <span>Yayın: <time datetime={new Date(post.data.pubDate).toISOString()} itemprop="datePublished">{new Date(post.data.pubDate).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })}</time></span>
+          <span>•</span>
+          <span>Güncelleme: <time datetime={post.data.updatedDate ? new Date(post.data.updatedDate).toISOString() : new Date(post.data.pubDate).toISOString()} itemprop="dateModified">{new Date(post.data.updatedDate || post.data.pubDate).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })}</time></span>
+        </div>
       </div>
 
       <!-- Article Title -->

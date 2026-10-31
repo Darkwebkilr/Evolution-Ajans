@@ -9,6 +9,7 @@ const blogCollection = defineCollection({
       .string()
       .max(160, "SEO için açıklama 160 karakterden uzun olmamalıdır!"),
     pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
     author: z.string().default("Astro Geliştiricisi"),
     image: z.string().optional(),
     isDraft: z.boolean().default(false),

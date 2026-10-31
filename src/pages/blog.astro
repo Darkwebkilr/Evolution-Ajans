@@ -58,9 +58,9 @@ const breadcrumbSchema = {
           >
             <div>
               <div class="flex items-center justify-between gap-2 mb-4">
-                <span class="text-[10px] font-mono text-black/60 font-pixel">
-                  {new Date(post.data.pubDate).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })}
-                </span>
+                <time datetime={new Date(post.data.pubDate).toISOString()} class="text-[10px] font-mono text-black/60 font-pixel">
+                    {new Date(post.data.pubDate).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })}
+                  </time>
                 <span class="text-[9px] font-mono uppercase bg-black text-white px-2 py-0.5 font-bold">
                   {post.data.author}
                 </span>
